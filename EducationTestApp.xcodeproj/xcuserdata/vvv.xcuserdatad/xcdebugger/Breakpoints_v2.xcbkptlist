@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EducationTestAppTests/EDAResponseMetadataTests.m"
+            timestampString = "473697783.807963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-testMetadataFromDictionarySuccessful"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDAResponseMetadataTests test_metadataFromDictionary]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/EDAResponseMetadataTests.m"
+                  timestampString = "473613949.831485"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "635">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDAResponseMetadataTests test_metadataFromDictionary]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/EDAResponseMetadataTests.m"
+                  timestampString = "473613949.831734"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "691">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDAResponseMetadataTests test_metadataFromDictionary]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/EDAResponseMetadataTests.m"
+                  timestampString = "473613949.831914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1417">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDAResponseMetadataTests test_metadataFromDictionary]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/EDAResponseMetadataTests.m"
+                  timestampString = "473613949.832233"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1544">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDAResponseMetadataTests test_metadataFromDictionary]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/EDAResponseMetadataTests.m"
+                  timestampString = "473613949.832383"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1681">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EducationTestAppTests/NSJSONSerializationTests/EDANSJSONSerializationTest.m"
+            timestampString = "474817258.326496"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-testSerializationToArrayWithNullObject"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDANSJSONSerializationTest testSerializationToArrayWithNullObject]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/NSJSONSerializationTests/EDANSJSONSerializationTest.m"
+                  timestampString = "474819484.02309"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "3587">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDANSJSONSerializationTest testSerializationToArrayWithNullObject]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/NSJSONSerializationTests/EDANSJSONSerializationTest.m"
+                  timestampString = "474819484.02335"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "5063">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDANSJSONSerializationTest testSerializationToArrayWithNullObject]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/NSJSONSerializationTests/EDANSJSONSerializationTest.m"
+                  timestampString = "474819484.023651"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "5195">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[EDANSJSONSerializationTest testSerializationToArrayWithNullObject]"
+                  moduleName = "EducationTestAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Storage/Projects/iOS/EducationTestApp/EducationTestAppTests/NSJSONSerializationTests/EDANSJSONSerializationTest.m"
+                  timestampString = "474819484.023876"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "5323">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EducationTestApp/Categories/NSDictionary+NSNull.m"
+            timestampString = "474819446.16557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-customSetObject:forKey:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EducationTestApp/Categories/NSDictionary+NSNull.m"
+            timestampString = "474819446.16557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-customSetObject:forKey:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
