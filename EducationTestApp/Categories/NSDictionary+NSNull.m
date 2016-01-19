@@ -10,11 +10,12 @@
 #import "NSDictionary+NSNull.h"
 #import "EDANull.h"
 
-//@interface NSDictionary (NSNullPrivate)
+@interface NSDictionary (NSNullPrivate)
 
-//@property (nonatomic) Method originValueForKeyMethod;
+- (id)customValueForKey:(NSString *)key;
+- (id)customObjectForKeyedSubscript:(id)key;
 
-//@end
+@end
 
 @implementation NSDictionary (NSNull)
 
@@ -45,7 +46,8 @@
     });
 }
 
-#pragma mark - Setters
+#pragma mark -
+#pragma mark Setters
 
 - (void)customSetValue:(id)value forKey:(NSString *)key {
     
@@ -65,27 +67,28 @@
     [self customSetObject:value forKey:key];
 }
 
-#pragma mark - Getters
+#pragma mark -
+#pragma mark Getters
+
+#define EDAReturnEDANullInsteadNSNull(object) \
+    if ([object isEqual:[NSNull null]]) { \
+        return [EDANull null]; \
+    } \
+    return object
+
 
 - (id)customValueForKey:(NSString *)key {
     NSLog(@"self class is %@", NSStringFromClass([self class]));
 
     id object = [self customValueForKey:key];
-    if ([object isEqual:[NSNull null]]) {
-        return [EDANull null];
-    }
-    return object;
+    EDAReturnEDANullInsteadNSNull(object);
 }
 
 - (id)customObjectForKeyedSubscript:(id)key {
     NSLog(@"self class is %@", NSStringFromClass([self class]));
 
     id object = [self customObjectForKeyedSubscript:key];
-    if ([object isEqual:[NSNull null]]) {
-        return [EDANull null];
-    }
-
-    return object;
+    EDAReturnEDANullInsteadNSNull(object);
 }
 
 @end
