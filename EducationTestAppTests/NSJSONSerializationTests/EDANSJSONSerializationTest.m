@@ -43,7 +43,7 @@
 }
 
 
-- (void)test_NullInstanceMethods {
+- (void)testNullInstanceMethods {
     
     Class objectClass = [NSNull superclass];
     unsigned int methodCount = 0;
@@ -63,7 +63,7 @@
     free(methods);
 }
 
-- (void)test_NullClassMethods {
+- (void)testNullClassMethods {
     
     Class objectClass = [NSNull class];
     unsigned int methodCount = 0;

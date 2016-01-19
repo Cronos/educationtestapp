@@ -26,7 +26,7 @@
     [super tearDown];
 }
 
-- (void)test_ExchangeValueForKeyMethod {
+- (void)testExchangeValueForKeyMethod {
     
     NSArray *keys = @[@"keyNull", @"keyObject", @"keyArray", @"keyString"];
     NSDictionary *dictionary = @{ keys[0] : [NSNull null],
@@ -46,10 +46,9 @@
     
     value = [dictionary valueForKey:keys[3]];
     XCTAssertTrue([value isKindOfClass:[NSString class]], @"value must be NSString class");
-    
 }
 
-- (void)test_ExchangeObjectForKeyedSubscriptMethod {
+- (void)testExchangeObjectForKeyedSubscriptMethod {
     
     NSArray *keys = @[@"keyNull", @"keyObject", @"keyArray", @"keyString"];
     NSDictionary *dictionary = @{ keys[0] : [NSNull null],
