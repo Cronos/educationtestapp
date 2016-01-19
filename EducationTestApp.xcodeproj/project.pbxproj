@@ -15,7 +15,6 @@
 		E382E39A1C3A914A009059BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E382E3991C3A914A009059BA /* Assets.xcassets */; };
 		E382E39D1C3A914A009059BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382E39B1C3A914A009059BA /* LaunchScreen.storyboard */; };
 		E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3A71C3A914A009059BA /* EducationTestAppTests.m */; };
-		E382E3B31C3A914A009059BA /* EducationTestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3B21C3A914A009059BA /* EducationTestAppUITests.m */; };
 		E382E3C41C3A9B6A009059BA /* EDATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E382E3C31C3A9B6A009059BA /* EDATableViewCell.xib */; };
 		E382E3C71C3A9C49009059BA /* EDATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3C61C3A9C49009059BA /* EDATableViewCell.m */; };
 		E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3CA1C3A9DE6009059BA /* EDAResponse.m */; };
@@ -69,7 +68,6 @@
 		E382E3A31C3A914A009059BA /* EducationTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EducationTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382E3A71C3A914A009059BA /* EducationTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationTestAppTests.m; sourceTree = "<group>"; };
 		E382E3A91C3A914A009059BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E382E3AE1C3A914A009059BA /* EducationTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EducationTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382E3B21C3A914A009059BA /* EducationTestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationTestAppUITests.m; sourceTree = "<group>"; };
 		E382E3B41C3A914A009059BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E382E3C31C3A9B6A009059BA /* EDATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDATableViewCell.xib; sourceTree = "<group>"; };
@@ -117,13 +115,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E382E3AB1C3A914A009059BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -142,7 +133,6 @@
 			children = (
 				E382E38A1C3A914A009059BA /* EducationTestApp.app */,
 				E382E3A31C3A914A009059BA /* EducationTestAppTests.xctest */,
-				E382E3AE1C3A914A009059BA /* EducationTestAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,24 +319,6 @@
 			productReference = E382E3A31C3A914A009059BA /* EducationTestAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E382E3AD1C3A914A009059BA /* EducationTestAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E382E3BD1C3A914A009059BA /* Build configuration list for PBXNativeTarget "EducationTestAppUITests" */;
-			buildPhases = (
-				E382E3AA1C3A914A009059BA /* Sources */,
-				E382E3AB1C3A914A009059BA /* Frameworks */,
-				E382E3AC1C3A914A009059BA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E382E3B01C3A914A009059BA /* PBXTargetDependency */,
-			);
-			name = EducationTestAppUITests;
-			productName = EducationTestAppUITests;
-			productReference = E382E3AE1C3A914A009059BA /* EducationTestAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -384,7 +356,6 @@
 			targets = (
 				E382E3891C3A914A009059BA /* EducationTestApp */,
 				E382E3A21C3A914A009059BA /* EducationTestAppTests */,
-				E382E3AD1C3A914A009059BA /* EducationTestAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -451,14 +422,6 @@
 				E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E382E3AA1C3A914A009059BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E382E3B31C3A914A009059BA /* EducationTestAppUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,30 +590,6 @@
 			};
 			name = Release;
 		};
-		E382E3BE1C3A914A009059BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = EducationTestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anahoret.EducationTestAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = EducationTestApp;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		E382E3BF1C3A914A009059BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = EducationTestAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anahoret.EducationTestAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = EducationTestApp;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -677,15 +616,6 @@
 			buildConfigurations = (
 				E382E3BB1C3A914A009059BA /* Debug */,
 				E382E3BC1C3A914A009059BA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E382E3BD1C3A914A009059BA /* Build configuration list for PBXNativeTarget "EducationTestAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E382E3BE1C3A914A009059BA /* Debug */,
-				E382E3BF1C3A914A009059BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
