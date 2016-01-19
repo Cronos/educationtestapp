@@ -11,8 +11,6 @@
 
 @interface EDANull()
 
-- (BOOL)isEqual:(id)object;
-- (NSUInteger)hash;
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector;
 - (void)forwardInvocation:(NSInvocation *)invocation;

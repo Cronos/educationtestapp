@@ -11,6 +11,5 @@
 @interface EDANull : NSObject
 
 + (instancetype)null;
-- (NSUInteger)hash;
 
 @end
