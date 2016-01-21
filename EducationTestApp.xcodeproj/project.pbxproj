@@ -31,6 +31,9 @@
 		E38CA3111C4E90E20047845A /* NSObject+SubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */; };
 		E392D3C61C4D2284006BFA4B /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */; };
 		E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C6A571C43A1B90026F72A /* EDANetwork.m */; };
+		E39D4FF81C4F8C9400333F57 /* NSNull+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FF71C4F8C9400333F57 /* NSNull+Swizzling.m */; };
+		E39D4FFB1C4F8E7900333F57 /* EDANSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */; };
+		E39D4FFE1C4FAED700333F57 /* NSJSONSerialization+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFD1C4FAED700333F57 /* NSJSONSerialization+Swizzling.m */; };
 		E39E31751C4CEA5A002E1F8C /* NSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = E39E31741C4CEA5A002E1F8C /* NSDictionary+NSNull.m */; };
 		E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */; };
 		E3CD77C91C47F0660047446F /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C81C47F0660047446F /* EDANull.m */; };
@@ -39,13 +42,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		E382E3A41C3A914A009059BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E382E3821C3A914A009059BA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E382E3891C3A914A009059BA;
-			remoteInfo = EducationTestApp;
-		};
-		E382E3AF1C3A914A009059BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E382E3821C3A914A009059BA /* Project object */;
 			proxyType = 1;
@@ -97,6 +93,11 @@
 		E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionaryTests.m; path = NSDictionaryTests/NSDictionaryTests.m; sourceTree = "<group>"; };
 		E39C6A561C43A1B90026F72A /* EDANetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDANetwork.h; path = Network/EDANetwork.h; sourceTree = "<group>"; };
 		E39C6A571C43A1B90026F72A /* EDANetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANetwork.m; path = Network/EDANetwork.m; sourceTree = "<group>"; };
+		E39D4FF61C4F8C9400333F57 /* NSNull+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+Swizzling.h"; sourceTree = "<group>"; };
+		E39D4FF71C4F8C9400333F57 /* NSNull+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Swizzling.m"; sourceTree = "<group>"; };
+		E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANSNullTests.m; sourceTree = "<group>"; };
+		E39D4FFC1C4FAED700333F57 /* NSJSONSerialization+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+Swizzling.h"; sourceTree = "<group>"; };
+		E39D4FFD1C4FAED700333F57 /* NSJSONSerialization+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+Swizzling.m"; sourceTree = "<group>"; };
 		E39E31731C4CEA5A002E1F8C /* NSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSNull.h"; sourceTree = "<group>"; };
 		E39E31741C4CEA5A002E1F8C /* NSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSNull.m"; sourceTree = "<group>"; };
 		E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANSJSONSerializationTest.m; path = NSJSONSerializationTests/EDANSJSONSerializationTest.m; sourceTree = "<group>"; };
@@ -174,6 +175,7 @@
 		E382E3A61C3A914A009059BA /* EducationTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				E39D4FF91C4F8E6000333F57 /* NSNull */,
 				E38CA30F1C4E90BA0047845A /* NSObject */,
 				E392D3C41C4D2232006BFA4B /* NSDictionary */,
 				E3CD77C31C4787880047446F /* NSJSONSerializationTests */,
@@ -269,6 +271,14 @@
 			name = NSDictionary;
 			sourceTree = "<group>";
 		};
+		E39D4FF91C4F8E6000333F57 /* NSNull */ = {
+			isa = PBXGroup;
+			children = (
+				E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */,
+			);
+			path = NSNull;
+			sourceTree = "<group>";
+		};
 		E39E31721C4CE6FD002E1F8C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,10 @@
 				E38CA30D1C4E8E010047845A /* NSObject+Subclasses.m */,
 				E39E31731C4CEA5A002E1F8C /* NSDictionary+NSNull.h */,
 				E39E31741C4CEA5A002E1F8C /* NSDictionary+NSNull.m */,
+				E39D4FF61C4F8C9400333F57 /* NSNull+Swizzling.h */,
+				E39D4FF71C4F8C9400333F57 /* NSNull+Swizzling.m */,
+				E39D4FFC1C4FAED700333F57 /* NSJSONSerialization+Swizzling.h */,
+				E39D4FFD1C4FAED700333F57 /* NSJSONSerialization+Swizzling.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -351,10 +365,6 @@
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = E382E3891C3A914A009059BA;
 					};
-					E382E3AD1C3A914A009059BA = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = E382E3891C3A914A009059BA;
-					};
 				};
 			};
 			buildConfigurationList = E382E3851C3A914A009059BA /* Build configuration list for PBXProject "EducationTestApp" */;
@@ -395,13 +405,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E382E3AC1C3A914A009059BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -419,10 +422,12 @@
 				E382E3921C3A914A009059BA /* AppDelegate.m in Sources */,
 				E382E3DA1C3AB1BE009059BA /* EDAResponseMetadata.m in Sources */,
 				E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */,
+				E39D4FF81C4F8C9400333F57 /* NSNull+Swizzling.m in Sources */,
 				E382E3C71C3A9C49009059BA /* EDATableViewCell.m in Sources */,
 				E382E3CF1C3A9E53009059BA /* EDAData.m in Sources */,
 				E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */,
 				E382E38F1C3A914A009059BA /* main.m in Sources */,
+				E39D4FFE1C4FAED700333F57 /* NSJSONSerialization+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +442,7 @@
 				E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */,
 				E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */,
 				E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */,
+				E39D4FFB1C4F8E7900333F57 /* EDANSNullTests.m in Sources */,
 				E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
@@ -450,11 +456,6 @@
 			isa = PBXTargetDependency;
 			target = E382E3891C3A914A009059BA /* EducationTestApp */;
 			targetProxy = E382E3A41C3A914A009059BA /* PBXContainerItemProxy */;
-		};
-		E382E3B01C3A914A009059BA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E382E3891C3A914A009059BA /* EducationTestApp */;
-			targetProxy = E382E3AF1C3A914A009059BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
