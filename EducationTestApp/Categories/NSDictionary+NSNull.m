@@ -25,15 +25,15 @@
     
     dispatch_once(&onceToken, ^{
         
-        Class selfClass = [NSDictionary class];
+        Class selfClass = [self class];
         
 //        Method originSetValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(setValue:forKey:));
 //        Method customSetValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(customSetValue:forKey:));
 //        method_exchangeImplementations(originSetValueForKeyMethod, customSetValueForKeyMethod);
-//
-//        Method originSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(setObject:forKey:));
-//        Method customSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(customSetObject:forKey:));
-//        method_exchangeImplementations(originSetObjectForKeyMethod, customSetObjectForKeyMethod);
+
+        Method originSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(setObject:forKey:));
+        Method customSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(customSetObject:forKey:));
+        method_exchangeImplementations(originSetObjectForKeyMethod, customSetObjectForKeyMethod);
 
         
         Method originValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(valueForKey:));
@@ -49,14 +49,16 @@
 #pragma mark -
 #pragma mark Setters
 
-- (void)customSetValue:(id)value forKey:(NSString *)key {
-    
-    id object = value;
-    if ([value isEqual:[NSNull null]]) {
-        object = [EDANull null];
-    }
-    [self customSetObject:object forKey:key];
-}
+//TODO:
+//- (void)customSetValue:(id)value forKey:(NSString *)key {
+//    NSLog(@"self class is %@", NSStringFromClass([self class]));
+//
+//    id object = value;
+//    if ([value isEqual:[NSNull null]]) {
+//        object = [EDANull null];
+//    }
+//    [self customSetValue:object forKey:key];
+//}
 
 - (void)customSetObject:(id)object forKey:(NSString *)key {
     
@@ -78,17 +80,14 @@
 
 
 - (id)customValueForKey:(NSString *)key {
-    NSLog(@"self class is %@", NSStringFromClass([self class]));
-
     id object = [self customValueForKey:key];
     EDAReturnEDANullInsteadNSNull(object);
 }
 
 - (id)customObjectForKeyedSubscript:(id)key {
-    NSLog(@"self class is %@", NSStringFromClass([self class]));
-
     id object = [self customObjectForKeyedSubscript:key];
     EDAReturnEDANullInsteadNSNull(object);
 }
+
 
 @end
