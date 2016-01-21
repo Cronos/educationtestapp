@@ -15,17 +15,80 @@
 
 @implementation EDANSJSONSerializationTest
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+
+#define EDAMethodList(class) \
+/*    Class class = [aClass class]; \ */ \
+    unsigned int methodCount = 0; \
+    Method *methods = class_copyMethodList(class, &methodCount); \
+    NSLog(@"\n\nFound %d methods on %s\n\n", methodCount, class_getName(class)); \
+    for (unsigned int i = 0; i < methodCount; i++) { \
+        Method method = methods[i]; \
+        NSLog(@"\t'%s' has method named \n\t\t '%s' of encoding '%s'\n", \
+              class_getName(class), \
+              sel_getName(method_getName(method)), \
+              method_getTypeEncoding(method)); \
+    }\
+    free(methods)
+
+- (void)testNSJSONSerializationClassMethods {
+    EDAMethodList(object_getClass([NSJSONSerialization class]));
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+- (void)testNSJSONSerializationInstanceMethods {
+    EDAMethodList([NSJSONSerialization class]);
 }
 
-- (void)testSerializationToArrayWithNullObject {
+- (void)testNSJSONReaderClassMethods {
+    Class privateClass = objc_getClass("_NSJSONReader");
+    EDAMethodList(object_getClass(privateClass));
+}
+
+- (void)testNSJSONReaderInstanceMethods {
+    EDAMethodList(objc_getClass("_NSJSONReader"));
+}
+
+- (void)testNSJSONReaderIvars {
+    Class class = objc_getClass("_NSJSONReader");
+    unsigned int ivarCount = 0;
+    
+    Ivar *ivars = class_copyIvarList(class, &ivarCount);
+    
+    NSLog(@"Found %d ivars on %s\n", ivarCount, class_getName(class));
+    
+    for (unsigned int i = 0; i < ivarCount; i++) {
+        Ivar ivar = ivars[i];
+        
+        NSLog(@"\t'%s' has ivar named \n>>> '%s' of encoding '%s'\n",
+              class_getName(class),
+              ivar_getName(ivar),
+              ivar_getTypeEncoding(ivar));
+    }
+    
+    free(ivars);
+}
+
+- (void)testNSJSONSerializationProperties {
+    Class class = [NSJSONSerialization class];
+
+    unsigned int propertiesCount = 0;
+    
+    objc_property_t *properties = class_copyPropertyList(class, &propertiesCount);
+    
+    NSLog(@"Found %d properties on %s\n", propertiesCount, class_getName(class));
+    
+    for (unsigned int i = 0; i < propertiesCount; i++) {
+        objc_property_t property = properties[i];
+        
+        NSLog(@"\t'%s' has properties named \n>>> '%s'\n",
+              class_getName(class),
+              property_getName(property));
+    }
+    
+    free(properties);
+}
+
+
+- (void)testSerializationArrayWithNSNullObject {
     
     NSArray *array = @[[NSNull null]];
     NSError *error = nil;
@@ -43,45 +106,5 @@
 }
 
 
-- (void)testNullInstanceMethods {
-    
-    Class objectClass = [NSNull superclass];
-    unsigned int methodCount = 0;
-    Method *methods = class_copyMethodList(objectClass, &methodCount);
-    
-    NSLog(@"Found %d methods on %s\n", methodCount, class_getName(objectClass));
-    
-    for (unsigned int i = 0; i < methodCount; i++) {
-        Method method = methods[i];
-        
-        NSLog(@"\t'%s' has instance-method named '%s' of encoding '%s'\n",
-              class_getName(objectClass),
-              sel_getName(method_getName(method)),
-              method_getTypeEncoding(method));
-    }
-    
-    free(methods);
-}
-
-- (void)testNullClassMethods {
-    
-    Class objectClass = [NSNull class];
-    unsigned int methodCount = 0;
-    
-    Method *methods = class_copyMethodList(object_getClass(objectClass), &methodCount);
-    
-    NSLog(@"Found %d methods on %s\n", methodCount, class_getName(objectClass));
-    
-    for (unsigned int i = 0; i < methodCount; i++) {
-        Method method = methods[i];
-        
-        NSLog(@"\t'%s' has class-method named '%s' of encoding '%s'\n",
-              class_getName(objectClass),
-              sel_getName(method_getName(method)),
-              method_getTypeEncoding(method));
-    }
-    
-    free(methods);
-}
 
 @end
