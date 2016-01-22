@@ -1,5 +1,5 @@
 //
-//  NSObject+Subclasses.h
+//  NSObject+Runtime.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 19.01.16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Subclasses)
+@interface NSObject (Runtime)
 
 + (Class)metaclass;
 + (NSArray *)subclasses;

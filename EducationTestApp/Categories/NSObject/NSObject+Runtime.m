@@ -1,15 +1,15 @@
 //
-//  NSObject+Subclasses.m
+//  NSObject+Runtime.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 19.01.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "NSObject+Subclasses.h"
+#import "NSObject+Runtime.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (Subclasses)
+@implementation NSObject (Runtime)
 
 + (Class)metaclass {
     
