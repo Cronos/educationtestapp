@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import <objc/runtime.h>
+#import "EDANull.h"
+
 
 @interface EDANSNullTests : XCTestCase
 
@@ -18,7 +20,7 @@
 #pragma mark -
 #pragma methods of NSNull
 
-- (void)testNullInstanceMethods {
+- (void)testNullInstanceMethodList {
     
     Class objectClass = [NSNull superclass];
     unsigned int methodCount = 0;
@@ -38,7 +40,7 @@
     free(methods);
 }
 
-- (void)testNullClassMethods {
+- (void)testNullClassMethodList {
     
     Class objectClass = [NSNull class];
     unsigned int methodCount = 0;

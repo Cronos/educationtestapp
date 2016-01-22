@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <objc/runtime.h>
+#import "EDANull.h"
 
 @interface EDANSJSONSerializationTest : XCTestCase
 
@@ -87,11 +88,11 @@
     free(properties);
 }
 
-
-- (void)testSerializationArrayWithNSNullObject {
-    
-    NSArray *array = @[[NSNull null]];
+- (void)testSerializationArrayWithEDANullObject {
+        
+    NSArray *array = @[[EDANull null]];
     NSError *error = nil;
+    
     NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:&error];
     
     XCTAssertNil(error, @"serialization from array error");
@@ -104,7 +105,6 @@
     XCTAssertTrue([deserializedObject isKindOfClass:[NSArray class]], @"deserializedObject must be kind of NSArray");
     
 }
-
 
 
 @end

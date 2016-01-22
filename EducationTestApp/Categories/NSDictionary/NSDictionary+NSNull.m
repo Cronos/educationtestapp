@@ -25,24 +25,24 @@
     
     dispatch_once(&onceToken, ^{
         
-        Class selfClass = [self class];
+//        Class selfClass = [self class];
         
 //        Method originSetValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(setValue:forKey:));
 //        Method customSetValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(customSetValue:forKey:));
 //        method_exchangeImplementations(originSetValueForKeyMethod, customSetValueForKeyMethod);
 
-        Method originSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(setObject:forKey:));
-        Method customSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(customSetObject:forKey:));
-        method_exchangeImplementations(originSetObjectForKeyMethod, customSetObjectForKeyMethod);
+//        Method originSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(setObject:forKey:));
+//        Method customSetObjectForKeyMethod = class_getInstanceMethod(selfClass, @selector(customSetObject:forKey:));
+//        method_exchangeImplementations(originSetObjectForKeyMethod, customSetObjectForKeyMethod);
 
         
-        Method originValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(valueForKey:));
-        Method customValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(customValueForKey:));
-        method_exchangeImplementations(originValueForKeyMethod, customValueForKeyMethod);
-        
-        Method originObjectForKeyedSubscriptMethod = class_getInstanceMethod(selfClass, @selector(objectForKeyedSubscript:));
-        Method customObjectForKeyedSubscriptMethod = class_getInstanceMethod(selfClass, @selector(customObjectForKeyedSubscript:));
-        method_exchangeImplementations(originObjectForKeyedSubscriptMethod, customObjectForKeyedSubscriptMethod);
+//        Method originValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(valueForKey:));
+//        Method customValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(customValueForKey:));
+//        method_exchangeImplementations(originValueForKeyMethod, customValueForKeyMethod);
+//        
+//        Method originObjectForKeyedSubscriptMethod = class_getInstanceMethod(selfClass, @selector(objectForKeyedSubscript:));
+//        Method customObjectForKeyedSubscriptMethod = class_getInstanceMethod(selfClass, @selector(customObjectForKeyedSubscript:));
+//        method_exchangeImplementations(originObjectForKeyedSubscriptMethod, customObjectForKeyedSubscriptMethod);
     });
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSObject+Subclasses.h"
+#import "NSObject+Runtime.h"
 
 @interface NSObject_SubclassesTests : XCTestCase
 
@@ -22,14 +22,14 @@
 }
 
 - (void)testNSObjectSubclasses {
-    NSArray *array = [NSObject subclasses];
-    NSLog(@"subclasses count for NSObject is %ld", array.count);
+    NSSet *set = [NSObject subclasses];
+    NSLog(@"subclasses count for NSObject is %ld", set.count);
     
-    array = [NSMutableArray subclasses];
-    NSLog(@"subclasses count for NSMutableArray is %ld", array.count);
+    set = [NSArray subclasses];
+    NSLog(@"subclasses count for NSArray is %ld", set.count);
     
-    array = [UIScrollView subclasses];
-    NSLog(@"subclasses count for NSMutableArray is %ld", array.count);
+    set = [UIScrollView subclasses];
+    NSLog(@"subclasses count for NSMutableArray is %ld", set.count);
 }
 
 @end

@@ -28,8 +28,8 @@
 		E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */; };
 		E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */; };
 		E38ABC2F1C5216B8000AC3E4 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC2E1C5216B8000AC3E4 /* NSObject+Runtime.m */; };
-		E38ABC331C5216ED000AC3E4 /* NSNull+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC321C5216ED000AC3E4 /* NSNull+Swizzling.m */; };
 		E38ABC371C5216F8000AC3E4 /* NSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC361C5216F8000AC3E4 /* NSDictionary+NSNull.m */; };
+		E38ABC381C522D3D000AC3E4 /* NSNull+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC321C5216ED000AC3E4 /* NSNull+Runtime.m */; };
 		E38CA3111C4E90E20047845A /* NSObject+SubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */; };
 		E392D3C61C4D2284006BFA4B /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */; };
 		E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C6A571C43A1B90026F72A /* EDANetwork.m */; };
@@ -88,8 +88,8 @@
 		E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseMetadataTests.m; sourceTree = "<group>"; };
 		E38ABC2D1C5216B8000AC3E4 /* NSObject+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
 		E38ABC2E1C5216B8000AC3E4 /* NSObject+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
-		E38ABC311C5216ED000AC3E4 /* NSNull+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+Swizzling.h"; sourceTree = "<group>"; };
-		E38ABC321C5216ED000AC3E4 /* NSNull+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Swizzling.m"; sourceTree = "<group>"; };
+		E38ABC311C5216ED000AC3E4 /* NSNull+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+Runtime.h"; sourceTree = "<group>"; };
+		E38ABC321C5216ED000AC3E4 /* NSNull+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Runtime.m"; sourceTree = "<group>"; };
 		E38ABC351C5216F8000AC3E4 /* NSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSNull.h"; sourceTree = "<group>"; };
 		E38ABC361C5216F8000AC3E4 /* NSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSNull.m"; sourceTree = "<group>"; };
 		E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SubclassesTests.m"; sourceTree = "<group>"; };
@@ -264,8 +264,8 @@
 		E38ABC301C5216ED000AC3E4 /* NSNull */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABC311C5216ED000AC3E4 /* NSNull+Swizzling.h */,
-				E38ABC321C5216ED000AC3E4 /* NSNull+Swizzling.m */,
+				E38ABC311C5216ED000AC3E4 /* NSNull+Runtime.h */,
+				E38ABC321C5216ED000AC3E4 /* NSNull+Runtime.m */,
 			);
 			path = NSNull;
 			sourceTree = "<group>";
@@ -435,13 +435,13 @@
 				E3CD77C91C47F0660047446F /* EDANull.m in Sources */,
 				E382E3DD1C3AB213009059BA /* EDAResponseRequestResult.m in Sources */,
 				E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */,
-				E38ABC331C5216ED000AC3E4 /* NSNull+Swizzling.m in Sources */,
 				E382E3E31C3AB263009059BA /* EDAResponseLayout.m in Sources */,
 				E38ABC371C5216F8000AC3E4 /* NSDictionary+NSNull.m in Sources */,
 				E382E3921C3A914A009059BA /* AppDelegate.m in Sources */,
 				E382E3DA1C3AB1BE009059BA /* EDAResponseMetadata.m in Sources */,
 				E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */,
 				E38ABC2F1C5216B8000AC3E4 /* NSObject+Runtime.m in Sources */,
+				E38ABC381C522D3D000AC3E4 /* NSNull+Runtime.m in Sources */,
 				E382E3C71C3A9C49009059BA /* EDATableViewCell.m in Sources */,
 				E382E3CF1C3A9E53009059BA /* EDAData.m in Sources */,
 				E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */,

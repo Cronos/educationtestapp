@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EDANull : NSObject
+//@interface EDANull : NSObject
+@interface EDANull : NSNull
 
-+ (instancetype)null;
+//+ (instancetype)null;
 
 @end

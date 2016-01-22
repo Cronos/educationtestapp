@@ -9,8 +9,7 @@
 #import "EDANull.h"
 #import <objc/runtime.h>
 
-@interface EDANull()
-
+@interface EDANull()<NSCoding>
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector;
 - (void)forwardInvocation:(NSInvocation *)invocation;
@@ -19,19 +18,27 @@
 
 @implementation EDANull
 
-+ (instancetype)null {
++ (id)allocWithZone:(struct _NSZone *)zone {
+    id result = [super allocWithZone:zone];
+    Class class = [EDANull class];
+    if (object_getClass(result) != class) {
+        object_setClass(result, class);
+    }
     
-    static id null = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        null = [self new];
-    });
-    
-    return null;
+    return result;
 }
 
+//+ (instancetype)null {
+//    static id null = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        null = [self new];
+//    });
+//    
+//    return null;
+//}
+
 - (BOOL)isEqual:(id)object {
-    
     BOOL result = (!object);                            // compare with nil
     result |= [object isKindOfClass:[NSNull class]];    // compare with NSNull
     result |= (self==object);                           // compare with self
@@ -40,7 +47,6 @@
 }
 
 - (NSUInteger)hash {
-    
     return [[NSNull null] hash];
 }
 
@@ -59,7 +65,6 @@
     invocation.target = nil;
     [invocation invoke];
 }
-
 
 - (void)fakeMethod {
 }
