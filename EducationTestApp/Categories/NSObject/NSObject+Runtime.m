@@ -50,6 +50,9 @@
     return [subclasses copy];
 }
 
+#pragma mark -
+#pragma mark AssociatedObject methods
+
 - (void)setValue:(id)value forPropertyKey:(const NSString *)key associationPolicy:(EDAPropertyPolicy)policy {
     objc_setAssociatedObject(self, (__bridge const void *)(key), value, (objc_AssociationPolicy)policy);
 }
