@@ -16,45 +16,90 @@
 
 @implementation EDANullTests
 
+#define EDANullArchived \
+[NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]
+
+#define JSONWithEDANullObject \
+[NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]
+
 - (void)testInitialize {
     
     EDANull *nullValue = [EDANull new];
-//    id value = nullValue;
     
     XCTAssertTrue([nullValue isMemberOfClass:[EDANull class]], @"nullObject must be EDANull");
 }
 
-#define EDANullArchived [NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]
+- (void)testIsKindOfClass {
+    XCTAssertTrue([[EDANull null] isKindOfClass:[NSNull class]], @"EDANull must be kind of NSNull");
+}
+
+#pragma mark -
+#pragma mark Behavior tests
+
+- (void)testSendUnknownMessages {
+    id nullObject = [EDANull null];
+    XCTAssertNoThrow([nullObject loadView], @"EDANull throw when send unknown message");
+    XCTAssertNoThrow([nullObject view], @"EDANull throw when send unknown message");
+    XCTAssertNoThrow([nullObject count], @"EDANull throw when send unknown message");
+    XCTAssertNoThrow([nullObject frame], @"EDANull throw when send unknown message");
+}
+
+- (void)testNSNullMethods {
+    id nullObject = [EDANull null];
+    XCTAssertNoThrow([nullObject description], @"EDANull throw when send description");
+    XCTAssertNoThrow([nullObject class], @"EDANull throw when send class");
+}
+
+- (void)testReturnValues {
+    id nullObject = [EDANull null];
+    XCTAssertNil([nullObject view], @"[[EDANull null] view] must be return nil");
+    XCTAssertTrue([nullObject count] == 0, @"[[EDANull null] count] must be return zero");
+    XCTAssertTrue(CGRectIsEmpty([nullObject frame]), @"[[EDANull null] frame] must be return empty rect");
+}
+
+- (void)testComparing {
+    id nullObject = [EDANull null];
+    XCTAssertNoThrow([nullObject isEqual:[NSNull null]], @"EDANull throw when compare with [NSNull null]");
+    XCTAssertTrue([nullObject isEqual:[NSNull null]], @"EDANull must be equals to [NSNull null]");
+    XCTAssertTrue([nullObject hash] == [[NSNull null] hash], @"EDANull hash must be equals to NSNull hash");
+    XCTAssertTrue([nullObject isEqual:nil], @"EDANull must be equals to nil");
+    XCTAssertTrue([nullObject isEqual:nullObject], @"EDANull must be equals to self");
+    XCTAssertFalse([nullObject isEqual:[NSObject new]], @"EDANull must be not equals to NSObject");
+}
+
+#pragma mark -
+#pragma mark NSCoding protocol tests
 
 - (void)testNSKeyedArchiver {
     NSData *data = EDANullArchived;
-    
     XCTAssertNotNil(data, @"[EDANull null] archive error");
 }
 
 - (void)testNSKeyedUnarchiver {
     id object = [NSKeyedUnarchiver unarchiveObjectWithData:EDANullArchived];
     XCTAssertNotNil(object, @"[EDANull null] unarchive error");
-    XCTAssertTrue([object isKindOfClass:[EDANull class]], @"object must be EDANull class");
+    XCTAssertTrue([object isMemberOfClass:[EDANull class]], @"object must be EDANull class");
 }
 
-- (void)testSerializationEDANullToJSON {
-    
-//    [self replaceClassMethod];
-//    [self replaceIsKindOfClassMethod];
-//    [self replaceIsMemberOfClassMethod];
-//    [self replaceIsSubclassOfClassMethod];
-    
+#pragma mark -
+#pragma mark JSONSerialization tests
 
-    NSArray *array = @[[EDANull null]];
-    
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:&error];
-    
-    XCTAssertNil(error, @"serialization from array error");
+- (void)testSerializationEDANullToJSON {
+    NSData *data = JSONWithEDANullObject;
     XCTAssertNotNil(data, @"data init error");
 }
 
+- (void)testSerializationJSONToEDANull {
+    NSError *error = nil;
+    NSData *data = JSONWithEDANullObject;
+    XCTAssertNotNil(data, @"data init error");
+
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    XCTAssertNil(error, @"serialization to array error");
+    XCTAssertEqual(array.count, 1, @"array.count must be is equals to 1");
+    Class class = [array[0] class];
+    XCTAssertTrue(class == [EDANull class], @"object must be EDANull class instead %@", class);
+}
 
 #pragma mark -
 #pragma mark replace EDANull methods
@@ -72,7 +117,6 @@
     IMP implementation = [class instanceMethodForSelector:selector];
     
     id block = ^(id object) {
-        //        NSLog(@"Call [%@ %@%@]", NSStringFromClass([object class]), NSStringFromSelector(selector), NSStringFromClass(class));
         NSLog(@"Call [EDANull %@]", NSStringFromSelector(selector));
         
         return ((id(*)(id, SEL))implementation)(object, selector);
@@ -88,7 +132,6 @@
 - (void)replaceIsKindOfClassMethod {
     SEL selector = @selector(isKindOfClass:);
     
-    //    id object = [EDANull class];
     id object = [EDANull null];
     Class class = object_getClass(object);
     if (class_isMetaClass(class)) {
@@ -115,14 +158,12 @@
 - (void)replaceIsMemberOfClassMethod {
     SEL selector = @selector(isMemberOfClass:);
     
-    //    id object = [EDANull class];
     id object = [EDANull null];
     Class class = object_getClass(object);
     if (class_isMetaClass(class)) {
         NSLog(@"Class %@ is metaclass", class);
     }
     
-    // new IMP
     IMP implementation = [class instanceMethodForSelector:selector];
     
     id block = ^(id object, Class class) {
@@ -146,7 +187,6 @@
         NSLog(@"Class %@ is metaclass", class);
     }
     
-    // new IMP
     IMP implementation = [class instanceMethodForSelector:selector];
     
     id block = ^(id object, Class class) {
