@@ -1,5 +1,5 @@
 //
-//  NSObject+Runtime.h
+//  NSObject+EDARuntime.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 19.01.16.

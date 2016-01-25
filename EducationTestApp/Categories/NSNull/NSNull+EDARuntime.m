@@ -1,22 +1,22 @@
 //
-//  NSNull+Runtime.h
+//  NSNull+EDARuntime.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 20.01.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "NSNull+Runtime.h"
+#import "NSNull+EDARuntime.h"
 #import <objc/runtime.h>
 #import "EDANull.h"
-#import "NSObject+Runtime.h"
+#import "NSObject+EDARuntime.h"
 
 typedef id(*EDAMethodNewIMP)(id, SEL);
 typedef id(*EDAMethodAllocIMP)(id, SEL);
 typedef id(*EDAMethodAllocWithZoneIMP)(id, SEL, NSZone *);
 typedef id(*EDAMethodNullIMP)(id, SEL);
 
-@implementation NSNull (Runtime)
+@implementation NSNull (EDARuntime)
 
 + (void)load {
 //    [self replaceNew];
@@ -32,7 +32,6 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
     SEL selector = NSSelectorFromString(sel);  \
     id object = [self class]; \
     Class class = object_getClass(object)
-
 
 + (void)replaceNew {
     EDAPrepareForReplaceSelector(@"new");

@@ -1,15 +1,15 @@
 //
-//  NSObject+Runtime.m
+//  NSObject+EDARuntime.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 19.01.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "NSObject+Runtime.h"
+#import "NSObject+EDARuntime.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (Runtime)
+@implementation NSObject (EDARuntime)
 
 + (void)setBlock:(EDABlockWithIMP)block forSelector:(SEL)selector {
     IMP implementation = [self instanceMethodForSelector:selector];
