@@ -1,5 +1,5 @@
 //
-//  EDANSNullTests.m
+//  NSNullTests.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 20.01.16.
@@ -10,12 +10,11 @@
 #import <objc/runtime.h>
 #import "EDANull.h"
 
-
-@interface EDANSNullTests : XCTestCase
+@interface NSNullTests : XCTestCase
 
 @end
 
-@implementation EDANSNullTests
+@implementation NSNullTests
 
 #pragma mark -
 #pragma methods of NSNull
@@ -64,11 +63,12 @@
 #pragma mark -
 #pragma Swizzling
 
-- (void)testSwizzling {
+- (void)testReturnEDANull {
     id null = [NSNull null];
     
     XCTAssertEqualObjects(null, [NSNull null], @"null must be NSNull");
     XCTAssertTrue([null isKindOfClass:[NSNull class]], @"null must be kind of NSNull class");
+    XCTAssertTrue([null isMemberOfClass:[EDANull class]], @"null must be member of EDANull class");
 }
 
 @end
