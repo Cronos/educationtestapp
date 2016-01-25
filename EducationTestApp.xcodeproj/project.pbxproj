@@ -33,10 +33,10 @@
 		E38CA3111C4E90E20047845A /* NSObject+SubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */; };
 		E392D3C61C4D2284006BFA4B /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */; };
 		E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C6A571C43A1B90026F72A /* EDANetwork.m */; };
+		E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D19541C560A8200A0D3E9 /* EDANullTests.m */; };
 		E39D4FFB1C4F8E7900333F57 /* EDANSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */; };
 		E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */; };
 		E3CD77C91C47F0660047446F /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C81C47F0660047446F /* EDANull.m */; };
-		E3CD77CB1C47F0E30047446F /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77CA1C47F0E30047446F /* EDANullTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,11 +96,11 @@
 		E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionaryTests.m; path = NSDictionaryTests/NSDictionaryTests.m; sourceTree = "<group>"; };
 		E39C6A561C43A1B90026F72A /* EDANetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDANetwork.h; path = Network/EDANetwork.h; sourceTree = "<group>"; };
 		E39C6A571C43A1B90026F72A /* EDANetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANetwork.m; path = Network/EDANetwork.m; sourceTree = "<group>"; };
+		E39D19541C560A8200A0D3E9 /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
 		E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANSNullTests.m; sourceTree = "<group>"; };
 		E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANSJSONSerializationTest.m; path = NSJSONSerializationTests/EDANSJSONSerializationTest.m; sourceTree = "<group>"; };
 		E3CD77C71C47F0660047446F /* EDANull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDANull.h; sourceTree = "<group>"; };
 		E3CD77C81C47F0660047446F /* EDANull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANull.m; sourceTree = "<group>"; };
-		E3CD77CA1C47F0E30047446F /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				E39D4FF91C4F8E6000333F57 /* NSNull */,
+				E39D19531C560A8200A0D3E9 /* EDANullTests */,
 				E38CA30F1C4E90BA0047845A /* NSObject */,
 				E392D3C41C4D2232006BFA4B /* NSDictionary */,
 				E3CD77C31C4787880047446F /* NSJSONSerializationTests */,
@@ -184,7 +185,6 @@
 				E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */,
 				E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */,
 				E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */,
-				E3CD77CA1C47F0E30047446F /* EDANullTests.m */,
 			);
 			path = EducationTestAppTests;
 			sourceTree = "<group>";
@@ -293,6 +293,14 @@
 				E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */,
 			);
 			name = NSDictionary;
+			sourceTree = "<group>";
+		};
+		E39D19531C560A8200A0D3E9 /* EDANullTests */ = {
+			isa = PBXGroup;
+			children = (
+				E39D19541C560A8200A0D3E9 /* EDANullTests.m */,
+			);
+			path = EDANullTests;
 			sourceTree = "<group>";
 		};
 		E39D4FF91C4F8E6000333F57 /* NSNull */ = {
@@ -455,13 +463,13 @@
 			files = (
 				E382E3D41C3AA80D009059BA /* EDADataTests.m in Sources */,
 				E392D3C61C4D2284006BFA4B /* NSDictionaryTests.m in Sources */,
-				E3CD77CB1C47F0E30047446F /* EDANullTests.m in Sources */,
 				E38CA3111C4E90E20047845A /* NSObject+SubclassesTests.m in Sources */,
 				E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */,
 				E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */,
 				E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */,
 				E39D4FFB1C4F8E7900333F57 /* EDANSNullTests.m in Sources */,
 				E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */,
+				E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
 			);

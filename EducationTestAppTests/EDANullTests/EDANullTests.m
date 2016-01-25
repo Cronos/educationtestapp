@@ -17,9 +17,11 @@
 @implementation EDANullTests
 
 - (void)testInitialize {
-    EDANull *nullObject = [EDANull null];
-
-    XCTAssertTrue([nullObject isKindOfClass:[EDANull class]], @"nullObject must be EDANull");
+    
+    EDANull *nullValue = [EDANull new];
+//    id value = nullValue;
+    
+    XCTAssertTrue([nullValue isMemberOfClass:[EDANull class]], @"nullObject must be EDANull");
 }
 
 #define EDANullArchived [NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]

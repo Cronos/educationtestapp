@@ -36,7 +36,8 @@
                                   };
     
     id value = [dictionary valueForKey:keys[0]];
-    XCTAssertTrue([value isKindOfClass:[EDANull class]], @"value must be EDANull class");
+//    XCTAssertTrue([value isKindOfClass:[EDANull class]], @"value must be EDANull class");
+    XCTAssertTrue([value isKindOfClass:[NSNull class]], @"value must be EDANull class");
     
     value = [dictionary valueForKey:keys[1]];
     XCTAssertTrue([value isKindOfClass:[NSObject class]], @"value must be NSObject class");
@@ -58,7 +59,8 @@
                                   };
     
     id value = dictionary[keys[0]];
-    XCTAssertTrue([value isKindOfClass:[EDANull class]], @"value must be EDANull class");
+//    XCTAssertTrue([value isKindOfClass:[EDANull class]], @"value must be EDANull class");
+    XCTAssertTrue([value isKindOfClass:[NSNull class]], @"value must be EDANull class");
     
     value = dictionary[keys[1]];
     XCTAssertTrue([value isKindOfClass:[NSObject class]], @"value must be NSObject class");

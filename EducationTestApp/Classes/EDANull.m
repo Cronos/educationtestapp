@@ -50,6 +50,9 @@
     return [[NSNull null] hash];
 }
 
+#pragma mark -
+#pragma mart Forwarding methods
+
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
     
     NSMethodSignature *signature = [super methodSignatureForSelector:selector];
