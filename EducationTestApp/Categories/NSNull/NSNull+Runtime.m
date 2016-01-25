@@ -11,130 +11,87 @@
 #import "EDANull.h"
 #import "NSObject+Runtime.h"
 
-typedef id(*EDAClassIMP)(id, SEL);
+typedef id(*EDAMethodNewIMP)(id, SEL);
+typedef id(*EDAMethodAllocIMP)(id, SEL);
+typedef id(*EDAMethodAllocWithZoneIMP)(id, SEL, NSZone *);
+typedef id(*EDAMethodNullIMP)(id, SEL);
 
 @implementation NSNull (Runtime)
 
 + (void)load {
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        Class class = [self class];
-//        
-//        Method originNullMethod = class_getClassMethod(class, @selector(null));
-//        Method customNullMethod = class_getClassMethod(class, @selector(fakeNull));
-//        method_exchangeImplementations(originNullMethod, customNullMethod);
-//    });
-    [self replaceNew];
-    [self replaceAlloc];
-    [self replaceAllocWithZone];
-//    [self replaceNull];
+//    [self replaceNew];
+//    [self replaceAlloc];
+//    [self replaceAllocWithZone];
+    [self replaceNull];
 }
 
+#pragma mark -
+#pragma mark Methods for replace implementations
+
+#define EDAPrepareForReplaceSelector(sel) \
+    SEL selector = NSSelectorFromString(sel);  \
+    id object = [self class]; \
+    Class class = object_getClass(object)
+
+
 + (void)replaceNew {
-    SEL selector = @selector(new);
-    
-    id object = [self class];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object) {
-        NSLog(@"Call [NSNull new]");
-        
-        return ((id(*)(id, SEL))implementation)(object, selector);
+    EDAPrepareForReplaceSelector(@"new");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodNewIMP methodIMP = (EDAMethodNewIMP)implementation;
+
+        return (id)^(id object) {
+            NSLog(@"Call [NSNull new]");
+            
+            return methodIMP(object, selector);
+        };
     };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
+    [class setBlock:block forSelector:selector];
 }
 
 + (void)replaceAlloc {
-    SEL selector = @selector(alloc);
-    
-    id object = [self class];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object) {
-        NSLog(@"Call [NSNull alloc]");
+    EDAPrepareForReplaceSelector(@"alloc");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodAllocIMP methodIMP = (EDAMethodAllocIMP)implementation;
         
-        return ((id(*)(id, SEL))implementation)(object, selector);
+        return (id)^(id object) {
+            NSLog(@"Call [NSNull alloc]");
+            
+            return methodIMP(object, selector);
+        };
     };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
+    [class setBlock:block forSelector:selector];
 }
 
 + (void)replaceAllocWithZone {
-    SEL selector = @selector(allocWithZone:);
-    
-    id object = [self class];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object, NSZone *zone) {
-        NSLog(@"Call [NSNull allocWithZone]");
-        
-        return ((id(*)(id, SEL, NSZone *))implementation)(object, selector, zone);
-    };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
+    EDAPrepareForReplaceSelector(@"allocWithZone:");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodAllocWithZoneIMP methodIMP = (EDAMethodAllocWithZoneIMP)implementation;
 
+        return (id)^(id object, NSZone *zone) {
+            NSLog(@"Call [NSNull allocWithZone]");
+
+            return methodIMP(object, selector, zone);
+        };
+    };
+    [class setBlock:block forSelector:selector];
 }
 
 + (void)replaceNull {
-    SEL selector = @selector(null);
-    
-    id object = [self class];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:@selector(edaNull)];
-    
-    id block = ^(id object) {
-        NSLog(@"Call [NSNull null]");
+    EDAPrepareForReplaceSelector(@"null");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodNullIMP methodIMP = (EDAMethodNullIMP)[class instanceMethodForSelector:@selector(edaNull)];
         
-        return ((id(*)(id, SEL))implementation)(object, selector);
+        return (id)^(id object) {
+            NSLog(@"Call [NSNull null]");
+            
+            return methodIMP(object, selector);
+        };
     };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
-    
+    [class setBlock:block forSelector:selector];
 }
 
 + (id)edaNull {
     return [EDANull null];
 }
-
-//+ (NSNull *)fakeNull {
-//    
-//    NSLog(@"[NSNull null] called");
-//    NSLog(@"%@",[NSThread callStackSymbols]);
-//
-//    return [self fakeNull];
-//}
-
 
 @end
