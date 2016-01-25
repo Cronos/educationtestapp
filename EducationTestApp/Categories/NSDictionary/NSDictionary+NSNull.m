@@ -19,12 +19,12 @@
 
 @implementation NSDictionary (NSNull)
 
-+ (void)load {
+//+ (void)load {
+
+//    static dispatch_once_t onceToken;
     
-    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
     
-    dispatch_once(&onceToken, ^{
-        
 //        Class selfClass = [self class];
         
 //        Method originSetValueForKeyMethod = class_getInstanceMethod(selfClass, @selector(setValue:forKey:));
@@ -43,8 +43,8 @@
 //        Method originObjectForKeyedSubscriptMethod = class_getInstanceMethod(selfClass, @selector(objectForKeyedSubscript:));
 //        Method customObjectForKeyedSubscriptMethod = class_getInstanceMethod(selfClass, @selector(customObjectForKeyedSubscript:));
 //        method_exchangeImplementations(originObjectForKeyedSubscriptMethod, customObjectForKeyedSubscriptMethod);
-    });
-}
+//    });
+//}
 
 #pragma mark -
 #pragma mark Setters
