@@ -18,16 +18,6 @@
 
 @implementation EDANull
 
-//+ (id)allocWithZone:(struct _NSZone *)zone {
-//    id result = [super allocWithZone:zone];
-//    Class class = [EDANull class];
-//    if (object_getClass(result) != class) {
-//        object_setClass(result, class);
-//    }
-//    
-//    return result;
-//}
-
 + (instancetype)null {
     static id null = nil;
     static dispatch_once_t onceToken;
@@ -38,31 +28,34 @@
     return null;
 }
 
+- (NSUInteger)hash {
+    return [(NSNull *)kCFNull hash];
+}
+
 - (BOOL)isEqual:(id)object {
-    BOOL result = (!object);                            // compare with nil
+    BOOL result = !object;                              // compare with nil
     result |= (self==object);                           // compare with self
 //    result |= [object isKindOfClass:[NSNull class]];    // compare with NSNull
     
     return result;
 }
 
-- (NSUInteger)hash {
-    return (NSUInteger)self;
-}
-
 - (BOOL)isKindOfClass:(Class)class {
-    return (class == [NSNull class]);
+    return (class == [NSNull class]) || ([super isKindOfClass:class]);
 }
 
 //- (BOOL)isMemberOfClass:(Class)class {
 //    return (class == [EDANull class]);
 //}
 
++ (BOOL)conformsToProtocol:(Protocol *)protocol {
+    return [super conformsToProtocol:protocol];
+}
+
 #pragma mark -
 #pragma mart Forwarding methods
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
-    
     NSMethodSignature *signature = [super methodSignatureForSelector:selector];
     if (!signature) {
         signature = [self methodSignatureForSelector:@selector(fakeMethod)];
@@ -72,7 +65,6 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
-    
     invocation.target = nil;
     [invocation invoke];
 }
@@ -84,9 +76,7 @@
 #pragma mark - NSCoding methods
 
 - (instancetype)initWithCoder:(NSCoder *)decoder {
-    self = [[EDANull alloc] init];
-    
-    return self;
+    return [EDANull new];
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {

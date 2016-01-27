@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSObject+Runtime.h"
+#import "NSObject+EDARuntime.h"
 
 @interface NSObject_SubclassesTests : XCTestCase
 

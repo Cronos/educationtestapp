@@ -9,87 +9,37 @@
 #import <XCTest/XCTest.h>
 #import <objc/runtime.h>
 #import "EDANull.h"
+#import "NSObject+EDARuntime.h"
+
+typedef id(*EDAMethodClassIMP)(id, SEL);
+typedef BOOL(*EDAMethodIsKindOfClassIMP)(id, SEL, Class);
+typedef BOOL(*EDAMethodIsMemberOfClassIMP)(id, SEL, Class);
+typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 @interface EDANSJSONSerializationTest : XCTestCase
+@property (nonatomic, strong) NSMutableSet<NSString *> *calledMethods;
+@property (nonatomic, strong) NSObject *savedImplementations;
 
 @end
 
+#define EDANullArchived \
+[NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]
+
+#define JSONWithEDANullObject \
+[NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]
+
 @implementation EDANSJSONSerializationTest
 
-
-#define EDAMethodList(class) \
-/*    Class class = [aClass class]; \ */ \
-    unsigned int methodCount = 0; \
-    Method *methods = class_copyMethodList(class, &methodCount); \
-    NSLog(@"\n\nFound %d methods on %s\n\n", methodCount, class_getName(class)); \
-    for (unsigned int i = 0; i < methodCount; i++) { \
-        Method method = methods[i]; \
-        NSLog(@"\t'%s' has method named \n\t\t '%s' of encoding '%s'\n", \
-              class_getName(class), \
-              sel_getName(method_getName(method)), \
-              method_getTypeEncoding(method)); \
-    }\
-    free(methods)
-
-- (void)testNSJSONSerializationClassMethods {
-    EDAMethodList(object_getClass([NSJSONSerialization class]));
+- (void)setUp {
+    [super setUp];
+    self.calledMethods = [NSMutableSet set];
 }
 
-- (void)testNSJSONSerializationInstanceMethods {
-    EDAMethodList([NSJSONSerialization class]);
-}
-
-- (void)testNSJSONReaderClassMethods {
-    Class privateClass = objc_getClass("_NSJSONReader");
-    EDAMethodList(object_getClass(privateClass));
-}
-
-- (void)testNSJSONReaderInstanceMethods {
-    EDAMethodList(objc_getClass("_NSJSONReader"));
-}
-
-- (void)testNSJSONReaderIvars {
-    Class class = objc_getClass("_NSJSONReader");
-    unsigned int ivarCount = 0;
-    
-    Ivar *ivars = class_copyIvarList(class, &ivarCount);
-    
-    NSLog(@"Found %d ivars on %s\n", ivarCount, class_getName(class));
-    
-    for (unsigned int i = 0; i < ivarCount; i++) {
-        Ivar ivar = ivars[i];
-        
-        NSLog(@"\t'%s' has ivar named \n>>> '%s' of encoding '%s'\n",
-              class_getName(class),
-              ivar_getName(ivar),
-              ivar_getTypeEncoding(ivar));
-    }
-    
-    free(ivars);
-}
-
-- (void)testNSJSONSerializationProperties {
-    Class class = [NSJSONSerialization class];
-
-    unsigned int propertiesCount = 0;
-    
-    objc_property_t *properties = class_copyPropertyList(class, &propertiesCount);
-    
-    NSLog(@"Found %d properties on %s\n", propertiesCount, class_getName(class));
-    
-    for (unsigned int i = 0; i < propertiesCount; i++) {
-        objc_property_t property = properties[i];
-        
-        NSLog(@"\t'%s' has properties named \n>>> '%s'\n",
-              class_getName(class),
-              property_getName(property));
-    }
-    
-    free(properties);
+- (void)tearDown {
+    [super tearDown];
 }
 
 - (void)testSerializationArrayWithEDANullObject {
-        
     NSArray *array = @[[EDANull null]];
     NSError *error = nil;
     
@@ -103,8 +53,117 @@
     
     XCTAssertNil(error, @"deserialization error");
     XCTAssertTrue([deserializedObject isKindOfClass:[NSArray class]], @"deserializedObject must be kind of NSArray");
-    
 }
 
+#pragma mark -
+#pragma mark replace EDANull methods
+
+- (void)testMethodsForDataWithJSONObject {
+    [self.calledMethods removeAllObjects];
+    
+    [self replaceMethodClass];
+    [self replaceMethodIsKindOfClass];
+    [self replaceMethodIsMemberOfClass];
+    [self replaceMethodIsSubclassOfClass];
+    
+    NSData *data = JSONWithEDANullObject;
+    
+    XCTAssertTrue(self.calledMethods.count == 2, @"JSONWithEDANullObject must to call 2 methods");
+    XCTAssertTrue([self.calledMethods containsObject:@"isKindOfClass:"], @"[NSJSONSerialization dataWithJSONObject] must be call 'isKindOfClass' method");
+    XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
+}
+
+- (void)testMethodsForJSONObjectWithData {
+    NSData *data = JSONWithEDANullObject;
+    
+    [self.calledMethods removeAllObjects];
+    [self replaceMethodClass];
+    [self replaceMethodIsKindOfClass];
+    [self replaceMethodIsMemberOfClass];
+    [self replaceMethodIsSubclassOfClass];
+
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
+}
+
+#define EDAPrepareForReplaceSelector(sel) \
+SEL selector = NSSelectorFromString(sel);  \
+id object = [EDANull class]; \
+Class class = object_getClass(object)
+
+- (void)replaceMethodClass {
+    EDAPrepareForReplaceSelector(@"class");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodClassIMP methodIMP = (EDAMethodClassIMP)implementation;
+        //TODO:
+        
+        [self registerClassWithImplementationProperty];
+//        [self.savedImplementations setValue:(id)methodIMP forPropertyKey:NSStringFromSelector(selector) associationPolicy:EDAPropertyNonatomicStrong];
+        return (id)^(id object) {
+            [self.calledMethods addObject:NSStringFromSelector(selector)];
+            return methodIMP(object, selector);
+        };
+    };
+    [object setBlock:block forSelector:selector];
+}
+
+- (void)replaceMethodIsKindOfClass {
+    EDAPrepareForReplaceSelector(@"isKindOfClass:");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodIsKindOfClassIMP methodIMP = (EDAMethodIsKindOfClassIMP)implementation;
+        return (id)^(id object, Class class) {
+            [self.calledMethods addObject:NSStringFromSelector(selector)];
+            return methodIMP(object, selector, class);
+        };
+    };
+    [object setBlock:block forSelector:selector];
+}
+
+- (void)replaceMethodIsMemberOfClass {
+    EDAPrepareForReplaceSelector(@"isMemberOfClass:");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodIsMemberOfClassIMP methodIMP = (EDAMethodIsMemberOfClassIMP)implementation;
+        return (id)^(id object, Class class) {
+            [self.calledMethods addObject:NSStringFromSelector(selector)];
+            return methodIMP(object, selector, class);
+        };
+    };
+    [object setBlock:block forSelector:selector];
+}
+
+- (void)replaceMethodIsSubclassOfClass {
+    EDAPrepareForReplaceSelector(@"isSubclassOfClass:");
+    EDABlockWithIMP block = ^(IMP implementation) {
+        EDAMethodIsSubclassOfClassIMP methodIMP = (EDAMethodIsSubclassOfClassIMP)implementation;
+        return (id)^(id object, Class class) {
+            [self.calledMethods addObject:NSStringFromSelector(selector)];
+            return methodIMP(object, selector, class);
+        };
+    };
+    [class setBlock:block forSelector:selector];
+}
+
+- (void)registerClassWithImplementationProperty {
+    NSString *className = @"EDAImplementation";
+    id object = [NSObject class]; \
+    Class class = object_getClass(object);
+
+    
+    Class newClass = objc_allocateClassPair(class, [className UTF8String], 0);
+    
+    objc_registerClassPair(newClass);
+//    BOOL result = class_addProperty(newClass, "value", nil, 0);
+//    
+//    id obj = [newClass new];
+}
+
+- (void)unregisterClassWithImplementationProperty {
+    NSString *className = @"EDAImplementation";
+    objc_disposeClassPair(NSClassFromString(@"EDAImplementation"));
+}
+
+- (id)objectWithImplementation:(IMP)implementation {
+    return nil;
+}
 
 @end

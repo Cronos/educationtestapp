@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "EDANull.h"
 #import <objc/runtime.h>
+#import "NSObject+EDARuntime.h"
 
 @interface EDANullTests : XCTestCase
 
@@ -21,6 +22,14 @@
 
 #define JSONWithEDANullObject \
 [NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]
+
+- (void)setUp {
+    [super setUp];
+}
+
+- (void)tearDown {
+    [super tearDown];
+}
 
 - (void)testInitialize {
     
@@ -99,106 +108,6 @@
     XCTAssertEqual(array.count, 1, @"array.count must be is equals to 1");
     Class class = [array[0] class];
     XCTAssertTrue(class == [EDANull class], @"object must be EDANull class instead %@", class);
-}
-
-#pragma mark -
-#pragma mark replace EDANull methods
-
-- (void)replaceClassMethod {
-    
-    SEL selector = @selector(class);
-    
-    id object = [EDANull class];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object) {
-        NSLog(@"Call [EDANull %@]", NSStringFromSelector(selector));
-        
-        return ((id(*)(id, SEL))implementation)(object, selector);
-    };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
-    
-}
-
-- (void)replaceIsKindOfClassMethod {
-    SEL selector = @selector(isKindOfClass:);
-    
-    id object = [EDANull null];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object, Class class) {
-        NSLog(@"Call [EDANull %@]", NSStringFromSelector(selector));
-        NSLog(@"\n\nStack\n\n\n%@\n\n\n",[NSThread callStackSymbols]);
-        if ([object isEqual:[EDANull null]]) {
-            return YES;
-        }
-        return ((BOOL(*)(id, SEL, Class))implementation)(object, selector, class);
-    };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
-}
-
-- (void)replaceIsMemberOfClassMethod {
-    SEL selector = @selector(isMemberOfClass:);
-    
-    id object = [EDANull null];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object, Class class) {
-        NSLog(@"Call [EDANull isMemberOfClass %@]", NSStringFromSelector(selector));
-        
-        return ((BOOL(*)(id, SEL, Class))implementation)(object, selector, class);
-    };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
-}
-
-- (void)replaceIsSubclassOfClassMethod {
-    SEL selector = @selector(isSubclassOfClass:);
-    
-    id object = [EDANull class];
-    Class class = object_getClass(object);
-    if (class_isMetaClass(class)) {
-        NSLog(@"Class %@ is metaclass", class);
-    }
-    
-    IMP implementation = [class instanceMethodForSelector:selector];
-    
-    id block = ^(id object, Class class) {
-        NSLog(@"Call [EDANull isSubclassOfClass %@]", NSStringFromSelector(selector));
-        
-        return ((BOOL(*)(id, SEL, Class))implementation)(object, selector, class);
-    };
-    
-    IMP blockIMP = imp_implementationWithBlock(block);
-    
-    Method method = class_getInstanceMethod(class, selector);
-    class_replaceMethod(class, selector, blockIMP, method_getTypeEncoding(method));
 }
 
 @end
