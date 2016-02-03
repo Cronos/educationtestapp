@@ -32,7 +32,7 @@
 - (BOOL)isEqual:(id)object {
     BOOL result = !object;                              // compare with nil
     result |= (self==object);                           // compare with self
-//    result |= [object isKindOfClass:[NSNull class]];    // compare with NSNull
+    result |= [object isKindOfClass:[NSNull class]];    // compare with NSNull
     
     return result;
 }
