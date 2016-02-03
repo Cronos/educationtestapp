@@ -30,6 +30,17 @@
     
     set = [UIScrollView subclasses];
     NSLog(@"subclasses count for NSMutableArray is %ld", set.count);
+#pragma mark -
+#pragma mark Register/Unregister class
+
+- (Class)registerClassWithName:(NSString *)name kindOf:(Class)class {
+    Class newClass = objc_allocateClassPair(class, [name UTF8String], 0);
+    objc_registerClassPair(newClass);
+    return newClass;
+}
+
+- (void)unregisterClassWithName:(NSString *)name {
+    objc_disposeClassPair(NSClassFromString(name));
 }
 
 @end
