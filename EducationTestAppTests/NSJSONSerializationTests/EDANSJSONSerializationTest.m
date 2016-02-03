@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "EDANull.h"
 #import "NSObject+EDARuntime.h"
-#import "EDAImpObject.h"
+#import "EDAImp.h"
 
 typedef id(*EDAMethodClassIMP)(id, SEL);
 typedef BOOL(*EDAMethodIsKindOfClassIMP)(id, SEL, Class);
@@ -194,7 +194,7 @@ Class class = object_getClass(object)
 }
 
 - (id)objectWithImplementation:(IMP)implementation {
-    EDAImpObject *object = [EDAImpObject new];
+    EDAImp *object = [EDAImp new];
     [object setImplementation:implementation];
     return object;
 }

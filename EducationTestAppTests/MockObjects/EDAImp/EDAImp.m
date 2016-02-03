@@ -1,14 +1,14 @@
 //
-//  EDAImpObject.m
+//  EDAImp.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 02.02.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "EDAImpObject.h"
+#import "EDAImp.h"
 
-@implementation EDAImpObject
+@implementation EDAImp
 
 static IMP __implementation = nil;
 

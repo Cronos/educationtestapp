@@ -1,5 +1,5 @@
 //
-//  EDAImpObject.h
+//  EDAImp.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 02.02.16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EDAImpObject : NSObject
+@interface EDAImp : NSObject
 
 - (void)setImplementation:(IMP)implementation;
 - (IMP)implementation;
