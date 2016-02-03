@@ -21,8 +21,9 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 @end
 
-#define JSONWithEDANullObject \
-[NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]
+NSData *dataWithJSONEDANullObject() {
+    return [NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil];
+}
 
 @implementation EDANSJSONSerializationTest
 
@@ -64,13 +65,15 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     
     NSData *data = JSONWithEDANullObject;
     
+    NSData *data = dataWithJSONEDANullObject();
+    XCTAssertNotNil(data, @"dataWithJSONObject not initialized");
     XCTAssertTrue(self.calledMethods.count == 2, @"JSONWithEDANullObject must to call 2 methods");
     XCTAssertTrue([self.calledMethods containsObject:@"isKindOfClass:"], @"[NSJSONSerialization dataWithJSONObject] must be call 'isKindOfClass' method");
     XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
 }
 
 - (void)testMethodsForJSONObjectWithData {
-    NSData *data = JSONWithEDANullObject;
+    NSData *data = dataWithJSONEDANullObject();
     
     [self.calledMethods removeAllObjects];
     [self replaceMethodClass];
