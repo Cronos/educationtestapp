@@ -21,15 +21,21 @@
     NSLog(@"Metaclass for %@ is %@", NSStringFromClass(class), NSStringFromClass(metaclass));
 }
 
-- (void)testNSObjectSubclasses {
-    NSSet *set = [NSObject subclasses];
-    NSLog(@"subclasses count for NSObject is %ld", set.count);
+- (void)testCreateEDACustomClass {
+    NSString *customClassName = @"EDATestClass";
+    Class class = [self registerClassWithName:customClassName kindOf:[NSObject class]];
+    XCTAssertNotNil(class, @"Class %@ not registered", customClassName);
     
-    set = [NSArray subclasses];
-    NSLog(@"subclasses count for NSArray is %ld", set.count);
+    id object = [class new];
     
-    set = [UIScrollView subclasses];
-    NSLog(@"subclasses count for NSMutableArray is %ld", set.count);
+    XCTAssertNotNil(object, @"Class %@ not initialized", customClassName);
+    XCTAssertTrue([object isMemberOfClass:class], @"Object must be member of %@ class", customClassName);
+    XCTAssertTrue([object isKindOfClass:[NSObject class]], @"Object must be kind of %@ class", [NSObject class]);
+    
+    object = nil;
+    [self unregisterClassWithName:customClassName];
+}
+
 #pragma mark -
 #pragma mark Register/Unregister class
 
