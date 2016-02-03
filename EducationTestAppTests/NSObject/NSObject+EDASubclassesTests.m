@@ -9,21 +9,21 @@
 #import <XCTest/XCTest.h>
 #import "NSObject+EDARuntime.h"
 
-@interface NSObject_SubclassesTests : XCTestCase
+@interface NSObject_EDASubclassesTests : XCTestCase
 
 @end
 
-@implementation NSObject_SubclassesTests
+@implementation NSObject_EDASubclassesTests
 
 - (void)testMetaclass {
-    NSArray *customClassNames = @[@"EDACustomClass1", @"EDACustomClass2", @"EDACustomClass3"];
+    NSArray *customClassNames = [self customClassNames:@"EDACustomClass" withCapacity:3];
     Class parentClass = [NSObject class];
     for (NSString *name in customClassNames) {
-        parentClass = [self registerClassWithName:name kindOf:parentClass];
+        parentClass = [parentClass registerClassWithName:name];
     }
     NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
 
-    [reverseNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [reverseNames enumerateObjectsUsingBlock:^(NSString  * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         Class class = NSClassFromString((NSString *)obj);
         Class metaclass = [class metaclass];
         XCTAssertEqualObjects(NSStringFromClass(metaclass), NSStringFromClass(class), @"Metaclass for %@ class must be %@", class, [class class]);
@@ -31,31 +31,31 @@
         XCTAssertEqualObjects(NSStringFromClass(metaclass), NSStringFromClass([NSObject class]), @"Metaclass for metaclass must be %@ class", NSStringFromClass([NSObject class]));
     }];
     for (NSString *name in reverseNames) {
-        [self unregisterClassWithName:name];
+        [NSObject unregisterClassWithName:name];
     }
 }
 
 - (void)testSubclasses {
-    NSArray *customClassNames = @[@"EDACustomClass1", @"EDACustomClass2", @"EDACustomClass3", @"EDACustomClass4"];
+    NSArray *customClassNames = [self customClassNames:@"EDACustomClass" withCapacity:4];
 
     Class parentClass = [NSObject class];
     for (NSString *name in customClassNames) {
-        parentClass = [self registerClassWithName:name kindOf:parentClass];
+        parentClass = [parentClass registerClassWithName:name];
     }
     NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
-    [reverseNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSSet *set = [NSClassFromString((NSString *)obj) subclasses];
+    [reverseNames enumerateObjectsUsingBlock:^(NSString  *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSSet *set = [NSClassFromString(obj) subclasses];
         XCTAssertEqual(set.count, idx, @"Subclasses for %@ class must be equal to %ld", (NSString *)obj, idx);
     }];
     
     for (NSString *name in reverseNames) {
-        [self unregisterClassWithName:name];
+        [NSObject unregisterClassWithName:name];
     }
 }
 
 - (void)testCreateEDACustomClass {
     NSString *customClassName = @"EDATestClass";
-    Class class = [self registerClassWithName:customClassName kindOf:[NSObject class]];
+    Class class = [NSObject registerClassWithName:customClassName];
     XCTAssertNotNil(class, @"Class %@ not registered", customClassName);
     
     id object = [class new];
@@ -65,20 +65,30 @@
     XCTAssertTrue([object isKindOfClass:[NSObject class]], @"Object must be kind of %@ class", [NSObject class]);
     
     object = nil;
-    [self unregisterClassWithName:customClassName];
+    [NSObject unregisterClassWithName:customClassName];
 }
 
-#pragma mark -
-#pragma mark Register/Unregister class
+- (void)testUnregisterCustomClasses {
+    NSArray *customClassNames = [self customClassNames:@"EDACustomClass" withCapacity:4];
+    
+    Class parentClass = [NSObject class];
+    for (NSString *name in customClassNames) {
+        parentClass = [parentClass registerClassWithName:name];
+    }
+    NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
+    
+    for (NSString *name in reverseNames) {
+        [NSObject unregisterClassWithName:name];
+    }
 
-- (Class)registerClassWithName:(NSString *)name kindOf:(Class)class {
-    Class newClass = objc_allocateClassPair(class, [name UTF8String], 0);
-    objc_registerClassPair(newClass);
-    return newClass;
 }
 
-- (void)unregisterClassWithName:(NSString *)name {
-    objc_disposeClassPair(NSClassFromString(name));
+- (NSArray <NSString *> *)customClassNames:(NSString *)name withCapacity:(NSInteger)count {
+    NSMutableArray <NSString *> *array = [NSMutableArray array];
+    for (NSInteger index = 0; index < count; index++) {
+        [array addObject:[NSString stringWithFormat:@"%@%ld", name, index]];
+    }
+    return [array copy];
 }
 
 @end
