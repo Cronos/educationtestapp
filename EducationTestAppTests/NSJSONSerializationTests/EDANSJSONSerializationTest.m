@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "EDANull.h"
 #import "NSObject+EDARuntime.h"
+#import "EDAImpObject.h"
 
 typedef id(*EDAMethodClassIMP)(id, SEL);
 typedef BOOL(*EDAMethodIsKindOfClassIMP)(id, SEL, Class);
@@ -18,6 +19,7 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 @interface EDANSJSONSerializationTest : XCTestCase
 @property (nonatomic, strong) NSMutableSet<NSString *> *calledMethods;
+@property (nonatomic, strong) NSMutableDictionary *savedImplementations;
 
 @end
 
@@ -30,6 +32,7 @@ NSData *dataWithJSONEDANullObject() {
 - (void)setUp {
     [super setUp];
     self.calledMethods = [NSMutableSet set];
+    self.savedImplementations = [NSMutableDictionary dictionary];
 }
 
 - (void)tearDown {
@@ -53,7 +56,7 @@ NSData *dataWithJSONEDANullObject() {
 }
 
 #pragma mark -
-#pragma mark replace EDANull methods
+#pragma mark Replace EDANull methods tests
 
 - (void)testMethodsForDataWithJSONObject {
     [self.calledMethods removeAllObjects];
@@ -80,8 +83,28 @@ NSData *dataWithJSONEDANullObject() {
     [self replaceEDANullMethodIsSubclassOfClass];
 
     NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    XCTAssertNotNil(array, @"JSONObjectWithData not initialized");
     XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
 }
+
+#pragma mark -
+#pragma mark Create class tests
+
+- (void)testSaveImplementation {
+//    SEL selector = @selector(class);
+    
+    [self.calledMethods removeAllObjects];
+    [self replaceEDANullMethodClass];
+
+    Class class = [[EDANull null] class];
+    XCTAssertNotNil(class, @"edanullClass is nil");
+    XCTAssertTrue(self.calledMethods.count == 1, @"JSONWithEDANullObject must to call 1 methods");
+     XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
+}
+
+
+#pragma mark -
+#pragma mark Runtime methods
 
 #define EDAPrepareForReplaceSelector(sel) \
 SEL selector = NSSelectorFromString(sel);  \
@@ -95,10 +118,7 @@ Class class = object_getClass(object)
     EDAPrepareForReplaceSelector(@"class");
     EDABlockWithIMP block = ^(IMP implementation) {
         EDAMethodClassIMP methodIMP = (EDAMethodClassIMP)implementation;
-        //TODO:
-        
-        [self registerClassWithImplementationProperty];
-//        [self.savedImplementations setValue:(id)methodIMP forPropertyKey:NSStringFromSelector(selector) associationPolicy:EDAPropertyNonatomicStrong];
+        [self saveImplementation:implementation forSelector:selector];
         return (id)^(id object) {
             [self.calledMethods addObject:NSStringFromSelector(selector)];
             return methodIMP(object, selector);
@@ -143,27 +163,40 @@ Class class = object_getClass(object)
     [class setBlock:block forSelector:selector];
 }
 
-- (void)registerClassWithImplementationProperty {
-    NSString *className = @"EDAImplementation";
-    id object = [NSObject class]; \
-    Class class = object_getClass(object);
+#pragma mark -
+#pragma mark Set/Get implementation methods
 
-    
-    Class newClass = objc_allocateClassPair(class, [className UTF8String], 0);
-    
-    objc_registerClassPair(newClass);
-//    BOOL result = class_addProperty(newClass, "value", nil, 0);
-//    
-//    id obj = [newClass new];
+- (void)saveImplementationForSelector:(SEL)selector forObject:(id)object {
+    IMP classIMP = [object instanceMethodForSelector:selector];
+    id impObject = [self objectWithImplementation:classIMP];
+    [self.savedImplementations setObject:impObject forKey:NSStringFromSelector(selector)];
 }
 
-- (void)unregisterClassWithImplementationProperty {
-    NSString *className = @"EDAImplementation";
-    objc_disposeClassPair(NSClassFromString(@"EDAImplementation"));
+- (void)restoreImplementationForMethod:(NSString *)methodName forObject:(id)object {
+    SEL selector = NSSelectorFromString(methodName);
+    [self restoreImplementationForSelector:selector forObject:object];
+}
+
+- (void)restoreImplementationForSelector:(SEL)selector forObject:(id)object {
+    IMP implementation = [self storedImplementationForSelector:selector];
+    if (implementation) {
+        Method method = class_getInstanceMethod(object, selector);
+        class_replaceMethod(object,
+                            selector,
+                            implementation,
+                            method_getTypeEncoding(method));
+    }
+
+}
+- (IMP)storedImplementationForSelector:(SEL)selector {
+    id object = [self.savedImplementations objectForKey:NSStringFromSelector(selector)];
+    return [object implementation];
 }
 
 - (id)objectWithImplementation:(IMP)implementation {
-    return nil;
+    EDAImpObject *object = [EDAImpObject new];
+    [object setImplementation:implementation];
+    return object;
 }
 
 @end
