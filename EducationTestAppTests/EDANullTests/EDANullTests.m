@@ -76,6 +76,12 @@
     XCTAssertFalse([nullObject isEqual:[NSObject new]], @"EDANull must be not equals to NSObject");
 }
 
+- (void)testIsMemberOfClass {
+    id null = [EDANull null];
+    XCTAssertTrue([null isMemberOfClass:[EDANull class]], @"[EDANull null] must be member of EDANull class");
+    XCTAssertTrue([null isMemberOfClass:[NSNull class]], @"[EDANull null] must be member of NSNull class");
+}
+
 #pragma mark -
 #pragma mark NSCoding protocol tests
 
