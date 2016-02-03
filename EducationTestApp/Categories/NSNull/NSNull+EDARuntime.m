@@ -25,52 +25,6 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
 #pragma mark -
 #pragma mark Methods for replace implementations
 
-#define EDAPrepareForReplaceSelector(sel) \
-    SEL selector = NSSelectorFromString(sel);  \
-    id object = [self class]; \
-    Class class = object_getClass(object)
-
-+ (void)replaceNew {
-    EDAPrepareForReplaceSelector(@"new");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodNewIMP methodIMP = (EDAMethodNewIMP)implementation;
-
-        return (id)^(id object) {
-            NSLog(@"Call [NSNull new]");
-            
-            return methodIMP(object, selector);
-        };
-    };
-    [class setBlock:block forSelector:selector];
-}
-
-+ (void)replaceAlloc {
-    EDAPrepareForReplaceSelector(@"alloc");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodAllocIMP methodIMP = (EDAMethodAllocIMP)implementation;
-        
-        return (id)^(id object) {
-            NSLog(@"Call [NSNull alloc]");
-            
-            return methodIMP(object, selector);
-        };
-    };
-    [class setBlock:block forSelector:selector];
-}
-
-+ (void)replaceAllocWithZone {
-    EDAPrepareForReplaceSelector(@"allocWithZone:");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodAllocWithZoneIMP methodIMP = (EDAMethodAllocWithZoneIMP)implementation;
-
-        return (id)^(id object, NSZone *zone) {
-            NSLog(@"Call [NSNull allocWithZone]");
-
-            return methodIMP(object, selector, zone);
-        };
-    };
-    [class setBlock:block forSelector:selector];
-}
 
 + (void)replaceNull {
     EDAPrepareForReplaceSelector(@"null");
