@@ -46,7 +46,8 @@
 //}
 
 + (BOOL)conformsToProtocol:(Protocol *)protocol {
-    return [super conformsToProtocol:protocol];
+    return YES;
+}
 }
 
 #pragma mark -
