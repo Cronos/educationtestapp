@@ -27,20 +27,21 @@
     return objc_getMetaClass(object_getClassName(self));
 }
 
-+ (NSArray *)subclasses {
++ (NSSet *)subclasses {
     NSMutableSet *subclasses = [NSMutableSet set];
 
     unsigned int classCount = 0;
     Class *classes = objc_copyClassList(&classCount);
     
-    if (classCount > 0) {
-        for (unsigned int index = 0; index < classCount; index++) {
-            Class class = classes[index];
-            Class superClass = class_getSuperclass(class);
-
-            if (superClass == self) {
-                [subclasses addObject:class];
-            }
+    for (unsigned int index = 0; index < classCount; index++) {
+        Class superClass = classes[index];
+        
+        do {
+            superClass = class_getSuperclass(superClass);
+        } while(superClass && superClass != self);
+        
+        if (superClass) {
+            [subclasses addObject:classes[index]];
         }
     }
     if (classes) {
