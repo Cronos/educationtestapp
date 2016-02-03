@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSObject+EDARuntime.h"
+#import "NSArray+EDAExtentions.h"
 
 @interface NSObject_EDASubclassesTests : XCTestCase
 
@@ -21,8 +22,8 @@
     for (NSString *name in customClassNames) {
         parentClass = [parentClass registerClassWithName:name];
     }
-    NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
-
+    
+    NSArray *reverseNames = [customClassNames reverse];
     [reverseNames enumerateObjectsUsingBlock:^(NSString  * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         Class class = NSClassFromString((NSString *)obj);
         Class metaclass = [class metaclass];
@@ -42,7 +43,8 @@
     for (NSString *name in customClassNames) {
         parentClass = [parentClass registerClassWithName:name];
     }
-    NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
+    
+    NSArray *reverseNames = [customClassNames reverse];
     [reverseNames enumerateObjectsUsingBlock:^(NSString  *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSSet *set = [NSClassFromString(obj) subclasses];
         XCTAssertEqual(set.count, idx, @"Subclasses for %@ class must be equal to %ld", (NSString *)obj, idx);
@@ -75,8 +77,8 @@
     for (NSString *name in customClassNames) {
         parentClass = [parentClass registerClassWithName:name];
     }
-    NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
     
+    NSArray *reverseNames = [customClassNames reverse];
     for (NSString *name in reverseNames) {
         [NSObject unregisterClassWithName:name];
     }
