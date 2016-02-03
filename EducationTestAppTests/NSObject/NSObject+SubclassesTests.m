@@ -19,6 +19,22 @@
     Class class = [NSMutableDictionary class];
     Class metaclass = [[NSMutableDictionary metaclass] metaclass];
     NSLog(@"Metaclass for %@ is %@", NSStringFromClass(class), NSStringFromClass(metaclass));
+- (void)testSubclasses {
+    NSArray *customClassNames = @[@"EDACustomClass1", @"EDACustomClass2", @"EDACustomClass3", @"EDACustomClass4"];
+
+    Class parentClass = [NSObject class];
+    for (NSString *name in customClassNames) {
+        parentClass = [self registerClassWithName:name kindOf:parentClass];
+    }
+    NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
+    [reverseNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSSet *set = [NSClassFromString((NSString *)obj) subclasses];
+        XCTAssertEqual(set.count, idx, @"Subclasses for %@ class must be equal to %ld", (NSString *)obj, idx);
+    }];
+    
+    for (NSString *name in reverseNames) {
+        [self unregisterClassWithName:name];
+    }
 }
 
 - (void)testCreateEDACustomClass {
