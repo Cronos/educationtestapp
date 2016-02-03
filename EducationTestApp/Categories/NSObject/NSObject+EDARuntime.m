@@ -62,4 +62,18 @@
     return objc_getAssociatedObject(self, (__bridge const void *)(key));
 }
 
+#pragma mark -
+#pragma mark Register/Unregister class
+
++ (Class)registerClassWithName:(NSString *)name {
+    Class newClass = objc_allocateClassPair(self, [name UTF8String], 0);
+    objc_registerClassPair(newClass);
+    
+    return newClass;
+}
+
++ (void)unregisterClassWithName:(NSString *)name {
+    objc_disposeClassPair(NSClassFromString(name));
+}
+
 @end
