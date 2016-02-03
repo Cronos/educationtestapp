@@ -58,12 +58,10 @@ NSData *dataWithJSONEDANullObject() {
 - (void)testMethodsForDataWithJSONObject {
     [self.calledMethods removeAllObjects];
     
-    [self replaceMethodClass];
-    [self replaceMethodIsKindOfClass];
-    [self replaceMethodIsMemberOfClass];
-    [self replaceMethodIsSubclassOfClass];
-    
-    NSData *data = JSONWithEDANullObject;
+    [self replaceEDANullMethodClass];
+    [self replaceEDANullMethodIsKindOfClass];
+    [self replaceEDANullMethodIsMemberOfClass];
+    [self replaceEDANullMethodIsSubclassOfClass];
     
     NSData *data = dataWithJSONEDANullObject();
     XCTAssertNotNil(data, @"dataWithJSONObject not initialized");
@@ -76,10 +74,10 @@ NSData *dataWithJSONEDANullObject() {
     NSData *data = dataWithJSONEDANullObject();
     
     [self.calledMethods removeAllObjects];
-    [self replaceMethodClass];
-    [self replaceMethodIsKindOfClass];
-    [self replaceMethodIsMemberOfClass];
-    [self replaceMethodIsSubclassOfClass];
+    [self replaceEDANullMethodClass];
+    [self replaceEDANullMethodIsKindOfClass];
+    [self replaceEDANullMethodIsMemberOfClass];
+    [self replaceEDANullMethodIsSubclassOfClass];
 
     NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
     XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
@@ -90,7 +88,10 @@ SEL selector = NSSelectorFromString(sel);  \
 id object = [EDANull class]; \
 Class class = object_getClass(object)
 
-- (void)replaceMethodClass {
+#pragma mark -
+#pragma mark Replace methods
+
+- (void)replaceEDANullMethodClass {
     EDAPrepareForReplaceSelector(@"class");
     EDABlockWithIMP block = ^(IMP implementation) {
         EDAMethodClassIMP methodIMP = (EDAMethodClassIMP)implementation;
@@ -106,7 +107,7 @@ Class class = object_getClass(object)
     [object setBlock:block forSelector:selector];
 }
 
-- (void)replaceMethodIsKindOfClass {
+- (void)replaceEDANullMethodIsKindOfClass {
     EDAPrepareForReplaceSelector(@"isKindOfClass:");
     EDABlockWithIMP block = ^(IMP implementation) {
         EDAMethodIsKindOfClassIMP methodIMP = (EDAMethodIsKindOfClassIMP)implementation;
@@ -118,7 +119,7 @@ Class class = object_getClass(object)
     [object setBlock:block forSelector:selector];
 }
 
-- (void)replaceMethodIsMemberOfClass {
+- (void)replaceEDANullMethodIsMemberOfClass {
     EDAPrepareForReplaceSelector(@"isMemberOfClass:");
     EDABlockWithIMP block = ^(IMP implementation) {
         EDAMethodIsMemberOfClassIMP methodIMP = (EDAMethodIsMemberOfClassIMP)implementation;
@@ -130,7 +131,7 @@ Class class = object_getClass(object)
     [object setBlock:block forSelector:selector];
 }
 
-- (void)replaceMethodIsSubclassOfClass {
+- (void)replaceEDANullMethodIsSubclassOfClass {
     EDAPrepareForReplaceSelector(@"isSubclassOfClass:");
     EDABlockWithIMP block = ^(IMP implementation) {
         EDAMethodIsSubclassOfClassIMP methodIMP = (EDAMethodIsSubclassOfClassIMP)implementation;
