@@ -41,9 +41,13 @@
     return (class == [NSNull class]) || ([super isKindOfClass:class]);
 }
 
-//- (BOOL)isMemberOfClass:(Class)class {
-//    return (class == [EDANull class]);
-//}
+- (BOOL)isMemberOfClass:(Class)class {
+    BOOL result = (class == [EDANull class]);
+    result |= [class isEqual:[NSNull class]];
+    result |= [super isMemberOfClass:class];
+    
+    return  result ;
+}
 
 + (BOOL)conformsToProtocol:(Protocol *)protocol {
     return YES;
