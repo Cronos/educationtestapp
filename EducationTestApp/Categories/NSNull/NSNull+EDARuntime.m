@@ -19,9 +19,6 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
 @implementation NSNull (EDARuntime)
 
 + (void)load {
-//    [self replaceNew];
-//    [self replaceAlloc];
-//    [self replaceAllocWithZone];
     [self replaceNull];
 }
 
