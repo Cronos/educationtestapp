@@ -11,9 +11,6 @@
 
 @interface EDANull()<NSCoding>
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector;
-- (void)forwardInvocation:(NSInvocation *)invocation;
-
 @end
 
 @implementation EDANull
