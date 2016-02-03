@@ -15,10 +15,26 @@
 
 @implementation NSObject_SubclassesTests
 
-- (void)testNSObjectMetaclass {
-    Class class = [NSMutableDictionary class];
-    Class metaclass = [[NSMutableDictionary metaclass] metaclass];
-    NSLog(@"Metaclass for %@ is %@", NSStringFromClass(class), NSStringFromClass(metaclass));
+- (void)testMetaclass {
+    NSArray *customClassNames = @[@"EDACustomClass1", @"EDACustomClass2", @"EDACustomClass3"];
+    Class parentClass = [NSObject class];
+    for (NSString *name in customClassNames) {
+        parentClass = [self registerClassWithName:name kindOf:parentClass];
+    }
+    NSArray *reverseNames = [[customClassNames reverseObjectEnumerator] allObjects];
+
+    [reverseNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        Class class = NSClassFromString((NSString *)obj);
+        Class metaclass = [class metaclass];
+        XCTAssertEqualObjects(NSStringFromClass(metaclass), NSStringFromClass(class), @"Metaclass for %@ class must be %@", class, [class class]);
+        metaclass = [metaclass metaclass];
+        XCTAssertEqualObjects(NSStringFromClass(metaclass), NSStringFromClass([NSObject class]), @"Metaclass for metaclass must be %@ class", NSStringFromClass([NSObject class]));
+    }];
+    for (NSString *name in reverseNames) {
+        [self unregisterClassWithName:name];
+    }
+}
+
 - (void)testSubclasses {
     NSArray *customClassNames = @[@"EDACustomClass1", @"EDACustomClass2", @"EDACustomClass3", @"EDACustomClass4"];
 
