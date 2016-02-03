@@ -48,6 +48,9 @@
 + (BOOL)conformsToProtocol:(Protocol *)protocol {
     return YES;
 }
+
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    return YES;
 }
 
 #pragma mark -
