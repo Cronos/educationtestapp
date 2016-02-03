@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3097B9C1C60EE100086B387 /* EDAImpObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E3097B9B1C60EE100086B387 /* EDAImpObject.m */; };
 		E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */; };
 		E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C6041C3C1DBC0006F1C1 /* EDADataManager.m */; };
 		E382E38F1C3A914A009059BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E38E1C3A914A009059BA /* main.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E3097B9A1C60EE100086B387 /* EDAImpObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAImpObject.h; sourceTree = "<group>"; };
+		E3097B9B1C60EE100086B387 /* EDAImpObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAImpObject.m; sourceTree = "<group>"; };
 		E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseTests.m; sourceTree = "<group>"; };
 		E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDATestAPI.h; sourceTree = "<group>"; };
 		E382C6031C3C1DBC0006F1C1 /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDADataManager.h; path = DataSource/EDADataManager.h; sourceTree = "<group>"; };
@@ -118,6 +121,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E3097B981C60EDFB0086B387 /* TestObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E3097B991C60EDFB0086B387 /* EDAImpObject */,
+			);
+			path = TestObjects;
+			sourceTree = "<group>";
+		};
+		E3097B991C60EDFB0086B387 /* EDAImpObject */ = {
+			isa = PBXGroup;
+			children = (
+				E3097B9A1C60EE100086B387 /* EDAImpObject.h */,
+				E3097B9B1C60EE100086B387 /* EDAImpObject.m */,
+			);
+			path = EDAImpObject;
+			sourceTree = "<group>";
+		};
 		E382E3811C3A914A009059BA = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +189,7 @@
 		E382E3A61C3A914A009059BA /* EducationTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				E3097B981C60EDFB0086B387 /* TestObjects */,
 				E39D4FF91C4F8E6000333F57 /* NSNullTests */,
 				E39D19531C560A8200A0D3E9 /* EDANullTests */,
 				E38CA30F1C4E90BA0047845A /* NSObject */,
@@ -457,6 +478,7 @@
 				E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */,
 				E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */,
 				E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */,
+				E3097B9C1C60EE100086B387 /* EDAImpObject.m in Sources */,
 				E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
