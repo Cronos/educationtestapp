@@ -18,12 +18,8 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 @interface EDANSJSONSerializationTest : XCTestCase
 @property (nonatomic, strong) NSMutableSet<NSString *> *calledMethods;
-@property (nonatomic, strong) NSObject *savedImplementations;
 
 @end
-
-#define EDANullArchived \
-[NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]
 
 #define JSONWithEDANullObject \
 [NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]
