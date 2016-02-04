@@ -19,8 +19,8 @@ typedef BOOL(*EDAMethodIsMemberOfClassIMP)(id, SEL, Class);
 typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 @interface EDANSJSONSerializationTest : XCTestCase
-@property (nonatomic, strong) NSMutableSet<NSString *> *calledMethods;
-@property (nonatomic, strong) NSMutableDictionary *savedImplementations;
+@property (nonatomic, strong) NSMutableSet <NSString *> *calledMethods;
+@property (nonatomic, strong) NSMutableDictionary <NSString *, EDAImp *> *savedImplementations;
 
 @end
 
@@ -58,10 +58,7 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 - (void)testMethodsForDataWithJSONObject {
     [self.calledMethods removeAllObjects];
     
-    [self replaceEDANullMethodClass];
-    [self replaceEDANullMethodIsKindOfClass];
-    [self replaceEDANullMethodIsMemberOfClass];
-    [self replaceEDANullMethodIsSubclassOfClass];
+    [self replaceEDANullMethods];
     
     [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
         XCTAssertNotNil(data, @"dataWithJSONObject not initialized");
@@ -70,31 +67,25 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
         XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
     }];
     
+    [self restoreEDANullMethods];
 }
 
 - (void)testMethodsForJSONObjectWithData {
     [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
         [self.calledMethods removeAllObjects];
         
+        [self replaceEDANullMethods];
         
         NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         XCTAssertNotNil(array, @"JSONObjectWithData not initialized");
         XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
     }];
     
-    [self.calledMethods removeAllObjects];
-    [self replaceEDANullMethodClass];
-    [self replaceEDANullMethodIsKindOfClass];
-    [self replaceEDANullMethodIsMemberOfClass];
-    [self replaceEDANullMethodIsSubclassOfClass];
-
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    XCTAssertNotNil(array, @"JSONObjectWithData not initialized");
-    XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
+    [self restoreEDANullMethods];
 }
 
 #pragma mark -
-#pragma mark Create class tests
+#pragma mark Store/restore implementation tests
 
 - (void)testSaveImplementation {
 //    SEL selector = @selector(class);
@@ -217,14 +208,23 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 }
 - (IMP)storedImplementationForSelector:(SEL)selector {
-    id object = [self.savedImplementations objectForKey:NSStringFromSelector(selector)];
-    return [object implementation];
+    NSString *method = NSStringFromSelector(selector);
+    EDAImp *object = [self.savedImplementations objectForKey:method];
+    return object.implementation;
 }
 
-- (id)objectWithImplementation:(IMP)implementation {
-    EDAImp *object = [EDAImp new];
-    [object setImplementation:implementation];
-    return object;
+- (void)replaceEDANullMethods {
+    [self replaceEDANullMethodClass];
+    [self replaceEDANullMethodIsKindOfClass];
+    [self replaceEDANullMethodIsMemberOfClass];
+    [self replaceEDANullMethodIsSubclassOfClass];
 }
 
+- (void)restoreEDANullMethods {
+    id object = [EDANull class];
+    for (NSString *methodName in @[@"class", @"isKindOfClass:", @"isMemberOfClass:"]) {
+        [self restoreImplementationForMethod:methodName forObject:object];
+    }
+    [self restoreImplementationForSelector:@selector(isSubclassOfClass:) forObject:object_getClass(object)];
+}
 @end
