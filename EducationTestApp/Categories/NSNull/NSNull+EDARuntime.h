@@ -1,5 +1,5 @@
 //
-//  NSNull+Swizzling.h
+//  NSNull+EDARuntime.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 20.01.16.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSNull (Swizzling)
+@interface NSNull (EDARuntime)
 
 @end

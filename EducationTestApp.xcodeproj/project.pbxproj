@@ -27,16 +27,18 @@
 		E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */; };
 		E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */; };
 		E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */; };
-		E38ABC2F1C5216B8000AC3E4 /* NSObject+Subclasses.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC2E1C5216B8000AC3E4 /* NSObject+Subclasses.m */; };
-		E38ABC331C5216ED000AC3E4 /* NSNull+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC321C5216ED000AC3E4 /* NSNull+Swizzling.m */; };
-		E38ABC371C5216F8000AC3E4 /* NSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC361C5216F8000AC3E4 /* NSDictionary+NSNull.m */; };
-		E38CA3111C4E90E20047845A /* NSObject+SubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */; };
-		E392D3C61C4D2284006BFA4B /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */; };
+		E38942301C6218D2007C1E6A /* NSArray+EDAExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E389422F1C6218D2007C1E6A /* NSArray+EDAExtentions.m */; };
+		E38942391C622371007C1E6A /* EDAImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E38942381C622371007C1E6A /* EDAImp.m */; };
+		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
+		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
+		E38ABC2F1C5216B8000AC3E4 /* NSObject+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC2E1C5216B8000AC3E4 /* NSObject+EDARuntime.m */; };
+		E38ABC381C522D3D000AC3E4 /* NSNull+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABC321C5216ED000AC3E4 /* NSNull+EDARuntime.m */; };
+		E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */; };
 		E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C6A571C43A1B90026F72A /* EDANetwork.m */; };
-		E39D4FFB1C4F8E7900333F57 /* EDANSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */; };
+		E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D19541C560A8200A0D3E9 /* EDANullTests.m */; };
+		E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */; };
 		E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */; };
 		E3CD77C91C47F0660047446F /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C81C47F0660047446F /* EDANull.m */; };
-		E3CD77CB1C47F0E30047446F /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77CA1C47F0E30047446F /* EDANullTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,21 +88,25 @@
 		E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseRequestResultTests.m; sourceTree = "<group>"; };
 		E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseLayoutTests.m; sourceTree = "<group>"; };
 		E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseMetadataTests.m; sourceTree = "<group>"; };
-		E38ABC2D1C5216B8000AC3E4 /* NSObject+Subclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Subclasses.h"; sourceTree = "<group>"; };
-		E38ABC2E1C5216B8000AC3E4 /* NSObject+Subclasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Subclasses.m"; sourceTree = "<group>"; };
-		E38ABC311C5216ED000AC3E4 /* NSNull+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+Swizzling.h"; sourceTree = "<group>"; };
-		E38ABC321C5216ED000AC3E4 /* NSNull+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Swizzling.m"; sourceTree = "<group>"; };
-		E38ABC351C5216F8000AC3E4 /* NSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NSNull.h"; sourceTree = "<group>"; };
-		E38ABC361C5216F8000AC3E4 /* NSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSNull.m"; sourceTree = "<group>"; };
-		E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SubclassesTests.m"; sourceTree = "<group>"; };
-		E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionaryTests.m; path = NSDictionaryTests/NSDictionaryTests.m; sourceTree = "<group>"; };
+		E389422E1C6218D2007C1E6A /* NSArray+EDAExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EDAExtentions.h"; sourceTree = "<group>"; };
+		E389422F1C6218D2007C1E6A /* NSArray+EDAExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EDAExtentions.m"; sourceTree = "<group>"; };
+		E38942371C622371007C1E6A /* EDAImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAImp.h; sourceTree = "<group>"; };
+		E38942381C622371007C1E6A /* EDAImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAImp.m; sourceTree = "<group>"; };
+		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
+		E389423C1C622424007C1E6A /* EDAMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAMock.m; sourceTree = "<group>"; };
+		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
+		E38ABC2D1C5216B8000AC3E4 /* NSObject+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EDARuntime.h"; sourceTree = "<group>"; };
+		E38ABC2E1C5216B8000AC3E4 /* NSObject+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDARuntime.m"; sourceTree = "<group>"; };
+		E38ABC311C5216ED000AC3E4 /* NSNull+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+EDARuntime.h"; sourceTree = "<group>"; };
+		E38ABC321C5216ED000AC3E4 /* NSNull+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+EDARuntime.m"; sourceTree = "<group>"; };
+		E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDASubclassesTests.m"; sourceTree = "<group>"; };
 		E39C6A561C43A1B90026F72A /* EDANetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDANetwork.h; path = Network/EDANetwork.h; sourceTree = "<group>"; };
 		E39C6A571C43A1B90026F72A /* EDANetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANetwork.m; path = Network/EDANetwork.m; sourceTree = "<group>"; };
-		E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANSNullTests.m; sourceTree = "<group>"; };
+		E39D19541C560A8200A0D3E9 /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
+		E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNullTests.m; sourceTree = "<group>"; };
 		E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANSJSONSerializationTest.m; path = NSJSONSerializationTests/EDANSJSONSerializationTest.m; sourceTree = "<group>"; };
 		E3CD77C71C47F0660047446F /* EDANull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDANull.h; sourceTree = "<group>"; };
 		E3CD77C81C47F0660047446F /* EDANull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANull.m; sourceTree = "<group>"; };
-		E3CD77CA1C47F0E30047446F /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +178,10 @@
 		E382E3A61C3A914A009059BA /* EducationTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E39D4FF91C4F8E6000333F57 /* NSNull */,
+				E38942351C622371007C1E6A /* MockObjects */,
+				E39D4FF91C4F8E6000333F57 /* NSNullTests */,
+				E39D19531C560A8200A0D3E9 /* EDANullTests */,
 				E38CA30F1C4E90BA0047845A /* NSObject */,
-				E392D3C41C4D2232006BFA4B /* NSDictionary */,
 				E3CD77C31C4787880047446F /* NSJSONSerializationTests */,
 				E382E3A71C3A914A009059BA /* EducationTestAppTests.m */,
 				E382E3A91C3A914A009059BA /* Info.plist */,
@@ -184,7 +191,6 @@
 				E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */,
 				E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */,
 				E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */,
-				E3CD77CA1C47F0E30047446F /* EDANullTests.m */,
 			);
 			path = EducationTestAppTests;
 			sourceTree = "<group>";
@@ -252,11 +258,47 @@
 			name = DataSource;
 			sourceTree = "<group>";
 		};
+		E389422D1C6218AF007C1E6A /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				E389422E1C6218D2007C1E6A /* NSArray+EDAExtentions.h */,
+				E389422F1C6218D2007C1E6A /* NSArray+EDAExtentions.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		E38942351C622371007C1E6A /* MockObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E389423A1C622415007C1E6A /* EDAMock */,
+				E38942361C622371007C1E6A /* EDAImp */,
+			);
+			path = MockObjects;
+			sourceTree = "<group>";
+		};
+		E38942361C622371007C1E6A /* EDAImp */ = {
+			isa = PBXGroup;
+			children = (
+				E38942371C622371007C1E6A /* EDAImp.h */,
+				E38942381C622371007C1E6A /* EDAImp.m */,
+			);
+			path = EDAImp;
+			sourceTree = "<group>";
+		};
+		E389423A1C622415007C1E6A /* EDAMock */ = {
+			isa = PBXGroup;
+			children = (
+				E389423B1C622424007C1E6A /* EDAMock.h */,
+				E389423C1C622424007C1E6A /* EDAMock.m */,
+			);
+			path = EDAMock;
+			sourceTree = "<group>";
+		};
 		E38ABC2C1C5216B8000AC3E4 /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABC2D1C5216B8000AC3E4 /* NSObject+Subclasses.h */,
-				E38ABC2E1C5216B8000AC3E4 /* NSObject+Subclasses.m */,
+				E38ABC2D1C5216B8000AC3E4 /* NSObject+EDARuntime.h */,
+				E38ABC2E1C5216B8000AC3E4 /* NSObject+EDARuntime.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -264,42 +306,35 @@
 		E38ABC301C5216ED000AC3E4 /* NSNull */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABC311C5216ED000AC3E4 /* NSNull+Swizzling.h */,
-				E38ABC321C5216ED000AC3E4 /* NSNull+Swizzling.m */,
+				E38ABC311C5216ED000AC3E4 /* NSNull+EDARuntime.h */,
+				E38ABC321C5216ED000AC3E4 /* NSNull+EDARuntime.m */,
 			);
 			path = NSNull;
-			sourceTree = "<group>";
-		};
-		E38ABC341C5216F8000AC3E4 /* NSDictionary */ = {
-			isa = PBXGroup;
-			children = (
-				E38ABC351C5216F8000AC3E4 /* NSDictionary+NSNull.h */,
-				E38ABC361C5216F8000AC3E4 /* NSDictionary+NSNull.m */,
-			);
-			path = NSDictionary;
 			sourceTree = "<group>";
 		};
 		E38CA30F1C4E90BA0047845A /* NSObject */ = {
 			isa = PBXGroup;
 			children = (
-				E38CA3101C4E90E20047845A /* NSObject+SubclassesTests.m */,
+				E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */,
+				E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
 		};
-		E392D3C41C4D2232006BFA4B /* NSDictionary */ = {
+		E39D19531C560A8200A0D3E9 /* EDANullTests */ = {
 			isa = PBXGroup;
 			children = (
-				E392D3C51C4D2284006BFA4B /* NSDictionaryTests.m */,
+				E39D19541C560A8200A0D3E9 /* EDANullTests.m */,
 			);
-			name = NSDictionary;
+			path = EDANullTests;
 			sourceTree = "<group>";
 		};
-		E39D4FF91C4F8E6000333F57 /* NSNull */ = {
+		E39D4FF91C4F8E6000333F57 /* NSNullTests */ = {
 			isa = PBXGroup;
 			children = (
-				E39D4FFA1C4F8E7900333F57 /* EDANSNullTests.m */,
+				E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */,
 			);
+			name = NSNullTests;
 			path = NSNull;
 			sourceTree = "<group>";
 		};
@@ -308,7 +343,7 @@
 			children = (
 				E38ABC2C1C5216B8000AC3E4 /* NSObject */,
 				E38ABC301C5216ED000AC3E4 /* NSNull */,
-				E38ABC341C5216F8000AC3E4 /* NSDictionary */,
+				E389422D1C6218AF007C1E6A /* NSArray */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -374,6 +409,7 @@
 		E382E3821C3A914A009059BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = EDA;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Voropaev Vitali";
 				TargetAttributes = {
@@ -435,14 +471,14 @@
 				E3CD77C91C47F0660047446F /* EDANull.m in Sources */,
 				E382E3DD1C3AB213009059BA /* EDAResponseRequestResult.m in Sources */,
 				E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */,
-				E38ABC331C5216ED000AC3E4 /* NSNull+Swizzling.m in Sources */,
 				E382E3E31C3AB263009059BA /* EDAResponseLayout.m in Sources */,
-				E38ABC371C5216F8000AC3E4 /* NSDictionary+NSNull.m in Sources */,
 				E382E3921C3A914A009059BA /* AppDelegate.m in Sources */,
 				E382E3DA1C3AB1BE009059BA /* EDAResponseMetadata.m in Sources */,
 				E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */,
-				E38ABC2F1C5216B8000AC3E4 /* NSObject+Subclasses.m in Sources */,
+				E38ABC2F1C5216B8000AC3E4 /* NSObject+EDARuntime.m in Sources */,
+				E38ABC381C522D3D000AC3E4 /* NSNull+EDARuntime.m in Sources */,
 				E382E3C71C3A9C49009059BA /* EDATableViewCell.m in Sources */,
+				E38942301C6218D2007C1E6A /* NSArray+EDAExtentions.m in Sources */,
 				E382E3CF1C3A9E53009059BA /* EDAData.m in Sources */,
 				E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */,
 				E382E38F1C3A914A009059BA /* main.m in Sources */,
@@ -454,14 +490,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E382E3D41C3AA80D009059BA /* EDADataTests.m in Sources */,
-				E392D3C61C4D2284006BFA4B /* NSDictionaryTests.m in Sources */,
-				E3CD77CB1C47F0E30047446F /* EDANullTests.m in Sources */,
-				E38CA3111C4E90E20047845A /* NSObject+SubclassesTests.m in Sources */,
+				E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */,
 				E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */,
 				E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */,
 				E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */,
-				E39D4FFB1C4F8E7900333F57 /* EDANSNullTests.m in Sources */,
+				E38942391C622371007C1E6A /* EDAImp.m in Sources */,
+				E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */,
 				E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */,
+				E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */,
+				E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */,
+				E389423D1C622424007C1E6A /* EDAMock.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
 			);
