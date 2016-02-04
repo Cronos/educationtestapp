@@ -8,6 +8,7 @@
 
 #import "EDANull.h"
 #import <objc/runtime.h>
+#import "NSMethodSignature+EDAExtentions.h"
 
 @interface EDANull()<NSCoding>
 
@@ -64,14 +65,19 @@
     NSMethodSignature *signature = [super methodSignatureForSelector:selector];
     if (!signature) {
         signature = [self methodSignatureForSelector:@selector(fakeMethod)];
+        signature.nilForwarded = YES;
     }
     
     return signature;
 }
 
 - (void)forwardInvocation:(NSInvocation *)invocation {
-    invocation.target = nil;
-    [invocation invoke];
+    if (invocation.methodSignature.nilForwarded) {
+        invocation.target = nil;
+        [invocation invoke];
+    } else {
+        [super forwardInvocation:invocation];
+    }
 }
 
 - (void)fakeMethod {
