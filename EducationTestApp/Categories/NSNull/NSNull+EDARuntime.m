@@ -11,9 +11,6 @@
 #import "EDANull.h"
 #import "NSObject+EDARuntime.h"
 
-typedef id(*EDAMethodNewIMP)(id, SEL);
-typedef id(*EDAMethodAllocIMP)(id, SEL);
-typedef id(*EDAMethodAllocWithZoneIMP)(id, SEL, NSZone *);
 typedef id(*EDAMethodNullIMP)(id, SEL);
 
 @implementation NSNull (EDARuntime)
@@ -27,7 +24,10 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
 
 
 + (void)replaceNull {
-    EDAPrepareForReplaceSelector(@"null");
+ 
+    SEL selector = @selector(null);
+    Class class = object_getClass(self);
+
     EDABlockWithIMP block = ^(IMP implementation) {
         EDAMethodNullIMP methodIMP = (EDAMethodNullIMP)[class instanceMethodForSelector:@selector(edaNull)];
         
@@ -37,6 +37,7 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
             return methodIMP(object, selector);
         };
     };
+    
     [class setBlock:block forSelector:selector];
 }
 
