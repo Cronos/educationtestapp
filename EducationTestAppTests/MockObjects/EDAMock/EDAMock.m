@@ -8,6 +8,7 @@
 
 #import "EDAMock.h"
 #import "NSobject+EDARuntime.h"
+#import "EDANull.h"
 
 @implementation EDAMock
 
@@ -31,6 +32,14 @@
     for (NSString *name in names) {
         parentClass = [parentClass registerClassWithName:name];
     }
+}
+
++ (void)EDANullArchivedData:(void(^)(NSData *data))block {
+    block ? block([NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]) : nil;
+}
+
++ (void)dataWithJSONEDANullObject:(void(^)(NSData *data))block {
+    block ? block([NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]) : nil;
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "EDANull.h"
 #import "NSObject+EDARuntime.h"
 #import "EDAImp.h"
+#import "EDAMock.h"
 
 typedef id(*EDAMethodClassIMP)(id, SEL);
 typedef BOOL(*EDAMethodIsKindOfClassIMP)(id, SEL, Class);
@@ -22,10 +23,6 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 @property (nonatomic, strong) NSMutableDictionary *savedImplementations;
 
 @end
-
-NSData *dataWithJSONEDANullObject() {
-    return [NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil];
-}
 
 @implementation EDANSJSONSerializationTest
 
@@ -66,15 +63,24 @@ NSData *dataWithJSONEDANullObject() {
     [self replaceEDANullMethodIsMemberOfClass];
     [self replaceEDANullMethodIsSubclassOfClass];
     
-    NSData *data = dataWithJSONEDANullObject();
-    XCTAssertNotNil(data, @"dataWithJSONObject not initialized");
-    XCTAssertTrue(self.calledMethods.count == 2, @"JSONWithEDANullObject must to call 2 methods");
-    XCTAssertTrue([self.calledMethods containsObject:@"isKindOfClass:"], @"[NSJSONSerialization dataWithJSONObject] must be call 'isKindOfClass' method");
-    XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
+    [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
+        XCTAssertNotNil(data, @"dataWithJSONObject not initialized");
+        XCTAssertTrue(self.calledMethods.count == 2, @"JSONWithEDANullObject must to call 2 methods");
+        XCTAssertTrue([self.calledMethods containsObject:@"isKindOfClass:"], @"[NSJSONSerialization dataWithJSONObject] must be call 'isKindOfClass' method");
+        XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
+    }];
+    
 }
 
 - (void)testMethodsForJSONObjectWithData {
-    NSData *data = dataWithJSONEDANullObject();
+    [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
+        [self.calledMethods removeAllObjects];
+        
+        
+        NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        XCTAssertNotNil(array, @"JSONObjectWithData not initialized");
+        XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
+    }];
     
     [self.calledMethods removeAllObjects];
     [self replaceEDANullMethodClass];
@@ -106,61 +112,83 @@ NSData *dataWithJSONEDANullObject() {
 #pragma mark -
 #pragma mark Runtime methods
 
-#define EDAPrepareForReplaceSelector(sel) \
-SEL selector = NSSelectorFromString(sel);  \
-id object = [EDANull class]; \
-Class class = object_getClass(object)
 
 #pragma mark -
 #pragma mark Replace methods
 
+- (void)prepareForReplaceSelector:(SEL)selector completion:(void (^)(id object, Class class, SEL selector))completion{
+    id object = [EDANull class];
+    Class class = object_getClass(object);
+    
+    completion ? completion(object, class, selector) : nil;
+}
+
 - (void)replaceEDANullMethodClass {
-    EDAPrepareForReplaceSelector(@"class");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodClassIMP methodIMP = (EDAMethodClassIMP)implementation;
-        [self saveImplementation:implementation forSelector:selector];
-        return (id)^(id object) {
-            [self.calledMethods addObject:NSStringFromSelector(selector)];
-            return methodIMP(object, selector);
+    [self prepareForReplaceSelector:@selector(class) completion:^(id object, __unsafe_unretained Class class, SEL selector) {
+        EDABlockWithIMP block = ^(IMP implementation) {
+            [self saveImplementationForSelector:selector forObject:object];
+            EDAMethodClassIMP methodIMP = (EDAMethodClassIMP)implementation;
+
+            return (id)^(id object) {
+                [self.calledMethods addObject:NSStringFromSelector(selector)];
+                
+                return methodIMP(object, selector);
+            };
         };
-    };
-    [object setBlock:block forSelector:selector];
+        
+        [object setBlock:block forSelector:selector];
+    }];
 }
 
 - (void)replaceEDANullMethodIsKindOfClass {
-    EDAPrepareForReplaceSelector(@"isKindOfClass:");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodIsKindOfClassIMP methodIMP = (EDAMethodIsKindOfClassIMP)implementation;
-        return (id)^(id object, Class class) {
-            [self.calledMethods addObject:NSStringFromSelector(selector)];
-            return methodIMP(object, selector, class);
+    [self prepareForReplaceSelector:@selector(isKindOfClass:) completion:^(id object, __unsafe_unretained Class class, SEL selector) {
+        EDABlockWithIMP block = ^(IMP implementation) {
+            [self saveImplementationForSelector:selector forObject:object];
+            EDAMethodIsKindOfClassIMP methodIMP = (EDAMethodIsKindOfClassIMP)implementation;
+            
+            return (id)^(id object, Class class) {
+                [self.calledMethods addObject:NSStringFromSelector(selector)];
+                
+                return methodIMP(object, selector, class);
+            };
         };
-    };
-    [object setBlock:block forSelector:selector];
+        
+        [object setBlock:block forSelector:selector];
+    }];
 }
 
 - (void)replaceEDANullMethodIsMemberOfClass {
-    EDAPrepareForReplaceSelector(@"isMemberOfClass:");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodIsMemberOfClassIMP methodIMP = (EDAMethodIsMemberOfClassIMP)implementation;
-        return (id)^(id object, Class class) {
-            [self.calledMethods addObject:NSStringFromSelector(selector)];
-            return methodIMP(object, selector, class);
+    [self prepareForReplaceSelector:@selector(isMemberOfClass:) completion:^(id object, __unsafe_unretained Class class, SEL selector) {
+        EDABlockWithIMP block = ^(IMP implementation) {
+            [self saveImplementationForSelector:selector forObject:object];
+            EDAMethodIsMemberOfClassIMP methodIMP = (EDAMethodIsMemberOfClassIMP)implementation;
+            
+            return (id)^(id object, Class class) {
+                [self.calledMethods addObject:NSStringFromSelector(selector)];
+                
+                return methodIMP(object, selector, class);
+            };
         };
-    };
-    [object setBlock:block forSelector:selector];
+        
+        [object setBlock:block forSelector:selector];
+    }];
 }
 
 - (void)replaceEDANullMethodIsSubclassOfClass {
-    EDAPrepareForReplaceSelector(@"isSubclassOfClass:");
-    EDABlockWithIMP block = ^(IMP implementation) {
-        EDAMethodIsSubclassOfClassIMP methodIMP = (EDAMethodIsSubclassOfClassIMP)implementation;
-        return (id)^(id object, Class class) {
-            [self.calledMethods addObject:NSStringFromSelector(selector)];
-            return methodIMP(object, selector, class);
+    [self prepareForReplaceSelector:@selector(isSubclassOfClass:) completion:^(id object, __unsafe_unretained Class class, SEL selector) {
+        EDABlockWithIMP block = ^(IMP implementation) {
+            [self saveImplementationForSelector:selector forObject:class];
+            EDAMethodIsSubclassOfClassIMP methodIMP = (EDAMethodIsSubclassOfClassIMP)implementation;
+
+            return (id)^(id object, Class class) {
+                [self.calledMethods addObject:NSStringFromSelector(selector)];
+                
+                return methodIMP(object, selector, class);
+            };
         };
-    };
-    [class setBlock:block forSelector:selector];
+        
+        [class setBlock:block forSelector:selector];
+    }];
 }
 
 #pragma mark -

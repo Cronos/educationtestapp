@@ -10,18 +10,13 @@
 #import "EDANull.h"
 #import <objc/runtime.h>
 #import "NSObject+EDARuntime.h"
+#import "EDAMock.h"
 
 @interface EDANullTests : XCTestCase
 
 @end
 
 @implementation EDANullTests
-
-#define EDANullArchived \
-[NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]
-
-#define JSONWithEDANullObject \
-[NSJSONSerialization dataWithJSONObject:@[[EDANull null]] options:NSJSONWritingPrettyPrinted error:nil]
 
 - (void)setUp {
     [super setUp];
@@ -86,34 +81,39 @@
 #pragma mark NSCoding protocol tests
 
 - (void)testNSKeyedArchiver {
-    NSData *data = EDANullArchived;
-    XCTAssertNotNil(data, @"[EDANull null] archive error");
+    [EDAMock EDANullArchivedData:^(NSData *data) {
+        XCTAssertNotNil(data, @"[EDANull null] archive error");
+    }];
 }
 
 - (void)testNSKeyedUnarchiver {
-    id object = [NSKeyedUnarchiver unarchiveObjectWithData:EDANullArchived];
-    XCTAssertNotNil(object, @"[EDANull null] unarchive error");
-    XCTAssertTrue([object isMemberOfClass:[EDANull class]], @"object must be EDANull class");
+    [EDAMock EDANullArchivedData:^(NSData *data) {
+        id object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        XCTAssertNotNil(object, @"[EDANull null] unarchive error");
+        XCTAssertTrue([object isMemberOfClass:[EDANull class]], @"object must be EDANull class");
+    }];
 }
 
 #pragma mark -
 #pragma mark JSONSerialization tests
 
 - (void)testSerializationEDANullToJSON {
-    NSData *data = JSONWithEDANullObject;
-    XCTAssertNotNil(data, @"data init error");
+    [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
+        XCTAssertNotNil(data, @"data init error");
+    }];
 }
 
 - (void)testSerializationJSONToEDANull {
-    NSError *error = nil;
-    NSData *data = JSONWithEDANullObject;
-    XCTAssertNotNil(data, @"data init error");
-
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-    XCTAssertNil(error, @"serialization to array error");
-    XCTAssertEqual(array.count, 1, @"array.count must be is equals to 1");
-    Class class = [array[0] class];
-    XCTAssertTrue(class == [EDANull class], @"object must be EDANull class instead %@", class);
+    [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
+        XCTAssertNotNil(data, @"data init error");
+        
+        NSError *error = nil;
+        NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        XCTAssertNil(error, @"serialization to array error");
+        XCTAssertEqual(array.count, 1, @"array.count must be is equals to 1");
+        Class class = [array[0] class];
+        XCTAssertTrue(class == [EDANull class], @"object must be EDANull class instead %@", class);
+    }];
 }
 
 @end
