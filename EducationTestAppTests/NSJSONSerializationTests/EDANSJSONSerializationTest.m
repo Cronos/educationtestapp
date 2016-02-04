@@ -88,21 +88,41 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 #pragma mark Store/restore implementation tests
 
 - (void)testSaveImplementation {
-//    SEL selector = @selector(class);
+    SEL selector = @selector(class);
+    id object = [EDANull class];
     
     [self.calledMethods removeAllObjects];
     [self replaceEDANullMethodClass];
 
-    Class class = [[EDANull null] class];
+    Class class = [[EDANull null] class];       // call new method
     XCTAssertNotNil(class, @"edanullClass is nil");
-    XCTAssertTrue(self.calledMethods.count == 1, @"JSONWithEDANullObject must to call 1 methods");
-     XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
+    XCTAssertTrue(self.calledMethods.count == 1, @"New implementation of [[EDANull null] class] must save 1 methods");
+    XCTAssertTrue([self.calledMethods containsObject:@"class"], @"New implementation of [[EDANull null] class] must be call 'class' method");
+    
+    [self.calledMethods removeAllObjects];
+    [self restoreImplementationForSelector:selector forObject:object];
+    
+    class = [[EDANull null] class];             // call original method
+    XCTAssertNotNil(class, @"edanullClass is nil");
+    XCTAssertTrue(self.calledMethods.count == 0, @"Original implementation of [[EDANull null] class] must no save any methods");
+    XCTAssertEqualObjects(NSStringFromClass(class), @"EDANull", @"class must be EDANull");
+
+    selector = @selector(isSubclassOfClass:);
+    
+    [self.calledMethods removeAllObjects];
+    [self replaceEDANullMethodIsSubclassOfClass];
+    
+    BOOL result = [EDANull isSubclassOfClass:[NSObject class]];
+    XCTAssertTrue(result, @"edanullClass must be subclass of NSObject");
+    XCTAssertTrue(self.calledMethods.count == 1, @"New implementation of [EDANull isSubclassOfClass] must save 1 methods");
+    XCTAssertTrue([self.calledMethods containsObject:@"isSubclassOfClass:"], @"New implementation of [EDANull isSubclassOfClass] must be call 'isSubclassOfClass' method");
+    
+    [self.calledMethods removeAllObjects];
+    [self restoreImplementationForSelector:selector forObject:object_getClass(object)];
+    result = [EDANull isSubclassOfClass:[NSObject class]];
+    XCTAssertTrue(result, @"edanullClass must be subclass of NSObject");
+    XCTAssertTrue(self.calledMethods.count == 0, @"Original implementation of [EDANull isSubclassOfClass] must no save any methods");
 }
-
-
-#pragma mark -
-#pragma mark Runtime methods
-
 
 #pragma mark -
 #pragma mark Replace methods
@@ -205,7 +225,6 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
                             implementation,
                             method_getTypeEncoding(method));
     }
-
 }
 
 - (IMP)storedImplementationForSelector:(SEL)selector {
