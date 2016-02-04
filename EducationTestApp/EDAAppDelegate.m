@@ -6,13 +6,13 @@
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "EDAAppDelegate.h"
 
-@interface AppDelegate ()
+@interface EDAAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation EDAAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

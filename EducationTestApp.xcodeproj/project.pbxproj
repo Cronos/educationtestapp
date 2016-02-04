@@ -10,7 +10,7 @@
 		E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */; };
 		E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C6041C3C1DBC0006F1C1 /* EDADataManager.m */; };
 		E382E38F1C3A914A009059BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E38E1C3A914A009059BA /* main.m */; };
-		E382E3921C3A914A009059BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3911C3A914A009059BA /* AppDelegate.m */; };
+		E382E3921C3A914A009059BA /* EDAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3911C3A914A009059BA /* EDAAppDelegate.m */; };
 		E382E3981C3A914A009059BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382E3961C3A914A009059BA /* Main.storyboard */; };
 		E382E39A1C3A914A009059BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E382E3991C3A914A009059BA /* Assets.xcassets */; };
 		E382E39D1C3A914A009059BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382E39B1C3A914A009059BA /* LaunchScreen.storyboard */; };
@@ -58,8 +58,8 @@
 		E382C6041C3C1DBC0006F1C1 /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDADataManager.m; path = DataSource/EDADataManager.m; sourceTree = "<group>"; };
 		E382E38A1C3A914A009059BA /* EducationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382E38E1C3A914A009059BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E382E3901C3A914A009059BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E382E3911C3A914A009059BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E382E3901C3A914A009059BA /* EDAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAAppDelegate.h; sourceTree = "<group>"; };
+		E382E3911C3A914A009059BA /* EDAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAAppDelegate.m; sourceTree = "<group>"; };
 		E382E3971C3A914A009059BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E382E3991C3A914A009059BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E382E39C1C3A914A009059BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				E382E3C21C3A9B49009059BA /* Cells */,
 				E382E3C11C3A9B23009059BA /* Views */,
 				E382E3C01C3A91ED009059BA /* Controllers */,
-				E382E3901C3A914A009059BA /* AppDelegate.h */,
-				E382E3911C3A914A009059BA /* AppDelegate.m */,
+				E382E3901C3A914A009059BA /* EDAAppDelegate.h */,
+				E382E3911C3A914A009059BA /* EDAAppDelegate.m */,
 				E382E3961C3A914A009059BA /* Main.storyboard */,
 				E382E3991C3A914A009059BA /* Assets.xcassets */,
 				E382E39B1C3A914A009059BA /* LaunchScreen.storyboard */,
@@ -498,7 +498,7 @@
 				E382E3DD1C3AB213009059BA /* EDAResponseRequestResult.m in Sources */,
 				E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */,
 				E382E3E31C3AB263009059BA /* EDAResponseLayout.m in Sources */,
-				E382E3921C3A914A009059BA /* AppDelegate.m in Sources */,
+				E382E3921C3A914A009059BA /* EDAAppDelegate.m in Sources */,
 				E39F84031C6383B200AC27EF /* NSArray+EDAExtentions.m in Sources */,
 				E382E3DA1C3AB1BE009059BA /* EDAResponseMetadata.m in Sources */,
 				E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */,
