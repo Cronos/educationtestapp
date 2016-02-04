@@ -167,8 +167,8 @@ Class class = object_getClass(object)
 #pragma mark Set/Get implementation methods
 
 - (void)saveImplementationForSelector:(SEL)selector forObject:(id)object {
-    IMP classIMP = [object instanceMethodForSelector:selector];
-    id impObject = [self objectWithImplementation:classIMP];
+    IMP implementation = [object instanceMethodForSelector:selector];
+    EDAImp *impObject = [EDAImp instanceWithImplementation:implementation];
     [self.savedImplementations setObject:impObject forKey:NSStringFromSelector(selector)];
 }
 

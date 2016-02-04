@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface EDAImp : NSObject
+@property (nonatomic, assign, readonly) IMP implementation;
 
-- (void)setImplementation:(IMP)implementation;
-- (IMP)implementation;
++ (instancetype)instanceWithImplementation:(IMP)implementation;
 
 @end
