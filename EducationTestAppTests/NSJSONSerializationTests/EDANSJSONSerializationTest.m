@@ -207,9 +207,11 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     }
 
 }
+
 - (IMP)storedImplementationForSelector:(SEL)selector {
     NSString *method = NSStringFromSelector(selector);
     EDAImp *object = [self.savedImplementations objectForKey:method];
+    [self.savedImplementations removeObjectForKey:method];
     return object.implementation;
 }
 
