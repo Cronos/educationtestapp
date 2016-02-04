@@ -38,7 +38,7 @@ typedef id(^EDABlockWithIMP)(IMP implementation);
 + (Class)metaclass;
 + (NSSet *)subclasses;
 
-+ (Class)registerClassWithName:(NSString *)name;
-+ (void)unregisterClassWithName:(NSString *)name;
++ (Class)subclassWithName:(NSString *)name;
++ (void)unregister;
 
 @end
