@@ -34,6 +34,13 @@
     }
 }
 
++ (void)unregisterClassesWithNames:(NSArray <NSString *> *)array {
+    for (NSString *name in array) {
+        Class class = NSClassFromString(name);
+        [class unregister];
+    }
+}
+
 + (void)EDANullArchivedData:(void(^)(NSData *data))block {
     block ? block([NSKeyedArchiver archivedDataWithRootObject:[EDANull null]]) : nil;
 }

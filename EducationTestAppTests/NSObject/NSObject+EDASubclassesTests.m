@@ -31,7 +31,7 @@
         XCTAssertEqualObjects(NSStringFromClass(metaclass), NSStringFromClass([NSObject class]), @"Metaclass for metaclass must be %@ class", NSStringFromClass([NSObject class]));
     }];
     
-    [self unregisterClassesWithNames:reverseNames];
+    [EDAMock unregisterClassesWithNames:reverseNames];
 }
 
 - (void)testSubclasses {
@@ -45,13 +45,7 @@
         XCTAssertEqual(set.count, idx, @"Subclasses for %@ class must be equal to %ld", (NSString *)obj, idx);
     }];
     
-    [self unregisterClassesWithNames:reverseNames];
+    [EDAMock unregisterClassesWithNames:reverseNames];
 }
 
-- (void)unregisterClassesWithNames:(NSArray <NSString *> *)array {
-    for (NSString *name in array) {
-        Class class = NSClassFromString(name);
-        [class unregister];
-    }
-}
 @end
