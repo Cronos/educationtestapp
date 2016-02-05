@@ -1,12 +1,12 @@
 //
-//  EDANetwork.m
+//  EDANetworkManager.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 11.01.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "EDANetwork.h"
+#import "EDANetworkManager.h"
 #import "EDAResponse.h"
 
 static NSString *const EDARequestPath = @"http://localhost";
@@ -20,17 +20,16 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
     EDANetworkRequestDataList
 };
 
-@implementation EDANetwork
+@implementation EDANetworkManager
 
 + (void)sendRequest:(EDANetworkRequestType)requestType withParameters:(NSDictionary *)parameters completionHandler:(EDAResponse *)completion {
-    
     switch (requestType) {
         case EDANetworkRequestOnceData:
         {
             if (completion) {
                 float delay = 0.5 + ((float)arc4random()/RAND_MAX)*2.0;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    EDAResponse *response = [EDAResponse responseFromDictionary:[EDANetwork resultForData:parameters[EDANetworkParameterId]]];
+                    EDAResponse *response = [EDAResponse responseFromDictionary:[EDANetworkManager resultForData:parameters[EDANetworkParameterId]]];
                     // call completion(response);
                 });
             }
@@ -51,16 +50,14 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
             requestParameters = [NSString stringWithFormat:@"/%@", dataId];
         }
     }
-    
-    
 }
 
 + (void)getDataWithId:(NSNumber *)Id completionHandler:(EDAResponse *)completion{
-    [EDANetwork sendRequest:EDANetworkRequestOnceData withParameters:@{EDANetworkParameterId : Id} completionHandler:completion];
+    [EDANetworkManager sendRequest:EDANetworkRequestOnceData withParameters:@{EDANetworkParameterId : Id} completionHandler:completion];
 }
 
 + (void)getDataListFrom:(NSInteger)index count:(NSInteger)count completionHandler:(EDAResponse *)completion{
-    [EDANetwork sendRequest:EDANetworkRequestDataList withParameters:@{EDANetworkParameterIndex : @(index), EDANetworkParameterCount : @(count)} completionHandler:completion];
+    [EDANetworkManager sendRequest:EDANetworkRequestDataList withParameters:@{EDANetworkParameterIndex : @(index), EDANetworkParameterCount : @(count)} completionHandler:completion];
 }
 
 #pragma mark - Test data
@@ -81,34 +78,29 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
                              },
                      @"data" : @[
                              @{
-                                 @"id" : Id,
-                                 @"content" : [EDANetwork randomStringWithLength:NSMakeRange(10, 200)], // length of each string should be random between 10 and 200 symbols
-                                 @"message" : [EDANetwork randomStringWithLength:NSMakeRange(100, 2000)], // // length should be random between 100 and 2000 symbols
-                                 @"image" : [EDANetwork imagePathForId:Id], // image URL pointing to real image (should differ for different ids)
-                                 @"images" : @[@"http://www.de/1.jpg", @"http://www.de/2.jpg"] // image URLs pointing to additional real image (can be duplicated for different ids)
+                                 @"id"      : Id,
+                                 @"content" : [EDANetworkManager randomStringWithLength:NSMakeRange(10, 200)], // length of each string should be random between 10 and 200 symbols
+                                 @"message" : [EDANetworkManager randomStringWithLength:NSMakeRange(100, 2000)], // // length should be random between 100 and 2000 symbols
+                                 @"image"   : [EDANetworkManager imagePathForId:Id], // image URL pointing to real image (should differ for different ids)
+                                 @"images"  : @[@"http://www.de/1.jpg", @"http://www.de/2.jpg"] // image URLs pointing to additional real image (can be duplicated for different ids)
                                  },
                              ]
                      }
              };
-
-    
 }
 
 + (NSDictionary *)resultForDataListFrom:(NSNumber *)index count:(NSNumber *)count {
-    
     return @{};
 }
 
 + (NSString *)imagePathForId:(NSNumber *)Id {
+    NSString *imageName = [NSString stringWithFormat:@"01%@.jpg", [EDANetworkManager filledStringForNumber:Id]];
     
-    NSString *imageName = [NSString stringWithFormat:@"01%@.jpg", [EDANetwork filledStringForNumber:Id]];
     return [EDARequestPath stringByAppendingPathComponent:imageName];
 }
 
 + (NSString *)randomStringWithLength:(NSRange)range {
-    
     NSUInteger length = range.location + arc4random_uniform((u_int32_t)(range.length - range.location));
-
     NSString *chars = @"ABCDEFG HIJKLMNOPQ- RSTUVWXYZ abcdefghij klmnopqr stuvwxyz -";
     
     NSMutableString *string = [NSMutableString stringWithString:@""];
@@ -121,7 +113,6 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
 }
 
 + (NSString *)filledStringForNumber:(NSNumber *)number {
-    
     NSMutableString *string = [NSMutableString stringWithString:number.stringValue];
     while (string.length<3) {
         [string insertString:@"0" atIndex:0];
