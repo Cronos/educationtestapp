@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSObject+EDARuntime.h"
-#import "NSArray+EDAExtentions.h"
+#import "NSArray+EDAExtensions.h"
 #import "EDAMock.h"
 
 @interface NSObject_EDASubclassesTests : XCTestCase

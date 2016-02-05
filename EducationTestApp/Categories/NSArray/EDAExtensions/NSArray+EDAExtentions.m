@@ -1,14 +1,14 @@
 //
-//  NSArray+EDAExtentions.m
+//  NSArray+EDAExtensions.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 03.02.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "NSArray+EDAExtentions.h"
+#import "NSArray+EDAExtensions.h"
 
-@implementation NSArray (EDAExtentions)
+@implementation NSArray (EDAExtensions)
 
 -(NSArray *)reverse {
     return [[self reverseObjectEnumerator] allObjects];
