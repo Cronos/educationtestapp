@@ -10,12 +10,12 @@
 
 @implementation NSArray (EDAExtensions)
 
--(NSArray *)reverse {
-    return [[self reverseObjectEnumerator] allObjects];
++ (NSArray *)reverseArray:(NSArray *)array {
+    return [array reverseArray];
 }
 
-+(NSArray *)reverseArray:(NSArray *)array {
-    return [array reverse];
+- (NSArray *)reverseArray {
+    return [[self reverseObjectEnumerator] allObjects];
 }
 
 @end

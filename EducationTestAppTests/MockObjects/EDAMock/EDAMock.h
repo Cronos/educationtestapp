@@ -12,6 +12,7 @@
 
 + (NSArray <NSString *> *)customClassNames:(NSString *)name withCapacity:(NSInteger)count;
 + (void)registerCustomClassesWithNames:(NSArray <NSString *> *)names withRootClass:(Class)class;
++ (void)unregisterClassesWithNames:(NSArray <NSString *> *)array;
 
 + (void)EDANullArchivedData:(void(^)(NSData *data))block;
 + (void)dataWithJSONEDANullObject:(void(^)(NSData *data))block;

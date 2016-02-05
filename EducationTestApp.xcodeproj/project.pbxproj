@@ -32,6 +32,7 @@
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
 		E38ABB611C64C8150099B5E6 /* NSArray+EDAExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABB601C64C8150099B5E6 /* NSArray+EDAExtentions.m */; };
 		E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */; };
+		E38DC34B1C638DE4004B3291 /* NSMethodSignature+EDAExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38DC34A1C638DE4004B3291 /* NSMethodSignature+EDAExtentions.m */; };
 		E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C6A571C43A1B90026F72A /* EDANetwork.m */; };
 		E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D19541C560A8200A0D3E9 /* EDANullTests.m */; };
 		E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */; };
@@ -96,6 +97,8 @@
 		E38ABB5F1C64C8150099B5E6 /* NSArray+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38ABB601C64C8150099B5E6 /* NSArray+EDAExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EDAExtentions.m"; sourceTree = "<group>"; };
 		E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDASubclassesTests.m"; sourceTree = "<group>"; };
+		E38DC3491C638DE4004B3291 /* NSMethodSignature+EDAExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+EDAExtentions.h"; sourceTree = "<group>"; };
+		E38DC34A1C638DE4004B3291 /* NSMethodSignature+EDAExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+EDAExtentions.m"; sourceTree = "<group>"; };
 		E39C6A561C43A1B90026F72A /* EDANetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDANetwork.h; path = Network/EDANetwork.h; sourceTree = "<group>"; };
 		E39C6A571C43A1B90026F72A /* EDANetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANetwork.m; path = Network/EDANetwork.m; sourceTree = "<group>"; };
 		E39D19541C560A8200A0D3E9 /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
@@ -327,6 +330,23 @@
 			path = NSObject;
 			sourceTree = "<group>";
 		};
+		E38DC3471C638D8F004B3291 /* NSMethodSignature */ = {
+			isa = PBXGroup;
+			children = (
+				E38DC3481C638DD8004B3291 /* EDAExtentions */,
+			);
+			path = NSMethodSignature;
+			sourceTree = "<group>";
+		};
+		E38DC3481C638DD8004B3291 /* EDAExtentions */ = {
+			isa = PBXGroup;
+			children = (
+				E38DC3491C638DE4004B3291 /* NSMethodSignature+EDAExtentions.h */,
+				E38DC34A1C638DE4004B3291 /* NSMethodSignature+EDAExtentions.m */,
+			);
+			path = EDAExtentions;
+			sourceTree = "<group>";
+		};
 		E39D19531C560A8200A0D3E9 /* EDANullTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +369,7 @@
 			children = (
 				E38ABC2C1C5216B8000AC3E4 /* NSObject */,
 				E38ABC301C5216ED000AC3E4 /* NSNull */,
+				E38DC3471C638D8F004B3291 /* NSMethodSignature */,
 				E389422D1C6218AF007C1E6A /* NSArray */,
 			);
 			path = Categories;
@@ -494,6 +515,7 @@
 				E382E3E61C3AB271009059BA /* EDAViewController.m in Sources */,
 				E39F83FB1C63835900AC27EF /* NSObject+EDARuntime.m in Sources */,
 				E3CD77C91C47F0660047446F /* EDANull.m in Sources */,
+				E38DC34B1C638DE4004B3291 /* NSMethodSignature+EDAExtentions.m in Sources */,
 				E39F83FF1C6383A300AC27EF /* NSNull+EDARuntime.m in Sources */,
 				E382E3DD1C3AB213009059BA /* EDAResponseRequestResult.m in Sources */,
 				E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */,

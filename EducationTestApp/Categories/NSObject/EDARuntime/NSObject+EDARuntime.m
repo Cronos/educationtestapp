@@ -65,15 +65,15 @@
 #pragma mark -
 #pragma mark Register/Unregister class
 
-+ (Class)registerClassWithName:(NSString *)name {
++ (Class)subclassWithName:(NSString *)name {
     Class newClass = objc_allocateClassPair(self, [name UTF8String], 0);
     objc_registerClassPair(newClass);
     
     return newClass;
 }
 
-+ (void)unregisterClassWithName:(NSString *)name {
-    objc_disposeClassPair(NSClassFromString(name));
++ (void)unregister {
+    objc_disposeClassPair(self);
 }
 
 @end

@@ -10,7 +10,8 @@
 
 @interface NSArray (EDAExtensions)
 
--(NSArray *)reverse;
-+(NSArray *)reverseArray:(NSArray *)array;
++ (NSArray *)reverseArray:(NSArray *)array;
+
+- (NSArray *)reverseArray;
 
 @end

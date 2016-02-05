@@ -19,7 +19,7 @@
 
 - (void)testCreateEDACustomClass {
     NSString *customClassName = @"EDATestClass";
-    Class class = [NSObject registerClassWithName:customClassName];
+    Class class = [NSObject subclassWithName:customClassName];
     XCTAssertNotNil(class, @"Class %@ not registered", customClassName);
     
     id object = [class new];
@@ -29,7 +29,7 @@
     XCTAssertTrue([object isKindOfClass:[NSObject class]], @"Object must be kind of %@ class", [NSObject class]);
     
     object = nil;
-    [NSObject unregisterClassWithName:customClassName];
+    [class unregister];
 }
 
 - (void)testUnregisterCustomClasses {
@@ -37,11 +37,11 @@
     
     [EDAMock registerCustomClassesWithNames:customClassNames withRootClass:[NSObject class]];
     
-    NSArray *reverseNames = [customClassNames reverse];
+    NSArray *reverseNames = [customClassNames reverseArray];
     for (NSString *name in reverseNames) {
-        [NSObject unregisterClassWithName:name];
         Class class = NSClassFromString(name);
-        XCTAssertNil(class, @"Class %@ not unregistered", name);
+        [class unregister];
+        XCTAssertNil(NSClassFromString(name), @"Class %@ not unregistered", name);
     }
 }
 
