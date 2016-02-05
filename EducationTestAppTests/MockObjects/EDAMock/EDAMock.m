@@ -30,7 +30,14 @@
 + (void)registerCustomClassesWithNames:(NSArray <NSString *> *)names withRootClass:(Class)class {
     Class parentClass = class;
     for (NSString *name in names) {
-        parentClass = [parentClass registerClassWithName:name];
+        parentClass = [parentClass subclassWithName:name];
+    }
+}
+
++ (void)unregisterClassesWithNames:(NSArray <NSString *> *)array {
+    for (NSString *name in array) {
+        Class class = NSClassFromString(name);
+        [class unregister];
     }
 }
 

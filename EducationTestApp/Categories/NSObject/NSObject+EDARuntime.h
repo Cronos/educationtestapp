@@ -24,21 +24,21 @@ typedef OBJC_ENUM(uintptr_t, EDAPropertyPolicy) {
     
     // Specifies an atomic copy property.
     EDAPropertyAtomicCopy = OBJC_ASSOCIATION_COPY
-    };
-
+};
+    
 typedef id(^EDABlockWithIMP)(IMP implementation);
-
-@interface NSObject (Runtime)
+    
+@interface NSObject (EDARuntime)
 
 + (void)setBlock:(EDABlockWithIMP)block forSelector:(SEL)selector;
-
-- (void)setValue:(id)value forPropertyKey:(const NSString *)key associationPolicy:(EDAPropertyPolicy)policy;
-- (id)valueForPropertyKey:(const NSString *)key;
 
 + (Class)metaclass;
 + (NSSet *)subclasses;
 
-+ (Class)registerClassWithName:(NSString *)name;
-+ (void)unregisterClassWithName:(NSString *)name;
++ (Class)subclassWithName:(NSString *)name;
++ (void)unregister;
+
+- (void)setValue:(id)value forPropertyKey:(const NSString *)key associationPolicy:(EDAPropertyPolicy)policy;
+- (id)valueForPropertyKey:(const NSString *)key;
 
 @end

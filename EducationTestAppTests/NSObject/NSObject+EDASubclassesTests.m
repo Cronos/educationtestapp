@@ -22,7 +22,7 @@
 
     [EDAMock registerCustomClassesWithNames:customClassNames withRootClass:[NSObject class]];
     
-    NSArray *reverseNames = [customClassNames reverse];
+    NSArray *reverseNames = [customClassNames reverseArray];
     [reverseNames enumerateObjectsUsingBlock:^(NSString  * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         Class class = NSClassFromString((NSString *)obj);
         Class metaclass = [class metaclass];
@@ -31,9 +31,7 @@
         XCTAssertEqualObjects(NSStringFromClass(metaclass), NSStringFromClass([NSObject class]), @"Metaclass for metaclass must be %@ class", NSStringFromClass([NSObject class]));
     }];
     
-    for (NSString *name in reverseNames) {
-        [NSObject unregisterClassWithName:name];
-    }
+    [EDAMock unregisterClassesWithNames:reverseNames];
 }
 
 - (void)testSubclasses {
@@ -41,15 +39,13 @@
 
     [EDAMock registerCustomClassesWithNames:customClassNames withRootClass:[NSObject class]];
     
-    NSArray *reverseNames = [customClassNames reverse];
+    NSArray *reverseNames = [customClassNames reverseArray];
     [reverseNames enumerateObjectsUsingBlock:^(NSString  *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSSet *set = [NSClassFromString(obj) subclasses];
         XCTAssertEqual(set.count, idx, @"Subclasses for %@ class must be equal to %ld", (NSString *)obj, idx);
     }];
     
-    for (NSString *name in reverseNames) {
-        [NSObject unregisterClassWithName:name];
-    }
+    [EDAMock unregisterClassesWithNames:reverseNames];
 }
 
 @end

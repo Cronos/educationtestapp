@@ -88,6 +88,7 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 #pragma mark Store/restore implementation tests
 
 - (void)testSaveImplementation {
+    //test -method
     SEL selector = @selector(class);
     id object = [EDANull class];
     
@@ -107,6 +108,8 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     XCTAssertTrue(self.calledMethods.count == 0, @"Original implementation of [[EDANull null] class] must no save any methods");
     XCTAssertEqualObjects(NSStringFromClass(class), @"EDANull", @"class must be EDANull");
 
+    
+    // test +method
     selector = @selector(isSubclassOfClass:);
     
     [self.calledMethods removeAllObjects];
@@ -231,6 +234,7 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     NSString *method = NSStringFromSelector(selector);
     EDAImp *object = [self.savedImplementations objectForKey:method];
     [self.savedImplementations removeObjectForKey:method];
+    
     return object.implementation;
 }
 
@@ -248,4 +252,5 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     }
     [self restoreImplementationForSelector:@selector(isSubclassOfClass:) forObject:object_getClass(object)];
 }
+
 @end
