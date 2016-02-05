@@ -8,38 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */; };
-		E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C6041C3C1DBC0006F1C1 /* EDADataManager.m */; };
-		E382E38F1C3A914A009059BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E38E1C3A914A009059BA /* main.m */; };
-		E382E3921C3A914A009059BA /* EDAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3911C3A914A009059BA /* EDAAppDelegate.m */; };
-		E382E3981C3A914A009059BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382E3961C3A914A009059BA /* Main.storyboard */; };
-		E382E39A1C3A914A009059BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E382E3991C3A914A009059BA /* Assets.xcassets */; };
-		E382E39D1C3A914A009059BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E382E39B1C3A914A009059BA /* LaunchScreen.storyboard */; };
 		E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3A71C3A914A009059BA /* EducationTestAppTests.m */; };
-		E382E3C41C3A9B6A009059BA /* EDATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E382E3C31C3A9B6A009059BA /* EDATableViewCell.xib */; };
-		E382E3C71C3A9C49009059BA /* EDATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3C61C3A9C49009059BA /* EDATableViewCell.m */; };
-		E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3CA1C3A9DE6009059BA /* EDAResponse.m */; };
-		E382E3CF1C3A9E53009059BA /* EDAData.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3CE1C3A9E53009059BA /* EDAData.m */; };
 		E382E3D41C3AA80D009059BA /* EDADataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3D31C3AA80D009059BA /* EDADataTests.m */; };
-		E382E3DA1C3AB1BE009059BA /* EDAResponseMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3D91C3AB1BE009059BA /* EDAResponseMetadata.m */; };
-		E382E3DD1C3AB213009059BA /* EDAResponseRequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3DC1C3AB213009059BA /* EDAResponseRequestResult.m */; };
-		E382E3E31C3AB263009059BA /* EDAResponseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3E21C3AB263009059BA /* EDAResponseLayout.m */; };
-		E382E3E61C3AB271009059BA /* EDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3E51C3AB271009059BA /* EDAViewController.m */; };
 		E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */; };
 		E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */; };
 		E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */; };
 		E38942391C622371007C1E6A /* EDAImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E38942381C622371007C1E6A /* EDAImp.m */; };
 		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
-		E38ABB611C64C8150099B5E6 /* NSArray+EDAExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABB601C64C8150099B5E6 /* NSArray+EDAExtentions.m */; };
-		E38ABB651C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABB641C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.m */; };
+		E38ABBA71C64E9930099B5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */; };
+		E38ABBA81C64E9930099B5E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6D1C64E9930099B5E6 /* LaunchScreen.storyboard */; };
+		E38ABBA91C64E9930099B5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6F1C64E9930099B5E6 /* Main.storyboard */; };
+		E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBBC1C64F60F0099B5E6 /* EDAAppDelegate.m */; };
+		E38ABBC01C64F60F0099B5E6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E38ABBBD1C64F60F0099B5E6 /* Info.plist */; };
+		E38ABBC11C64F60F0099B5E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBBE1C64F60F0099B5E6 /* main.m */; };
+		E38ABBF91C64F6170099B5E6 /* NSArray+EDAExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBC81C64F6170099B5E6 /* NSArray+EDAExtentions.m */; };
+		E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBCC1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m */; };
+		E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD01C64F6170099B5E6 /* NSNull+EDARuntime.m */; };
+		E38ABBFC1C64F6170099B5E6 /* NSObject+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD41C64F6170099B5E6 /* NSObject+EDARuntime.m */; };
+		E38ABBFD1C64F6170099B5E6 /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD81C64F6170099B5E6 /* EDADataManager.m */; };
+		E38ABBFE1C64F6170099B5E6 /* EDANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBDB1C64F6170099B5E6 /* EDANetworkManager.m */; };
+		E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBDF1C64F6170099B5E6 /* EDAData.m */; };
+		E38ABC001C64F6170099B5E6 /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE21C64F6170099B5E6 /* EDANull.m */; };
+		E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE51C64F6170099B5E6 /* EDAResponse.m */; };
+		E38ABC021C64F6170099B5E6 /* EDAResponseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE81C64F6170099B5E6 /* EDAResponseLayout.m */; };
+		E38ABC031C64F6170099B5E6 /* EDAResponseMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBEB1C64F6170099B5E6 /* EDAResponseMetadata.m */; };
+		E38ABC041C64F6170099B5E6 /* EDAResponseRequestResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBEE1C64F6170099B5E6 /* EDAResponseRequestResult.m */; };
+		E38ABC051C64F6170099B5E6 /* EDATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBF41C64F6170099B5E6 /* EDATableViewCell.m */; };
+		E38ABC061C64F6170099B5E6 /* EDATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38ABBF51C64F6170099B5E6 /* EDATableViewCell.xib */; };
+		E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBF71C64F6170099B5E6 /* EDAViewController.m */; };
 		E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */; };
-		E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C6A571C43A1B90026F72A /* EDANetwork.m */; };
 		E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D19541C560A8200A0D3E9 /* EDANullTests.m */; };
 		E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */; };
-		E39F83FB1C63835900AC27EF /* NSObject+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F83FA1C63835900AC27EF /* NSObject+EDARuntime.m */; };
-		E39F83FF1C6383A300AC27EF /* NSNull+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F83FE1C6383A300AC27EF /* NSNull+EDARuntime.m */; };
 		E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */; };
-		E3CD77C91C47F0660047446F /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C81C47F0660047446F /* EDANull.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,37 +56,13 @@
 /* Begin PBXFileReference section */
 		E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseTests.m; sourceTree = "<group>"; };
 		E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDATestAPI.h; sourceTree = "<group>"; };
-		E382C6031C3C1DBC0006F1C1 /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDADataManager.h; path = DataSource/EDADataManager.h; sourceTree = "<group>"; };
-		E382C6041C3C1DBC0006F1C1 /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDADataManager.m; path = DataSource/EDADataManager.m; sourceTree = "<group>"; };
 		E382E38A1C3A914A009059BA /* EducationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E382E38E1C3A914A009059BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E382E3901C3A914A009059BA /* EDAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAAppDelegate.h; sourceTree = "<group>"; };
-		E382E3911C3A914A009059BA /* EDAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDAAppDelegate.m; sourceTree = "<group>"; };
-		E382E3971C3A914A009059BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E382E3991C3A914A009059BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E382E39C1C3A914A009059BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E382E39E1C3A914A009059BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E382E3A31C3A914A009059BA /* EducationTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EducationTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382E3A71C3A914A009059BA /* EducationTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationTestAppTests.m; sourceTree = "<group>"; };
 		E382E3A91C3A914A009059BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E382E3B21C3A914A009059BA /* EducationTestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationTestAppUITests.m; sourceTree = "<group>"; };
 		E382E3B41C3A914A009059BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E382E3C31C3A9B6A009059BA /* EDATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDATableViewCell.xib; sourceTree = "<group>"; };
-		E382E3C51C3A9C49009059BA /* EDATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDATableViewCell.h; path = Cells/EDATableViewCell.h; sourceTree = "<group>"; };
-		E382E3C61C3A9C49009059BA /* EDATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDATableViewCell.m; path = Cells/EDATableViewCell.m; sourceTree = "<group>"; };
-		E382E3C91C3A9DE6009059BA /* EDAResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDAResponse.h; path = Network/EDAResponse.h; sourceTree = "<group>"; };
-		E382E3CA1C3A9DE6009059BA /* EDAResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDAResponse.m; path = Network/EDAResponse.m; sourceTree = "<group>"; };
-		E382E3CD1C3A9E53009059BA /* EDAData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDAData.h; path = DataSource/EDAData.h; sourceTree = "<group>"; };
-		E382E3CE1C3A9E53009059BA /* EDAData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDAData.m; path = DataSource/EDAData.m; sourceTree = "<group>"; };
 		E382E3D31C3AA80D009059BA /* EDADataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataTests.m; sourceTree = "<group>"; };
-		E382E3D81C3AB1BE009059BA /* EDAResponseMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDAResponseMetadata.h; path = DataSource/EDAResponseMetadata.h; sourceTree = "<group>"; };
-		E382E3D91C3AB1BE009059BA /* EDAResponseMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDAResponseMetadata.m; path = DataSource/EDAResponseMetadata.m; sourceTree = "<group>"; };
-		E382E3DB1C3AB213009059BA /* EDAResponseRequestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDAResponseRequestResult.h; path = DataSource/EDAResponseRequestResult.h; sourceTree = "<group>"; };
-		E382E3DC1C3AB213009059BA /* EDAResponseRequestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDAResponseRequestResult.m; path = DataSource/EDAResponseRequestResult.m; sourceTree = "<group>"; };
-		E382E3E11C3AB263009059BA /* EDAResponseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDAResponseLayout.h; path = DataSource/EDAResponseLayout.h; sourceTree = "<group>"; };
-		E382E3E21C3AB263009059BA /* EDAResponseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDAResponseLayout.m; path = DataSource/EDAResponseLayout.m; sourceTree = "<group>"; };
-		E382E3E41C3AB271009059BA /* EDAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDAViewController.h; path = Controllers/EDAViewController.h; sourceTree = "<group>"; };
-		E382E3E51C3AB271009059BA /* EDAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDAViewController.m; path = Controllers/EDAViewController.m; sourceTree = "<group>"; };
 		E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseRequestResultTests.m; sourceTree = "<group>"; };
 		E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseLayoutTests.m; sourceTree = "<group>"; };
 		E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseMetadataTests.m; sourceTree = "<group>"; };
@@ -94,22 +71,46 @@
 		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
 		E389423C1C622424007C1E6A /* EDAMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAMock.m; sourceTree = "<group>"; };
 		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
-		E38ABB5F1C64C8150099B5E6 /* NSArray+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EDAExtensions.h"; sourceTree = "<group>"; };
-		E38ABB601C64C8150099B5E6 /* NSArray+EDAExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EDAExtentions.m"; sourceTree = "<group>"; };
-		E38ABB631C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+EDAExtensions.h"; sourceTree = "<group>"; };
-		E38ABB641C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+EDAExtensions.m"; sourceTree = "<group>"; };
+		E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E38ABB6E1C64E9930099B5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E38ABB701C64E9930099B5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E38ABBBB1C64F60F0099B5E6 /* EDAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAAppDelegate.h; sourceTree = "<group>"; };
+		E38ABBBC1C64F60F0099B5E6 /* EDAAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAAppDelegate.m; sourceTree = "<group>"; };
+		E38ABBBD1C64F60F0099B5E6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E38ABBBE1C64F60F0099B5E6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E38ABBC71C64F6170099B5E6 /* NSArray+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38ABBC81C64F6170099B5E6 /* NSArray+EDAExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EDAExtentions.m"; sourceTree = "<group>"; };
+		E38ABBCB1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38ABBCC1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+EDAExtensions.m"; sourceTree = "<group>"; };
+		E38ABBCF1C64F6170099B5E6 /* NSNull+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+EDARuntime.h"; sourceTree = "<group>"; };
+		E38ABBD01C64F6170099B5E6 /* NSNull+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+EDARuntime.m"; sourceTree = "<group>"; };
+		E38ABBD31C64F6170099B5E6 /* NSObject+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EDARuntime.h"; sourceTree = "<group>"; };
+		E38ABBD41C64F6170099B5E6 /* NSObject+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDARuntime.m"; sourceTree = "<group>"; };
+		E38ABBD71C64F6170099B5E6 /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataManager.h; sourceTree = "<group>"; };
+		E38ABBD81C64F6170099B5E6 /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManager.m; sourceTree = "<group>"; };
+		E38ABBDA1C64F6170099B5E6 /* EDANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDANetworkManager.h; sourceTree = "<group>"; };
+		E38ABBDB1C64F6170099B5E6 /* EDANetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANetworkManager.m; sourceTree = "<group>"; };
+		E38ABBDE1C64F6170099B5E6 /* EDAData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAData.h; sourceTree = "<group>"; };
+		E38ABBDF1C64F6170099B5E6 /* EDAData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAData.m; sourceTree = "<group>"; };
+		E38ABBE11C64F6170099B5E6 /* EDANull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDANull.h; sourceTree = "<group>"; };
+		E38ABBE21C64F6170099B5E6 /* EDANull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANull.m; sourceTree = "<group>"; };
+		E38ABBE41C64F6170099B5E6 /* EDAResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAResponse.h; sourceTree = "<group>"; };
+		E38ABBE51C64F6170099B5E6 /* EDAResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponse.m; sourceTree = "<group>"; };
+		E38ABBE71C64F6170099B5E6 /* EDAResponseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAResponseLayout.h; sourceTree = "<group>"; };
+		E38ABBE81C64F6170099B5E6 /* EDAResponseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseLayout.m; sourceTree = "<group>"; };
+		E38ABBEA1C64F6170099B5E6 /* EDAResponseMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAResponseMetadata.h; sourceTree = "<group>"; };
+		E38ABBEB1C64F6170099B5E6 /* EDAResponseMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseMetadata.m; sourceTree = "<group>"; };
+		E38ABBED1C64F6170099B5E6 /* EDAResponseRequestResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAResponseRequestResult.h; sourceTree = "<group>"; };
+		E38ABBEE1C64F6170099B5E6 /* EDAResponseRequestResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseRequestResult.m; sourceTree = "<group>"; };
+		E38ABBF31C64F6170099B5E6 /* EDATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDATableViewCell.h; sourceTree = "<group>"; };
+		E38ABBF41C64F6170099B5E6 /* EDATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDATableViewCell.m; sourceTree = "<group>"; };
+		E38ABBF51C64F6170099B5E6 /* EDATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDATableViewCell.xib; sourceTree = "<group>"; };
+		E38ABBF61C64F6170099B5E6 /* EDAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAViewController.h; sourceTree = "<group>"; };
+		E38ABBF71C64F6170099B5E6 /* EDAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAViewController.m; sourceTree = "<group>"; };
 		E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDASubclassesTests.m"; sourceTree = "<group>"; };
-		E39C6A561C43A1B90026F72A /* EDANetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDANetwork.h; path = Network/EDANetwork.h; sourceTree = "<group>"; };
-		E39C6A571C43A1B90026F72A /* EDANetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANetwork.m; path = Network/EDANetwork.m; sourceTree = "<group>"; };
 		E39D19541C560A8200A0D3E9 /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
 		E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNullTests.m; sourceTree = "<group>"; };
-		E39F83F91C63835900AC27EF /* NSObject+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EDARuntime.h"; sourceTree = "<group>"; };
-		E39F83FA1C63835900AC27EF /* NSObject+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDARuntime.m"; sourceTree = "<group>"; };
-		E39F83FD1C6383A300AC27EF /* NSNull+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+EDARuntime.h"; sourceTree = "<group>"; };
-		E39F83FE1C6383A300AC27EF /* NSNull+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+EDARuntime.m"; sourceTree = "<group>"; };
 		E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANSJSONSerializationTest.m; path = NSJSONSerializationTests/EDANSJSONSerializationTest.m; sourceTree = "<group>"; };
-		E3CD77C71C47F0660047446F /* EDANull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDANull.h; sourceTree = "<group>"; };
-		E3CD77C81C47F0660047446F /* EDANull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANull.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +134,9 @@
 		E382E3811C3A914A009059BA = {
 			isa = PBXGroup;
 			children = (
-				E382E38C1C3A914A009059BA /* EducationTestApp */,
+				E38ABBBA1C64F60F0099B5E6 /* EducationTestApp */,
+				E38ABB6B1C64E9930099B5E6 /* Resources */,
+				E38ABBC21C64F6170099B5E6 /* Sources */,
 				E382E3A61C3A914A009059BA /* EducationTestAppTests */,
 				E382E3B11C3A914A009059BA /* EducationTestAppUITests */,
 				E382E38B1C3A914A009059BA /* Products */,
@@ -147,35 +150,6 @@
 				E382E3A31C3A914A009059BA /* EducationTestAppTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E382E38C1C3A914A009059BA /* EducationTestApp */ = {
-			isa = PBXGroup;
-			children = (
-				E39E31721C4CE6FD002E1F8C /* Categories */,
-				E3CD77C61C47F04B0047446F /* Classes */,
-				E382E3CC1C3A9E2B009059BA /* DataSource */,
-				E382E3C81C3A9DB0009059BA /* Network */,
-				E382E3C21C3A9B49009059BA /* Cells */,
-				E382E3C11C3A9B23009059BA /* Views */,
-				E382E3C01C3A91ED009059BA /* Controllers */,
-				E382E3901C3A914A009059BA /* EDAAppDelegate.h */,
-				E382E3911C3A914A009059BA /* EDAAppDelegate.m */,
-				E382E3961C3A914A009059BA /* Main.storyboard */,
-				E382E3991C3A914A009059BA /* Assets.xcassets */,
-				E382E39B1C3A914A009059BA /* LaunchScreen.storyboard */,
-				E382E39E1C3A914A009059BA /* Info.plist */,
-				E382E38D1C3A914A009059BA /* Supporting Files */,
-			);
-			path = EducationTestApp;
-			sourceTree = "<group>";
-		};
-		E382E38D1C3A914A009059BA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E382E38E1C3A914A009059BA /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E382E3A61C3A914A009059BA /* EducationTestAppTests */ = {
@@ -207,68 +181,6 @@
 			path = EducationTestAppUITests;
 			sourceTree = "<group>";
 		};
-		E382E3C01C3A91ED009059BA /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E382E3E41C3AB271009059BA /* EDAViewController.h */,
-				E382E3E51C3AB271009059BA /* EDAViewController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		E382E3C11C3A9B23009059BA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		E382E3C21C3A9B49009059BA /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E382E3C31C3A9B6A009059BA /* EDATableViewCell.xib */,
-				E382E3C51C3A9C49009059BA /* EDATableViewCell.h */,
-				E382E3C61C3A9C49009059BA /* EDATableViewCell.m */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		E382E3C81C3A9DB0009059BA /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				E39C6A561C43A1B90026F72A /* EDANetwork.h */,
-				E39C6A571C43A1B90026F72A /* EDANetwork.m */,
-			);
-			name = Network;
-			sourceTree = "<group>";
-		};
-		E382E3CC1C3A9E2B009059BA /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				E382E3CD1C3A9E53009059BA /* EDAData.h */,
-				E382E3CE1C3A9E53009059BA /* EDAData.m */,
-				E382E3DB1C3AB213009059BA /* EDAResponseRequestResult.h */,
-				E382E3DC1C3AB213009059BA /* EDAResponseRequestResult.m */,
-				E382E3E11C3AB263009059BA /* EDAResponseLayout.h */,
-				E382E3E21C3AB263009059BA /* EDAResponseLayout.m */,
-				E382E3D81C3AB1BE009059BA /* EDAResponseMetadata.h */,
-				E382E3D91C3AB1BE009059BA /* EDAResponseMetadata.m */,
-				E382E3C91C3A9DE6009059BA /* EDAResponse.h */,
-				E382E3CA1C3A9DE6009059BA /* EDAResponse.m */,
-				E382C6031C3C1DBC0006F1C1 /* EDADataManager.h */,
-				E382C6041C3C1DBC0006F1C1 /* EDADataManager.m */,
-			);
-			name = DataSource;
-			sourceTree = "<group>";
-		};
-		E389422D1C6218AF007C1E6A /* NSArray */ = {
-			isa = PBXGroup;
-			children = (
-				E38ABB5E1C64C8150099B5E6 /* EDAExtensions */,
-			);
-			path = NSArray;
-			sourceTree = "<group>";
-		};
 		E38942351C622371007C1E6A /* MockObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,38 +208,261 @@
 			path = EDAMock;
 			sourceTree = "<group>";
 		};
-		E38ABB5E1C64C8150099B5E6 /* EDAExtensions */ = {
+		E38ABB6B1C64E9930099B5E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABB5F1C64C8150099B5E6 /* NSArray+EDAExtensions.h */,
-				E38ABB601C64C8150099B5E6 /* NSArray+EDAExtentions.m */,
+				E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */,
+				E38ABB6D1C64E9930099B5E6 /* LaunchScreen.storyboard */,
+				E38ABB6F1C64E9930099B5E6 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E38ABBBA1C64F60F0099B5E6 /* EducationTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBBB1C64F60F0099B5E6 /* EDAAppDelegate.h */,
+				E38ABBBC1C64F60F0099B5E6 /* EDAAppDelegate.m */,
+				E38ABBBD1C64F60F0099B5E6 /* Info.plist */,
+				E38ABBBE1C64F60F0099B5E6 /* main.m */,
+			);
+			path = EducationTestApp;
+			sourceTree = "<group>";
+		};
+		E38ABBC21C64F6170099B5E6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBC31C64F6170099B5E6 /* Library */,
+				E38ABBDC1C64F6170099B5E6 /* Models */,
+				E38ABBEF1C64F6170099B5E6 /* UI */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E38ABBC31C64F6170099B5E6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBC41C64F6170099B5E6 /* Categories */,
+				E38ABBD51C64F6170099B5E6 /* Managers */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E38ABBC41C64F6170099B5E6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBC51C64F6170099B5E6 /* NSArray */,
+				E38ABBC91C64F6170099B5E6 /* NSMethodSignature */,
+				E38ABBCD1C64F6170099B5E6 /* NSNull */,
+				E38ABBD11C64F6170099B5E6 /* NSObject */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E38ABBC51C64F6170099B5E6 /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBC61C64F6170099B5E6 /* EDAExtensions */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		E38ABBC61C64F6170099B5E6 /* EDAExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBC71C64F6170099B5E6 /* NSArray+EDAExtensions.h */,
+				E38ABBC81C64F6170099B5E6 /* NSArray+EDAExtentions.m */,
 			);
 			path = EDAExtensions;
 			sourceTree = "<group>";
 		};
-		E38ABB621C64D2440099B5E6 /* EDAExtensions */ = {
+		E38ABBC91C64F6170099B5E6 /* NSMethodSignature */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABB631C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.h */,
-				E38ABB641C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.m */,
+				E38ABBCA1C64F6170099B5E6 /* EDAExtensions */,
+			);
+			path = NSMethodSignature;
+			sourceTree = "<group>";
+		};
+		E38ABBCA1C64F6170099B5E6 /* EDAExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBCB1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.h */,
+				E38ABBCC1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m */,
 			);
 			path = EDAExtensions;
 			sourceTree = "<group>";
 		};
-		E38ABC2C1C5216B8000AC3E4 /* NSObject */ = {
+		E38ABBCD1C64F6170099B5E6 /* NSNull */ = {
 			isa = PBXGroup;
 			children = (
-				E39F83F81C63835900AC27EF /* EDARuntime */,
+				E38ABBCE1C64F6170099B5E6 /* EDARuntime */,
+			);
+			path = NSNull;
+			sourceTree = "<group>";
+		};
+		E38ABBCE1C64F6170099B5E6 /* EDARuntime */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBCF1C64F6170099B5E6 /* NSNull+EDARuntime.h */,
+				E38ABBD01C64F6170099B5E6 /* NSNull+EDARuntime.m */,
+			);
+			path = EDARuntime;
+			sourceTree = "<group>";
+		};
+		E38ABBD11C64F6170099B5E6 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBD21C64F6170099B5E6 /* EDARuntime */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
 		};
-		E38ABC301C5216ED000AC3E4 /* NSNull */ = {
+		E38ABBD21C64F6170099B5E6 /* EDARuntime */ = {
 			isa = PBXGroup;
 			children = (
-				E39F83FC1C6383A300AC27EF /* EDARuntime */,
+				E38ABBD31C64F6170099B5E6 /* NSObject+EDARuntime.h */,
+				E38ABBD41C64F6170099B5E6 /* NSObject+EDARuntime.m */,
 			);
-			path = NSNull;
+			path = EDARuntime;
+			sourceTree = "<group>";
+		};
+		E38ABBD51C64F6170099B5E6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBD61C64F6170099B5E6 /* EDADataManager */,
+				E38ABBD91C64F6170099B5E6 /* EDANetworkManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E38ABBD61C64F6170099B5E6 /* EDADataManager */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBD71C64F6170099B5E6 /* EDADataManager.h */,
+				E38ABBD81C64F6170099B5E6 /* EDADataManager.m */,
+			);
+			path = EDADataManager;
+			sourceTree = "<group>";
+		};
+		E38ABBD91C64F6170099B5E6 /* EDANetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBDA1C64F6170099B5E6 /* EDANetworkManager.h */,
+				E38ABBDB1C64F6170099B5E6 /* EDANetworkManager.m */,
+			);
+			path = EDANetworkManager;
+			sourceTree = "<group>";
+		};
+		E38ABBDC1C64F6170099B5E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBDD1C64F6170099B5E6 /* EDAData */,
+				E38ABBE01C64F6170099B5E6 /* EDANull */,
+				E38ABBE31C64F6170099B5E6 /* EDAResponse */,
+				E38ABBE61C64F6170099B5E6 /* EDAResponseLayout */,
+				E38ABBE91C64F6170099B5E6 /* EDAResponseMetadata */,
+				E38ABBEC1C64F6170099B5E6 /* EDAResponseRequestResult */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E38ABBDD1C64F6170099B5E6 /* EDAData */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBDE1C64F6170099B5E6 /* EDAData.h */,
+				E38ABBDF1C64F6170099B5E6 /* EDAData.m */,
+			);
+			path = EDAData;
+			sourceTree = "<group>";
+		};
+		E38ABBE01C64F6170099B5E6 /* EDANull */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBE11C64F6170099B5E6 /* EDANull.h */,
+				E38ABBE21C64F6170099B5E6 /* EDANull.m */,
+			);
+			path = EDANull;
+			sourceTree = "<group>";
+		};
+		E38ABBE31C64F6170099B5E6 /* EDAResponse */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBE41C64F6170099B5E6 /* EDAResponse.h */,
+				E38ABBE51C64F6170099B5E6 /* EDAResponse.m */,
+			);
+			path = EDAResponse;
+			sourceTree = "<group>";
+		};
+		E38ABBE61C64F6170099B5E6 /* EDAResponseLayout */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBE71C64F6170099B5E6 /* EDAResponseLayout.h */,
+				E38ABBE81C64F6170099B5E6 /* EDAResponseLayout.m */,
+			);
+			path = EDAResponseLayout;
+			sourceTree = "<group>";
+		};
+		E38ABBE91C64F6170099B5E6 /* EDAResponseMetadata */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBEA1C64F6170099B5E6 /* EDAResponseMetadata.h */,
+				E38ABBEB1C64F6170099B5E6 /* EDAResponseMetadata.m */,
+			);
+			path = EDAResponseMetadata;
+			sourceTree = "<group>";
+		};
+		E38ABBEC1C64F6170099B5E6 /* EDAResponseRequestResult */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBED1C64F6170099B5E6 /* EDAResponseRequestResult.h */,
+				E38ABBEE1C64F6170099B5E6 /* EDAResponseRequestResult.m */,
+			);
+			path = EDAResponseRequestResult;
+			sourceTree = "<group>";
+		};
+		E38ABBEF1C64F6170099B5E6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBF01C64F6170099B5E6 /* Controllers */,
+				E38ABBF81C64F6170099B5E6 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E38ABBF01C64F6170099B5E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBF11C64F6170099B5E6 /* EDAViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E38ABBF11C64F6170099B5E6 /* EDAViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBF21C64F6170099B5E6 /* Cells */,
+				E38ABBF61C64F6170099B5E6 /* EDAViewController.h */,
+				E38ABBF71C64F6170099B5E6 /* EDAViewController.m */,
+			);
+			path = EDAViewController;
+			sourceTree = "<group>";
+		};
+		E38ABBF21C64F6170099B5E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E38ABBF31C64F6170099B5E6 /* EDATableViewCell.h */,
+				E38ABBF41C64F6170099B5E6 /* EDATableViewCell.m */,
+				E38ABBF51C64F6170099B5E6 /* EDATableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E38ABBF81C64F6170099B5E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E38CA30F1C4E90BA0047845A /* NSObject */ = {
@@ -337,14 +472,6 @@
 				E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */,
 			);
 			path = NSObject;
-			sourceTree = "<group>";
-		};
-		E38DC3471C638D8F004B3291 /* NSMethodSignature */ = {
-			isa = PBXGroup;
-			children = (
-				E38ABB621C64D2440099B5E6 /* EDAExtensions */,
-			);
-			path = NSMethodSignature;
 			sourceTree = "<group>";
 		};
 		E39D19531C560A8200A0D3E9 /* EDANullTests */ = {
@@ -364,50 +491,12 @@
 			path = NSNull;
 			sourceTree = "<group>";
 		};
-		E39E31721C4CE6FD002E1F8C /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				E38ABC2C1C5216B8000AC3E4 /* NSObject */,
-				E38ABC301C5216ED000AC3E4 /* NSNull */,
-				E38DC3471C638D8F004B3291 /* NSMethodSignature */,
-				E389422D1C6218AF007C1E6A /* NSArray */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		E39F83F81C63835900AC27EF /* EDARuntime */ = {
-			isa = PBXGroup;
-			children = (
-				E39F83F91C63835900AC27EF /* NSObject+EDARuntime.h */,
-				E39F83FA1C63835900AC27EF /* NSObject+EDARuntime.m */,
-			);
-			path = EDARuntime;
-			sourceTree = "<group>";
-		};
-		E39F83FC1C6383A300AC27EF /* EDARuntime */ = {
-			isa = PBXGroup;
-			children = (
-				E39F83FD1C6383A300AC27EF /* NSNull+EDARuntime.h */,
-				E39F83FE1C6383A300AC27EF /* NSNull+EDARuntime.m */,
-			);
-			path = EDARuntime;
-			sourceTree = "<group>";
-		};
 		E3CD77C31C4787880047446F /* NSJSONSerializationTests */ = {
 			isa = PBXGroup;
 			children = (
 				E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */,
 			);
 			name = NSJSONSerializationTests;
-			sourceTree = "<group>";
-		};
-		E3CD77C61C47F04B0047446F /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E3CD77C71C47F0660047446F /* EDANull.h */,
-				E3CD77C81C47F0660047446F /* EDANull.m */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,10 +580,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E382E39D1C3A914A009059BA /* LaunchScreen.storyboard in Resources */,
-				E382E39A1C3A914A009059BA /* Assets.xcassets in Resources */,
-				E382E3C41C3A9B6A009059BA /* EDATableViewCell.xib in Resources */,
-				E382E3981C3A914A009059BA /* Main.storyboard in Resources */,
+				E38ABC061C64F6170099B5E6 /* EDATableViewCell.xib in Resources */,
+				E38ABBC01C64F60F0099B5E6 /* Info.plist in Resources */,
+				E38ABBA81C64E9930099B5E6 /* LaunchScreen.storyboard in Resources */,
+				E38ABBA71C64E9930099B5E6 /* Assets.xcassets in Resources */,
+				E38ABBA91C64E9930099B5E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,22 +602,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E382E3E61C3AB271009059BA /* EDAViewController.m in Sources */,
-				E39F83FB1C63835900AC27EF /* NSObject+EDARuntime.m in Sources */,
-				E3CD77C91C47F0660047446F /* EDANull.m in Sources */,
-				E38ABB651C64D2440099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,
-				E39F83FF1C6383A300AC27EF /* NSNull+EDARuntime.m in Sources */,
-				E382E3DD1C3AB213009059BA /* EDAResponseRequestResult.m in Sources */,
-				E39C6A581C43A1B90026F72A /* EDANetwork.m in Sources */,
-				E382E3E31C3AB263009059BA /* EDAResponseLayout.m in Sources */,
-				E382E3921C3A914A009059BA /* EDAAppDelegate.m in Sources */,
-				E382E3DA1C3AB1BE009059BA /* EDAResponseMetadata.m in Sources */,
-				E382E3CB1C3A9DE6009059BA /* EDAResponse.m in Sources */,
-				E382E3C71C3A9C49009059BA /* EDATableViewCell.m in Sources */,
-				E38ABB611C64C8150099B5E6 /* NSArray+EDAExtentions.m in Sources */,
-				E382E3CF1C3A9E53009059BA /* EDAData.m in Sources */,
-				E382C6051C3C1DBC0006F1C1 /* EDADataManager.m in Sources */,
-				E382E38F1C3A914A009059BA /* main.m in Sources */,
+				E38ABBC11C64F60F0099B5E6 /* main.m in Sources */,
+				E38ABC051C64F6170099B5E6 /* EDATableViewCell.m in Sources */,
+				E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */,
+				E38ABBFD1C64F6170099B5E6 /* EDADataManager.m in Sources */,
+				E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */,
+				E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */,
+				E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */,
+				E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */,
+				E38ABC041C64F6170099B5E6 /* EDAResponseRequestResult.m in Sources */,
+				E38ABBFC1C64F6170099B5E6 /* NSObject+EDARuntime.m in Sources */,
+				E38ABBFE1C64F6170099B5E6 /* EDANetworkManager.m in Sources */,
+				E38ABC001C64F6170099B5E6 /* EDANull.m in Sources */,
+				E38ABC021C64F6170099B5E6 /* EDAResponseLayout.m in Sources */,
+				E38ABC031C64F6170099B5E6 /* EDAResponseMetadata.m in Sources */,
+				E38ABBF91C64F6170099B5E6 /* NSArray+EDAExtentions.m in Sources */,
+				E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,20 +652,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E382E3961C3A914A009059BA /* Main.storyboard */ = {
+		E38ABB6D1C64E9930099B5E6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E382E3971C3A914A009059BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E382E39B1C3A914A009059BA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E382E39C1C3A914A009059BA /* Base */,
+				E38ABB6E1C64E9930099B5E6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E38ABB6F1C64E9930099B5E6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E38ABB701C64E9930099B5E6 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
