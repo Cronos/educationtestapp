@@ -1,5 +1,5 @@
 //
-//  NSMethodSignature+EDAExtentions.h
+//  NSMethodSignature+EDAExtensions.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 04.02.16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSMethodSignature (EDAExtentions)
+@interface NSMethodSignature (EDAExtensions)
 @property (nonatomic, assign, getter=isNilForwarded)    BOOL nilForwarded;
 
 @end

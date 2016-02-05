@@ -1,17 +1,17 @@
 //
-//  NSMethodSignature+EDAExtentions.m
+//  NSMethodSignature+EDAExtensions.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 04.02.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "NSMethodSignature+EDAExtentions.h"
+#import "NSMethodSignature+EDAExtensions.h"
 #import "NSObject+EDARuntime.h"
 
 static const NSString * kEDAMethodSignatureNilForwarded    = @"kEDAMethodSignatureNilForwarded";
 
-@implementation NSMethodSignature (EDAExtentions)
+@implementation NSMethodSignature (EDAExtensions)
 
 @dynamic nilForwarded;
 
