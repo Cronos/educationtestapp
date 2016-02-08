@@ -268,11 +268,10 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
 
 - (void)restoreEDANullMethods {
     id object = [EDANull class];
-    for (NSString *methodName in @[@"class", @"isKindOfClass:", @"isMemberOfClass:"]) {
-        [self restoreImplementationForMethod:methodName forObject:object];
+    NSSet <NSString *> *methods = [NSSet setWithArray:[self.savedImplementations allKeys]];
+    for (NSString *methodName in methods) {
+        [self restoreImplementationForMethod:methodName forObject:[methodName isEqualToString:@"isSubclassOfClass:"] ? object_getClass(object) : object];
     }
-    
-    [self restoreImplementationForSelector:@selector(isSubclassOfClass:) forObject:object_getClass(object)];
 }
 
 @end
