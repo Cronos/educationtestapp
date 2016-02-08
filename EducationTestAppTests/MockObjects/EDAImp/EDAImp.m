@@ -19,6 +19,8 @@
     return [[self alloc] initWithImplementation:implementation];
 }
 
+- (instancetype)init {
+    return [self initWithImplementation:nil];
 }
 
 - (instancetype)initWithImplementation:(IMP)implementation {
