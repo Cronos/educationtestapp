@@ -8,7 +8,7 @@
 
 #import "EDANull.h"
 #import <objc/runtime.h>
-#import "NSMethodSignature+EDAExtentions.h"
+#import "NSMethodSignature+EDAExtensions.h"
 
 @interface EDANull()<NSCoding>
 

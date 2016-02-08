@@ -1,5 +1,5 @@
 //
-//  EDANetwork.h
+//  EDANetworkManager.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 11.01.16.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EDANetwork : NSObject
+@interface EDANetworkManager : NSObject
 
 @end

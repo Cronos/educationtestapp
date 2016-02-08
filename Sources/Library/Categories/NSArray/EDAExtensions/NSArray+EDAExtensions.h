@@ -1,5 +1,5 @@
 //
-//  NSArray+EDAExtentions.h
+//  NSArray+EDAExtensions.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 03.02.16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (EDAExtentions)
+@interface NSArray (EDAExtensions)
 
 + (NSArray *)reverseArray:(NSArray *)array;
 
