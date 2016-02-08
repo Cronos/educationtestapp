@@ -250,6 +250,7 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     for (NSString *methodName in @[@"class", @"isKindOfClass:", @"isMemberOfClass:"]) {
         [self restoreImplementationForMethod:methodName forObject:object];
     }
+    
     [self restoreImplementationForSelector:@selector(isSubclassOfClass:) forObject:object_getClass(object)];
 }
 
