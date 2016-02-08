@@ -15,10 +15,10 @@
 
 @implementation EDAImp
 
-+ (instancetype)instanceWithImplementation:(IMP)implementation {
-    EDAImp *object = [[self alloc] initWithImplementation:implementation];
-    
-    return object;
++ (instancetype)instanceWithImplementation:(IMP)implementation {    
+    return [[self alloc] initWithImplementation:implementation];
+}
+
 }
 
 - (instancetype)initWithImplementation:(IMP)implementation {
