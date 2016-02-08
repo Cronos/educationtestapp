@@ -8,6 +8,11 @@
 
 #import "EDAImp.h"
 
+@interface EDAImp()
+@property (nonatomic, readwrite) IMP implementation;
+
+@end
+
 @implementation EDAImp
 
 + (instancetype)instanceWithImplementation:(IMP)implementation {
@@ -19,7 +24,7 @@
 - (instancetype)initWithImplementation:(IMP)implementation {
     self = [super init];
     if (self) {
-        _implementation = implementation;
+        self.implementation = implementation;
     }
     
     return self;
