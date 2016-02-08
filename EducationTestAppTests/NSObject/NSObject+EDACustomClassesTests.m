@@ -17,27 +17,32 @@
 
 @implementation NSObject_EDACustomClassesTests
 
-- (void)testCreateEDACustomClass {
-    NSString *customClassName = @"EDATestClass";
-    Class class = [NSObject subclassWithName:customClassName];
-    XCTAssertNotNil(class, @"Class %@ not registered", customClassName);
-    
-    id object = [class new];
-    
-    XCTAssertNotNil(object, @"Class %@ not initialized", customClassName);
-    XCTAssertTrue([object isMemberOfClass:class], @"Object must be member of %@ class", customClassName);
-    XCTAssertTrue([object isKindOfClass:[NSObject class]], @"Object must be kind of %@ class", [NSObject class]);
-    
-    object = nil;
-    [class unregister];
-}
-
-- (void)testUnregisterCustomClasses {
+- (void)testRegisterCustomClasses {
     NSArray *customClassNames = [EDAMock customClassNames:@"EDACustomClass" withCapacity:3];
     
-    [EDAMock registerCustomClassesWithNames:customClassNames withRootClass:[NSObject class]];
+    Class rootClass = [NSObject class];
+    [EDAMock registerCustomClassesWithNames:customClassNames withRootClass:rootClass];
     
     NSArray *reverseNames = [customClassNames reverseArray];
+    [reverseNames enumerateObjectsUsingBlock:^(NSString  * _Nonnull className, NSUInteger idx, BOOL * _Nonnull stop) {
+        Class class = NSClassFromString(className);
+        XCTAssertNotNil(class, @"Class %@ not registered", className);
+
+        //Test for create instance
+        id object = [class new];
+        XCTAssertNotNil(object, @"Instance of %@ class not initialized", className);
+        XCTAssertTrue([object isMemberOfClass:class], @"Object must be member of %@ class", className);
+        
+        //Test for superclass
+        Class superclass = (idx+1)<reverseNames.count ? NSClassFromString(reverseNames[idx+1]) : rootClass;
+        XCTAssertTrue([class isSubclassOfClass:superclass], @"Class %@ must be subclass of %@ class", NSStringFromClass(class), NSStringFromClass(superclass));
+        XCTAssertTrue([object isKindOfClass:superclass], @"Object must be kind of %@ class", NSStringFromClass(superclass));
+        
+        //Test for subclasses
+        NSSet *subclasses = [class subclasses];
+        XCTAssertEqual(subclasses.count, idx, @"Count subclasses of %@ must be equals to %ld", className, idx);
+    }];
+    
     for (NSString *name in reverseNames) {
         Class class = NSClassFromString(name);
         [class unregister];
