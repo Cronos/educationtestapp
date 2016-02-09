@@ -32,7 +32,7 @@
                                  @"info" : @"Logged in successfully" // text accompanying the response
                                  };
     
-    EDAResponseRequestResult *result = [EDAResponseRequestResult resultFromDictionary:dictionary];
+    EDAResponseRequestResult *result = [EDAResponseRequestResult instanceWithDictionary:dictionary];
     
     XCTAssertTrue(result.success, @"Success initialize error");
     XCTAssertEqual(result.info, @"Logged in successfully", @"Info initialize error");
@@ -45,7 +45,7 @@
                                  @"info" : @"Failed to login"
                                  };
     
-    EDAResponseRequestResult *result = [EDAResponseRequestResult resultFromDictionary:dictionary];
+    EDAResponseRequestResult *result = [EDAResponseRequestResult instanceWithDictionary:dictionary];
     
     XCTAssertFalse(result.success, @"Success initialize error");
     XCTAssertEqual(result.info, @"Failed to login", @"Info initialize error");

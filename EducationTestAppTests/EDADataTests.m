@@ -28,7 +28,7 @@
 
 - (void)testDataFromDictionary {
     
-    EDAData *data = [EDAData dataFromDictionary:testDataWithIdResponse()[@"data"][0]];
+    EDAData *data = [EDAData instanceWithDictionary:testDataWithIdResponse()[@"data"][0]];
     
     XCTAssertEqual(data.Id, 1, @"Id initialize error");
     XCTAssertEqual(data.content, @"MAMAPAPADEDABABA", @"Content string initialize error");

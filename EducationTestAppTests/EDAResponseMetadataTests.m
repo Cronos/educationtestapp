@@ -30,7 +30,7 @@
 
 - (void)testMetadataFromDictionarySuccessful {
     
-    EDAResponseMetadata *metadata = [EDAResponseMetadata metaFromDictionary:testDataSuccessfulResponse()[@"response"][@"meta"]];
+    EDAResponseMetadata *metadata = [EDAResponseMetadata instanceWithDictionary:testDataSuccessfulResponse()[@"response"][@"meta"]];
     
     XCTAssertNotNil(metadata, @"Metadata init error");
     XCTAssertNotNil(metadata.request, @"Metadata.request init error");
@@ -45,7 +45,7 @@
 
 - (void)testMetadataFromDictionaryUnsuccessful {
     
-    EDAResponseMetadata *metadata = [EDAResponseMetadata metaFromDictionary:testDataUnsuccessfulResponse()[@"response"][@"meta"]];
+    EDAResponseMetadata *metadata = [EDAResponseMetadata instanceWithDictionary:testDataUnsuccessfulResponse()[@"response"][@"meta"]];
     
     XCTAssertNotNil(metadata, @"Metadata init error");
     XCTAssertNotNil(metadata.request, @"Metadata.request init error");

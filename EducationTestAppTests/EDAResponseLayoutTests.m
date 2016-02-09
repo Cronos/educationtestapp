@@ -28,7 +28,7 @@
 
 - (void)testLayoutFromDictionary {
     
-    EDAResponseLayout *layout = [EDAResponseLayout layoutFromDictionary:testDataSuccessfulResponse()[@"response"][@"meta"][@"layout"]];
+    EDAResponseLayout *layout = [EDAResponseLayout instanceWithDictionary:testDataSuccessfulResponse()[@"response"][@"meta"][@"layout"]];
     
     XCTAssertEqual(layout.index, 0, @"Index initialization error.");
     XCTAssertEqual(layout.count, 1, @"Count initialization error.");

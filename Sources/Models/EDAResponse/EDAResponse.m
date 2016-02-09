@@ -12,12 +12,10 @@
 
 @implementation EDAResponse
 
-+ (instancetype)responseFromDictionary:(NSDictionary *)dictionary {
-    
++ (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-
         EDAResponse *response = [EDAResponse new];
-        response.meta = [EDAResponseMetadata metaFromDictionary:dictionary[@"meta"]];
+        response.meta = [EDAResponseMetadata instanceWithDictionary:dictionary[@"meta"]];
         response.data = [EDAData arrayFromArray:dictionary[@"data"]];
         
         return response;

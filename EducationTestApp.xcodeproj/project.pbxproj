@@ -16,6 +16,7 @@
 		E38942391C622371007C1E6A /* EDAImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E38942381C622371007C1E6A /* EDAImp.m */; };
 		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
+		E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */; };
 		E38ABBA71C64E9930099B5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */; };
 		E38ABBA81C64E9930099B5E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6D1C64E9930099B5E6 /* LaunchScreen.storyboard */; };
 		E38ABBA91C64E9930099B5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6F1C64E9930099B5E6 /* Main.storyboard */; };
@@ -71,6 +72,8 @@
 		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
 		E389423C1C622424007C1E6A /* EDAMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAMock.m; sourceTree = "<group>"; };
 		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
+		E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataModel.h; sourceTree = "<group>"; };
+		E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataModel.m; sourceTree = "<group>"; };
 		E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E38ABB6E1C64E9930099B5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E38ABB701C64E9930099B5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +209,15 @@
 				E389423C1C622424007C1E6A /* EDAMock.m */,
 			);
 			path = EDAMock;
+			sourceTree = "<group>";
+		};
+		E38A5A791C69D9EE00AC03ED /* EDADataModel */ = {
+			isa = PBXGroup;
+			children = (
+				E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */,
+				E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */,
+			);
+			path = EDADataModel;
 			sourceTree = "<group>";
 		};
 		E38ABB6B1C64E9930099B5E6 /* Resources */ = {
@@ -357,8 +369,9 @@
 		E38ABBDC1C64F6170099B5E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABBDD1C64F6170099B5E6 /* EDAData */,
 				E38ABBE01C64F6170099B5E6 /* EDANull */,
+				E38ABBDD1C64F6170099B5E6 /* EDAData */,
+				E38A5A791C69D9EE00AC03ED /* EDADataModel */,
 				E38ABBE31C64F6170099B5E6 /* EDAResponse */,
 				E38ABBE61C64F6170099B5E6 /* EDAResponseLayout */,
 				E38ABBE91C64F6170099B5E6 /* EDAResponseMetadata */,
@@ -608,6 +621,7 @@
 				E38ABBFD1C64F6170099B5E6 /* EDADataManager.m in Sources */,
 				E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */,
 				E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */,
+				E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */,
 				E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */,
 				E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */,
 				E38ABC041C64F6170099B5E6 /* EDAResponseRequestResult.m in Sources */,

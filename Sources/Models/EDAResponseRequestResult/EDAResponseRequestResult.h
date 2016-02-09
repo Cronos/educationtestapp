@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDADataModel.h"
 
-@interface EDAResponseRequestResult : NSObject
+@interface EDAResponseRequestResult : EDADataModel
 
 @property (nonatomic, assign) BOOL  success;
 @property (nonatomic, copy) NSString *info;
-
-+ (instancetype)resultFromDictionary:(NSDictionary *)dictionary;
 
 @end

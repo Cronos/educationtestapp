@@ -10,8 +10,7 @@
 
 @implementation EDAData
 
-+ (instancetype _Nullable)dataFromDictionary:(NSDictionary *)dictionary {
-    
++ (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
         
         EDAData *data = [EDAData new];
@@ -28,11 +27,10 @@
 }
 
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array {
-    
     NSMutableArray *newArray = [NSMutableArray array];
     
     for (NSDictionary *dictionary in array) {
-        EDAData *data = [EDAData dataFromDictionary:dictionary];
+        EDAData *data = [EDAData instanceWithDictionary:dictionary];
         if (data) {
             [newArray addObject:data];
         }

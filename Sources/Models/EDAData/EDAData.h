@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDADataModel.h"
 
-@interface EDAData : NSObject
+@interface EDAData : EDADataModel
 
 @property (nonatomic, assign) NSInteger             Id;
 @property (nonatomic, copy) NSString                *content;
@@ -16,7 +17,6 @@
 @property (nonatomic, copy) NSString                *image;
 @property (nonatomic, strong) NSArray <NSString*>   *images;
 
-+ (instancetype)dataFromDictionary:(NSDictionary *)dictionary;
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array;
 
 @end

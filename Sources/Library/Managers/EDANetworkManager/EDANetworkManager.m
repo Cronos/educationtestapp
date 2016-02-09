@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
             if (completion) {
                 float delay = 0.5 + ((float)arc4random()/RAND_MAX)*2.0;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    EDAResponse *response = [EDAResponse responseFromDictionary:[EDANetworkManager resultForData:parameters[EDANetworkParameterId]]];
+                    EDAResponse *response = [EDAResponse instanceWithDictionary:[EDANetworkManager resultForData:parameters[EDANetworkParameterId]]];
                     // call completion(response);
                 });
             }
