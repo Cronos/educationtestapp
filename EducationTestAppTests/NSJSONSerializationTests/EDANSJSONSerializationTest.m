@@ -14,6 +14,7 @@
 #import "EDAMock.h"
 
 typedef id(*EDAMethodClassIMP)(id, SEL);
+typedef id(*EDAMethodNullIMP)(id, SEL);
 typedef BOOL(*EDAMethodIsKindOfClassIMP)(id, SEL, Class);
 typedef BOOL(*EDAMethodIsMemberOfClassIMP)(id, SEL, Class);
 typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
@@ -62,9 +63,10 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     
     [EDAMock dataWithJSONEDANullObject:^(NSData *data) {
         XCTAssertNotNil(data, @"dataWithJSONObject not initialized");
-        XCTAssertTrue(self.calledMethods.count == 2, @"JSONWithEDANullObject must to call 2 methods");
+        XCTAssertTrue(self.calledMethods.count == 3, @"JSONWithEDANullObject must to call 3 methods");
         XCTAssertTrue([self.calledMethods containsObject:@"isKindOfClass:"], @"[NSJSONSerialization dataWithJSONObject] must be call 'isKindOfClass' method");
         XCTAssertTrue([self.calledMethods containsObject:@"class"], @"[NSJSONSerialization dataWithJSONObject] must be call 'class' method");
+        XCTAssertTrue([self.calledMethods containsObject:@"null"], @"[NSJSONSerialization dataWithJSONObject] must be call 'null' method");
     }];
     
     [self restoreEDANullMethods];
@@ -78,7 +80,8 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
         
         NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         XCTAssertNotNil(array, @"JSONObjectWithData not initialized");
-        XCTAssertTrue(self.calledMethods.count == 0, @"JSONWithEDANullObject must not call no methods");
+        XCTAssertTrue(self.calledMethods.count == 1, @"JSONObjectWithData must to call 1 methods");
+        XCTAssertTrue([self.calledMethods containsObject:@"null"], @"[NSJSONSerialization dataWithJSONObject] must be call 'null' method");
     }];
     
     [self restoreEDANullMethods];
@@ -205,6 +208,23 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     }];
 }
 
+- (void)replaceEDANullMethodNull {
+    [self prepareForReplaceSelector:@selector(null) completion:^(id object, __unsafe_unretained Class class, SEL selector) {
+        EDABlockWithIMP block = ^(IMP implementation) {
+            [self saveImplementationForSelector:selector forObject:object];
+            EDAMethodClassIMP methodIMP = (EDAMethodNullIMP)implementation;
+            
+            return (id)^(id object) {
+                [self.calledMethods addObject:NSStringFromSelector(selector)];
+                
+                return methodIMP(object, selector);
+            };
+        };
+        
+        [class setBlock:block forSelector:selector];
+    }];
+}
+
 #pragma mark -
 #pragma mark Set/Get implementation methods
 
@@ -243,14 +263,15 @@ typedef BOOL(*EDAMethodIsSubclassOfClassIMP)(id, SEL, Class);
     [self replaceEDANullMethodIsKindOfClass];
     [self replaceEDANullMethodIsMemberOfClass];
     [self replaceEDANullMethodIsSubclassOfClass];
+    [self replaceEDANullMethodNull];
 }
 
 - (void)restoreEDANullMethods {
     id object = [EDANull class];
-    for (NSString *methodName in @[@"class", @"isKindOfClass:", @"isMemberOfClass:"]) {
-        [self restoreImplementationForMethod:methodName forObject:object];
+    NSSet <NSString *> *methods = [NSSet setWithArray:[self.savedImplementations allKeys]];
+    for (NSString *methodName in methods) {
+        [self restoreImplementationForMethod:methodName forObject:[methodName isEqualToString:@"isSubclassOfClass:"] ? object_getClass(object) : object];
     }
-    [self restoreImplementationForSelector:@selector(isSubclassOfClass:) forObject:object_getClass(object)];
 }
 
 @end

@@ -8,18 +8,25 @@
 
 #import "EDAImp.h"
 
+@interface EDAImp()
+@property (nonatomic, readwrite) IMP implementation;
+
+@end
+
 @implementation EDAImp
 
-+ (instancetype)instanceWithImplementation:(IMP)implementation {
-    EDAImp *object = [[self alloc] initWithImplementation:implementation];
-    
-    return object;
++ (instancetype)instanceWithImplementation:(IMP)implementation {    
+    return [[self alloc] initWithImplementation:implementation];
+}
+
+- (instancetype)init {
+    return [self initWithImplementation:nil];
 }
 
 - (instancetype)initWithImplementation:(IMP)implementation {
     self = [super init];
     if (self) {
-        _implementation = implementation;
+        self.implementation = implementation;
     }
     
     return self;

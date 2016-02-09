@@ -27,9 +27,7 @@
 }
 
 - (void)testInitialize {
-    
     EDANull *nullValue = [EDANull new];
-    
     XCTAssertTrue([nullValue isMemberOfClass:[EDANull class]], @"nullObject must be EDANull");
 }
 
