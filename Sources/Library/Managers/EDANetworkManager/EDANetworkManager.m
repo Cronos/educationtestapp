@@ -9,7 +9,8 @@
 #import "EDANetworkManager.h"
 #import "EDAResponse.h"
 
-static NSString *const EDARequestPath = @"http://localhost";
+//static NSString *const EDARequestPath = @"http://localhost";
+static NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082";
 
 static NSString *const EDANetworkParameterId = @"id";
 static NSString *const EDANetworkParameterIndex = @"index";
@@ -96,7 +97,7 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
 + (NSString *)imagePathForId:(NSNumber *)Id {
     NSString *imageName = [NSString stringWithFormat:@"01%@.jpg", [EDANetworkManager filledStringForNumber:Id]];
     
-    return [EDARequestPath stringByAppendingPathComponent:imageName];
+    return [EDAAPIHost stringByAppendingPathComponent:imageName];
 }
 
 + (NSString *)randomStringWithLength:(NSRange)range {
