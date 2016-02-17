@@ -20,7 +20,7 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 @implementation EDAURLRequest
 
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout {
-    NSURL *url = [NSURL URLWithString:[EDAAPIHost stringByAppendingPathComponent:path]];
+    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIHost]];
     EDAURLRequest *request = [super requestWithURL:url cachePolicy:(NSURLRequestCachePolicy)policy timeoutInterval:timeout];
     request.allowsCellularAccess = YES;
     [request setMethod:httpMethod];
