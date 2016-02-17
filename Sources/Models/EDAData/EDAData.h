@@ -10,7 +10,7 @@
 #import "EDADataModel.h"
 
 @interface EDAData : EDADataModel
-
+@property (nonatomic, assign) NSUInteger            index;
 @property (nonatomic, assign) NSInteger             Id;
 @property (nonatomic, copy) NSString                *content;
 @property (nonatomic, copy) NSString                *message;

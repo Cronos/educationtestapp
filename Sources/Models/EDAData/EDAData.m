@@ -12,13 +12,13 @@
 
 + (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        
         EDAData *data = [EDAData new];
         data.Id = [[dictionary objectForKey:@"id"] integerValue];
         data.content =[dictionary objectForKey:@"content"];
         data.message = [dictionary objectForKey:@"message"];
         data.image = [dictionary objectForKey:@"image"];
         data.images = [dictionary objectForKey:@"images"];
+        data.index = 0;
         
         return data;
     }
@@ -28,7 +28,6 @@
 
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array {
     NSMutableArray *newArray = [NSMutableArray array];
-    
     for (NSDictionary *dictionary in array) {
         EDAData *data = [EDAData instanceWithDictionary:dictionary];
         if (data) {
