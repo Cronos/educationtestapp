@@ -39,4 +39,18 @@
     return [newArray copy];
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.index = 0;
+        self.Id = 0;
+        self.content = nil;
+        self.message = nil;
+        self.image = nil;
+        self.images = nil;
+    }
+    
+    return self;
+}
+
 @end
