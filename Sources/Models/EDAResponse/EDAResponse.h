@@ -12,7 +12,6 @@
 @class EDAResponseMetadata, EDAData;
 
 @interface EDAResponse : EDADataModel
-
 @property (nonatomic, strong) EDAResponseMetadata   *meta;
 @property (nonatomic, strong) NSArray<EDAData*>     *data;
 

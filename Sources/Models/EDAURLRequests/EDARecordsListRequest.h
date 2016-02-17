@@ -10,6 +10,6 @@
 
 @interface EDARecordsListRequest : EDAURLRequest
 
-+ (instancetype)requestFromIndex:(NSInteger)index count:(NSInteger)count;
++ (instancetype)requestFromIndex:(NSUInteger)index count:(NSUInteger)count;
 
 @end

@@ -12,7 +12,6 @@
 @class EDAResponseRequestResult, EDAResponseLayout;
 
 @interface EDAResponseMetadata : EDADataModel
-
 @property (nonatomic, strong) EDAResponseRequestResult  *request;
 @property (nonatomic, strong) EDAResponseLayout         *layout;
 

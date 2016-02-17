@@ -10,7 +10,6 @@
 #import "EDADataModel.h"
 
 @interface EDAResponseRequestResult : EDADataModel
-
 @property (nonatomic, assign) BOOL  success;
 @property (nonatomic, copy) NSString *info;
 

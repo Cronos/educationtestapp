@@ -10,7 +10,6 @@
 #import "EDADataModel.h"
 
 @interface EDAResponseLayout : EDADataModel
-
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) NSInteger totalCount;

@@ -8,11 +8,11 @@
 
 #import "EDARecordsListRequest.h"
 
-NSString * const EDARecordsListRequestTemplate = @"data?index=%ld&count=%ld";
+NSString * const EDARecordsListRequestTemplate = @"?index=%lud&count=%lud";
 
 @implementation EDARecordsListRequest
 
-+ (instancetype)requestFromIndex:(NSInteger)index count:(NSInteger)count {
++ (instancetype)requestFromIndex:(NSUInteger)index count:(NSUInteger)count {
     NSString *path = [NSString stringWithFormat:EDARecordsListRequestTemplate, index, count];
     EDARecordsListRequest *request = [self requestWithPath:path];
     [request setContentType:@"application/json; charset=utf-8"];

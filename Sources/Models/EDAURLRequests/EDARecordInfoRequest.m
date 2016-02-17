@@ -8,7 +8,7 @@
 
 #import "EDARecordInfoRequest.h"
 
-NSString * const EDARecordInfoRequestTemplate = @"/data/%ld";
+NSString * const EDARecordInfoRequestTemplate = @"/%ld";
 
 @implementation EDARecordInfoRequest
 
