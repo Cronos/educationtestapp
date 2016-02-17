@@ -8,7 +8,7 @@
 
 #import "EDARecordsListRequest.h"
 
-NSString * const EDARecordsListRequestTemplate = @"?index=%lud&count=%lud";
+NSString * const EDARecordsListRequestTemplate = @"?index=%lu&count=%lu";
 
 @implementation EDARecordsListRequest
 
