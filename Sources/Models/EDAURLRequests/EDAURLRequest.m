@@ -9,7 +9,7 @@
 #import "EDAURLRequest.h"
 
 NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082/data";
-static const NSTimeInterval defaultTimeout = 30.0;
+static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @interface EDAURLRequest()
 
@@ -29,15 +29,15 @@ static const NSTimeInterval defaultTimeout = 30.0;
 }
 
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy {
-    return [self requestWithPath:path httpMethod:httpMethod cachePolicy:policy timeout:defaultTimeout];
+    return [self requestWithPath:path httpMethod:httpMethod cachePolicy:policy timeout:EDARequestDefaultTimeout];
 }
 
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod {
-    return [self requestWithPath:path httpMethod:httpMethod cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:defaultTimeout];
+    return [self requestWithPath:path httpMethod:httpMethod cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
 }
 
 + (instancetype)requestWithPath:(NSString *)path {
-    return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:defaultTimeout];
+    return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
 }
 
 #pragma mark -
