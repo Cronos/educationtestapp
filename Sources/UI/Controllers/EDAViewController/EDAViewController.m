@@ -14,11 +14,10 @@
 static NSString *   const EDATableViewCellIdentifier    = @"EDATableViewCell";
 static CGFloat      const EDATableViewCellHeigth        = 80.0;
 static NSUInteger   const EDATableViewSectionCount      = 1;
-static NSUInteger   const EDATableViewDefaultFetchCount = 20;
+static NSUInteger   const EDATableViewDefaultFetchCount = 10;
 
 @interface EDAViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, assign) NSUInteger index;
 
 @end
 
@@ -27,7 +26,6 @@ static NSUInteger   const EDATableViewDefaultFetchCount = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:EDATableViewCellIdentifier bundle:nil] forCellReuseIdentifier:EDATableViewCellIdentifier];
-    self.index = 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -61,27 +59,36 @@ static NSUInteger   const EDATableViewDefaultFetchCount = 20;
     return EDATableViewCellHeigth;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //TODO: дозагрузка приложений
-    if (indexPath.row >= ([EDADataManager sharedManager].count - EDATableViewDefaultFetchCount/2)) {
+- (void)tableView:(UITableView *)tableView willDisplayCell:(EDATableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row >= ([EDADataManager sharedManager].count - EDATableViewDefaultFetchCount)) {
         [self fetchData];
     }
+    [cell willDisplay];
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(EDATableViewCell *)cell forRowAtIndexPath:(NSIndexPath*)indexPath {
+    [cell didEndDisplaying];
 }
 
 #pragma mark -
 #pragma mark Private
 
+- (void)insertRowsFromIndex:(NSUInteger)index count:(NSUInteger)count {
+    NSMutableArray *array = [NSMutableArray array];
+    for (NSInteger idx = index; idx < index + count; idx++) {
+        [array addObject:[NSIndexPath indexPathForItem:idx inSection:0]];
+    }
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:[array copy] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
+
+}
+
 - (void)fetchData {
-
-    [[EDADataManager sharedManager] fetchDataForRecordsFromIndex:self.index count:EDATableViewDefaultFetchCount completion:^(NSError *error) {
-        self.index += EDATableViewDefaultFetchCount;
-
-        //TODO: handle error?
-        if (error) {
-            [self showAlertWithTitle:@"ERROR" message:error.localizedDescription handler:nil];
-        } else {
-            [self.tableView reloadData];
-        }
+    [[EDADataManager sharedManager] fetchDataCount:EDATableViewDefaultFetchCount completion:^(NSUInteger index, NSUInteger count) {
+        [self insertRowsFromIndex:index count:count];
+    } error:^(NSError *error) {
+        [self showAlertWithTitle:@"ERROR" message:error.localizedDescription handler:nil];
     }];
 }
 

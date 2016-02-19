@@ -10,7 +10,6 @@
 
 @class EDAResponse, EDAData;
 
-typedef void(^EDAResponseAndErrorBlock)(EDAResponse *response, NSError *error);
 typedef void(^EDAErrorBlock)(NSError *error);
 
 @interface EDADataManager : NSObject
@@ -20,6 +19,7 @@ typedef void(^EDAErrorBlock)(NSError *error);
 + (instancetype)sharedManager;
 
 - (EDAData *)objectAtIndexedSubscript:(NSUInteger)idx;
-- (void)fetchDataForRecordsFromIndex:(NSUInteger)index count:(NSUInteger)count completion:(EDAErrorBlock)completion;
+- (void)fetchDataCount:(NSUInteger)recordsCount completion:(void (^)(NSUInteger index, NSUInteger count))completion error:(EDAErrorBlock)error;
+
 
 @end

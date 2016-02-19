@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^EDAURLSessionTaskCompletion)(NSData *data, NSURLResponse *response, NSError *error);
+typedef void (^EDAURLSessionDataTaskCompletion)(NSData *data, NSError *error);
 typedef void (^EDAURLSessionDownloadTaskCompletion)(NSURL *location, NSURLResponse *response, NSError *error);
 
 @interface NSURLSession (EDAExtensions)
 
 + (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request
                                      priority:(float)priority
-                                   completion:(EDAURLSessionTaskCompletion)completion;
+                                   completion:(EDAURLSessionDataTaskCompletion)completion;
 
 + (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request
-                                   completion:(EDAURLSessionTaskCompletion)completion;
+                                   completion:(EDAURLSessionDataTaskCompletion)completion;
 
 + (NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request
                                              priority:(float)priority

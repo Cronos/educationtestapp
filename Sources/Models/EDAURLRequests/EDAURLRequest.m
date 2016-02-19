@@ -8,7 +8,7 @@
 
 #import "EDAURLRequest.h"
 
-NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082/data";
+NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082";
 static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @interface EDAURLRequest()

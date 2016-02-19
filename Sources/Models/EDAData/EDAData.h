@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "EDADataModel.h"
 
+@class EDAData;
+
+typedef void(^EDADataBlock)(EDAData *data);
+
 @interface EDAData : EDADataModel
 @property (nonatomic, assign) NSUInteger            index;
 @property (nonatomic, assign) NSInteger             Id;
@@ -16,7 +20,16 @@
 @property (nonatomic, copy) NSString                *message;
 @property (nonatomic, copy) NSString                *image;
 @property (nonatomic, strong) NSArray <NSString*>   *images;
+@property (nonatomic, copy) EDADataBlock            updateDataBlock;
 
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array;
++ (instancetype)dataWithIndex:(NSUInteger)index;
+
+- (instancetype)initWithIndex:(NSUInteger)index;
+
+- (void)setPropertyValueWithData:(EDAData *)data;
+
+- (void)fetchData;
+- (void)cancelFetchData;
 
 @end

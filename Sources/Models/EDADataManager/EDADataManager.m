@@ -16,20 +16,18 @@
 #import "EDAResponseLayout.h"
 #import "NSArray+EDAExtensions.h"
 #import "NSError+EDAExtensions.h"
+#import "EDADispatch.h"
 
 @interface EDADataManager ()
 @property (nonatomic, assign) NSInteger totalRecordsCount;
 @property (nonatomic, strong) NSMutableSet <EDAData *> *data;
-@property (nonatomic, strong) NSURLSessionDataTask *fetchDataTask;
+@property (nonatomic, assign) NSInteger count;
 
-- (void)addMockDataFromIndex:(NSUInteger)index count:(NSUInteger)count;
 - (void)updateDataWithObjects:(NSArray *)objects fromIndex:(NSUInteger)index;
 
 @end
 
 @implementation EDADataManager
-
-@dynamic count;
 
 + (instancetype)sharedManager {
     static id __sharedInstance = nil;
@@ -45,7 +43,8 @@
     self = [super init];
     if (self) {
         self.data = [NSMutableSet set];
-        self.totalRecordsCount = 0;
+        self.count = 0;
+        self.totalRecordsCount = -1;
     }
     
     return self;
@@ -54,98 +53,86 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (EDAData *)objectAtIndexedSubscript:(NSUInteger)idx {
-    NSSet *set = [self.data objectsPassingTest:^BOOL(EDAData *obj, BOOL *stop) {
-        return obj.index == idx;
-    }];
-
-    return set.allObjects.firstObject;
-}
-
-- (void)setObject:(EDAData *)object atIndexedSubscript:(NSUInteger)idx {
-    NSSet *set = [self.data objectsPassingTest:^BOOL(EDAData *obj, BOOL *stop) {
-        *stop = (obj.index == idx);
-        return *stop;
-    }];
-    
-    EDAData *data = set.allObjects.firstObject;
-    [self.data removeObject:data];
-    [self.data addObject:object];
-}
-
-- (void)fetchDataForRecordsFromIndex:(NSUInteger)index count:(NSUInteger)count completion:(EDAErrorBlock)completion {
-    EDARecordsListRequest *request = [EDARecordsListRequest requestFromIndex:index count:count];
-    [self addMockDataFromIndex:index count:count];
-    NSURLSessionDataTask *task = [NSURLSession dataTaskWithRequest:request completion:^(NSData *data, NSURLResponse *taskResponse, NSError *taskError) {
+- (EDAData *)dataWithIndex:(NSUInteger)index {
+    @synchronized(self.data) {
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(EDAData *evaluatedObject, NSDictionary<NSString *,id> *bindings) {
+            return evaluatedObject.index == index;
+        }];
         
-        NSInteger statusCode = [[taskResponse valueForKey:@"statusCode"] integerValue];
-        if (statusCode != 200) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion ? completion([NSError errorWithCode:statusCode description:[@(statusCode) stringValue]]) : nil;
-            });
-            
-            return;
-        }
-
-        NSError *error = taskError;
-        NSDictionary *dictionary = nil;
-        EDAResponse *response = nil;
-        if (!taskError) {
-            dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-        }
-        
-        if (!error) {
-            response = [EDAResponse instanceWithDictionary:dictionary[@"response"]];
-            self.totalRecordsCount = response.meta.layout.totalCount;
-            [self updateDataWithObjects:response.data fromIndex:response.meta.layout.index];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion ? completion(error) : nil;
-            });
-        }
-    }];
-    
-    //TODO: add task to array ?
-    [task startWithPriority:0.5];
+        return [self.data filteredSetUsingPredicate:predicate].allObjects.firstObject;
+    }
 }
 
 #pragma mark -
-#pragma mark Forwarding methods
+#pragma mark IndexedSubscript
 
--(BOOL)respondsToSelector:(SEL)aSelector {
-    return ([self.data respondsToSelector:aSelector] || [super respondsToSelector:aSelector]);
+- (EDAData *)objectAtIndexedSubscript:(NSUInteger)index {
+    @synchronized(self.data) {
+        EDAData *data = [self dataWithIndex:index];
+        if (!data) {
+            data = [EDAData dataWithIndex:index];
+            [self.data addObject:data];
+        }
+
+        return data;
+    }
 }
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
-    if ([self.data respondsToSelector:selector]) {
-        return [self.data methodSignatureForSelector:selector];
-    } else {
-        return [super methodSignatureForSelector:selector];
-    }}
-
-- (void)forwardInvocation:(NSInvocation *)invocation {
-    if ([self.data respondsToSelector:invocation.selector]) {
-        [invocation invokeWithTarget:self.data];
-    } else {
-        [super forwardInvocation:invocation];
+- (void)setObject:(EDAData *)object atIndexedSubscript:(NSUInteger)index {
+    @synchronized(self.data) {
+        EDAData *data = [self dataWithIndex:index];
+        if (data) {
+            [self.data removeObject:data];
+        }
+        
+        [self.data addObject:object];
     }
+}
+
+- (void)fetchDataCount:(NSUInteger)recordsCount completion:(void (^)(NSUInteger index, NSUInteger count))completion error:(EDAErrorBlock)error {
+    NSInteger index = self.count;
+    NSUInteger count = self.totalRecordsCount < 0 ? recordsCount : MIN(recordsCount, self.totalRecordsCount - index);
+    self.count += count;
+    
+    EDADispatchAsyncInMainQueue(^{
+        completion ? completion(index, count) : nil;
+    });
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_async(queue, ^{
+    
+        EDARecordsListRequest *request = [EDARecordsListRequest requestFromIndex:index count:count];
+        typeof(self) __weak weakSelf = self;
+        NSURLSessionDataTask *task = [NSURLSession dataTaskWithRequest:request completion:^(NSData *data, NSError *requestError) {
+            if (requestError) {
+                EDADispatchAsyncInMainQueue(^{
+                    error ? error(requestError) : nil;
+                });
+            } else {
+                NSError *error = nil;
+                EDAResponse *response = nil;
+                NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                typeof(weakSelf) __strong strongSelf = weakSelf;
+                if (!error) {
+                    response = [EDAResponse instanceWithDictionary:dictionary[@"response"]];
+                    strongSelf.totalRecordsCount = response.meta.layout.totalCount;
+                    [strongSelf updateDataWithObjects:response.data fromIndex:response.meta.layout.index];
+                }
+            }
+        }];
+        
+        [task startWithPriority:0.5];
+    });
 }
 
 #pragma mark -
 #pragma mark Private
 
-- (void)addMockDataFromIndex:(NSUInteger)index count:(NSUInteger)count {
-    for (NSUInteger idx = 0; idx < count; idx++) {
-        EDAData *data = [EDAData new];
-        data.index = index+idx;
-        [self.data addObject:data];
-    }
-}
-
 - (void)updateDataWithObjects:(NSArray *)objects fromIndex:(NSUInteger)index {
-    [objects enumerateObjectsUsingBlock:^(EDAData *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [objects enumerateObjectsUsingBlock:^(EDAData *data, NSUInteger idx, BOOL * _Nonnull stop) {
         NSUInteger objIdx = index + idx;
-        obj.index = objIdx;
-        self[objIdx] = obj;
+        self[objIdx].Id = data.Id;
+        [self[objIdx] fetchData];
     }];
 }
 

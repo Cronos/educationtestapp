@@ -34,8 +34,8 @@ extern NSString *const EDARecordsListRequestTemplate;
     XCTAssertEqual(request.cachePolicy, EDAURLRequestReturnCacheDataElseLoad, @"cachePolicy must be equal to default value EDAURLRequestReturnCacheDataElseLoad");
     XCTAssertEqualObjects(request.HTTPMethod, @"GET", @"request method must be equal to 'GET'");
     
-    NSURL *url = [NSURL URLWithString:[EDAAPIHost stringByAppendingPathComponent:path]];
-    XCTAssertEqualObjects(request.URL.absoluteString, url.absoluteString, @"request URL must be equal to %@", url.absoluteString);
+    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIHost]];
+    XCTAssertTrue([request.URL.absoluteString isEqualToString:url.absoluteString], @"request URL\n %@ must be equal to\n %@",request.URL.absoluteString, url.absoluteString);
 }
 
 - (void)testCreateRequestWithPath {

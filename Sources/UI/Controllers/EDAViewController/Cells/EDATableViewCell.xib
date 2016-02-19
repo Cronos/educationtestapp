@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EDATableViewCell" rowHeight="80" id="ETL-fL-BtK" userLabel="imageViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EDATableViewCell" rowHeight="80" id="ETL-fL-BtK" userLabel="imageViewCell" customClass="EDATableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETL-fL-BtK" id="eaM-HE-D9u">
@@ -28,17 +28,33 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLK-qe-K56">
+                        <rect key="frame" x="15" y="50" width="64" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="EM6-W8-w3q"/>
+                            <constraint firstAttribute="width" constant="64" id="axB-Im-uL9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="6go-qz-nB8" secondAttribute="trailing" constant="15" id="D1g-xe-GzT"/>
                     <constraint firstItem="nL7-mI-XYa" firstAttribute="centerY" secondItem="eaM-HE-D9u" secondAttribute="centerY" id="PDd-V8-TbY"/>
+                    <constraint firstAttribute="bottom" secondItem="XLK-qe-K56" secondAttribute="bottom" constant="8" id="PHp-r2-nRE"/>
                     <constraint firstAttribute="bottom" secondItem="6go-qz-nB8" secondAttribute="bottom" constant="7" id="a6L-lS-Jum"/>
                     <constraint firstItem="6go-qz-nB8" firstAttribute="leading" secondItem="nL7-mI-XYa" secondAttribute="trailing" constant="15" id="lhd-dB-L7X"/>
                     <constraint firstItem="6go-qz-nB8" firstAttribute="top" secondItem="eaM-HE-D9u" secondAttribute="top" constant="8" id="rIR-H1-4cp"/>
+                    <constraint firstItem="XLK-qe-K56" firstAttribute="leading" secondItem="eaM-HE-D9u" secondAttribute="leading" constant="15" id="tBm-Cp-nPa"/>
                     <constraint firstItem="nL7-mI-XYa" firstAttribute="leading" secondItem="eaM-HE-D9u" secondAttribute="leading" constant="15" id="yGT-iE-7Wl"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="1" green="1" blue="0.246412037" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="contentLabel" destination="6go-qz-nB8" id="bnN-Xo-vIQ"/>
+                <outlet property="indexLabel" destination="XLK-qe-K56" id="AFw-Gd-JtT"/>
+            </connections>
             <point key="canvasLocation" x="457" y="211"/>
         </tableViewCell>
     </objects>

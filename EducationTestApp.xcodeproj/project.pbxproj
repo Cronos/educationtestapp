@@ -85,6 +85,7 @@
 		E385CAC61C7499BB000197DB /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataManager.h; sourceTree = "<group>"; };
 		E385CAC71C7499BB000197DB /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManager.m; sourceTree = "<group>"; };
 		E385CACB1C7499F1000197DB /* EDADataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManagerTests.m; sourceTree = "<group>"; };
+		E385E97E1C7752F000E7849C /* EDADispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDADispatch.h; sourceTree = "<group>"; };
 		E38942371C622371007C1E6A /* EDAImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAImp.h; sourceTree = "<group>"; };
 		E38942381C622371007C1E6A /* EDAImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAImp.m; sourceTree = "<group>"; };
 		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
@@ -347,6 +348,7 @@
 		E38ABBC31C64F6170099B5E6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E385E97E1C7752F000E7849C /* EDADispatch.h */,
 				E38ABBC41C64F6170099B5E6 /* Categories */,
 				E38ABBD51C64F6170099B5E6 /* Managers */,
 			);
