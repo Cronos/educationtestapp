@@ -22,7 +22,7 @@
 @implementation EDATableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -30,7 +30,7 @@
 }
 
 - (void)prepareForReuse {
-    self.data.updateDataBlock = nil;
+    self.data.didUpdatedBlock = nil;
     self.data = nil;
 }
 
@@ -38,11 +38,12 @@
     if (_data != data) {
         _data = data;
         typeof(self) __weak weakSelf = self;
-        _data.updateDataBlock = ^(EDAData *data) {
+        _data.didUpdatedBlock = ^(EDAData *data) {
             typeof(weakSelf) __weak strongSelf = weakSelf;
             [strongSelf updateViewsWithData:data];
-        };        
+        };
     }
+    [self updateViewsWithData:data];
 }
 
 - (void)willDisplay {

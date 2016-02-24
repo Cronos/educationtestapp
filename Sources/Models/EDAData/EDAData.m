@@ -69,7 +69,7 @@
     }
 }
 
-- (void)setPropertyValueWithData:(EDAData *)data {
+- (void)setPropertyValueWithData:(EDAData *)data {    
     self.Id = data.Id;
     self.content =  data.content;
     self.message = data.message;
@@ -77,7 +77,7 @@
     self.images = data.images;
     
     EDADispatchAsyncInMainQueue(^{
-        self.updateDataBlock ? self.updateDataBlock(self) : nil;
+        self.didUpdatedBlock ? self.didUpdatedBlock(self) : nil;
     });
 }
 
@@ -88,8 +88,9 @@
     
     if (self.isLoaded) {
         EDADispatchAsyncInMainQueue(^{
-            self.updateDataBlock ? self.updateDataBlock(self) : nil;
+            self.didUpdatedBlock ? self.didUpdatedBlock(self) : nil;
         });
+        
         return;
     }
     
@@ -99,8 +100,8 @@
             if (data ){
                 typeof(weakSelf) __strong strongSelf = weakSelf;
                 [strongSelf parseLoadedData:data];
-//            } else {
-//                 NSLog(@"Index %lu fetchData error: %@", (unsigned long)self.index, error.localizedDescription);
+            } else {
+                 NSLog(@"Index %lu fetchData error: %@", (unsigned long)self.index, error.localizedDescription);
             }
         }] resume];
     }

@@ -36,7 +36,8 @@
             EDAURLSessionDispatchInMainQueue(nil, [NSError errorWithCode:statusCode description:errorDescription]);
         }
         
-        EDAURLSessionDispatchInMainQueue(data, nil);
+//        EDAURLSessionDispatchInMainQueue(data, nil);
+        completion ? completion(data, nil) : nil;
     }];
     
     task.priority = priority;

@@ -20,7 +20,7 @@ typedef void(^EDADataBlock)(EDAData *data);
 @property (nonatomic, copy) NSString                *message;
 @property (nonatomic, copy) NSString                *image;
 @property (nonatomic, strong) NSArray <NSString*>   *images;
-@property (nonatomic, copy) EDADataBlock            updateDataBlock;
+@property (nonatomic, copy) EDADataBlock            didUpdatedBlock;
 
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array;
 + (instancetype)dataWithIndex:(NSUInteger)index;
