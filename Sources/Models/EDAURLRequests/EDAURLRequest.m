@@ -8,7 +8,7 @@
 
 #import "EDAURLRequest.h"
 
-NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082";
+NSString * const EDAAPIBaseURL = @"http://newdev.anahoret.com:8082";
 static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @interface EDAURLRequest()
@@ -20,7 +20,6 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 @implementation EDAURLRequest
 
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout {
-    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIHost]];
     EDAURLRequest *request = [super requestWithURL:url cachePolicy:(NSURLRequestCachePolicy)policy timeoutInterval:timeout];
     request.allowsCellularAccess = YES;
     [request setMethod:httpMethod];
@@ -38,6 +37,7 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 + (instancetype)requestWithPath:(NSString *)path {
     return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
+    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIBaseURL]];
 }
 
 #pragma mark -

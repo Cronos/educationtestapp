@@ -11,9 +11,9 @@
 #import "EDARecordInfoRequest.h"
 #import "EDARecordsListRequest.h"
 
-extern NSString *const EDAAPIHost;
 extern NSString *const EDARecordInfoRequestTemplate;
 extern NSString *const EDARecordsListRequestTemplate;
+extern NSString * const EDAAPIBaseURL;
 
 @interface EDAURLRequestTests : XCTestCase
 
@@ -34,7 +34,7 @@ extern NSString *const EDARecordsListRequestTemplate;
     XCTAssertEqual(request.cachePolicy, EDAURLRequestReturnCacheDataElseLoad, @"cachePolicy must be equal to default value EDAURLRequestReturnCacheDataElseLoad");
     XCTAssertEqualObjects(request.HTTPMethod, @"GET", @"request method must be equal to 'GET'");
     
-    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIHost]];
+    NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIBaseURL]];
     XCTAssertTrue([request.URL.absoluteString isEqualToString:url.absoluteString], @"request URL\n %@ must be equal to\n %@",request.URL.absoluteString, url.absoluteString);
 }
 
