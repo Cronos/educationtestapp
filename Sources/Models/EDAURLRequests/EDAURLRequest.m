@@ -9,6 +9,10 @@
 #import "EDAURLRequest.h"
 
 NSString * const EDAAPIBaseURL = @"http://newdev.anahoret.com:8082";
+
+NSString * const EDARequestHeaderFieldContentType    = @"Content-Type";
+NSString * const EDARequestHeaderFieldAuthorization  = @"Authorization";
+
 static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @interface EDAURLRequest()
@@ -44,11 +48,11 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 #pragma mark Public methods
 
 - (void)setContentType:(NSString *)value {
-    [self addValue:value forHTTPHeaderField:@"Content-Type"];
+    [self addValue:value forHTTPHeaderField:EDARequestHeaderFieldContentType];
 }
 
 - (void)setAuthorizationHeader:(NSString *)credentials {
-    [self addValue:credentials forHTTPHeaderField:@"Authorization"];
+    [self addValue:credentials forHTTPHeaderField:EDARequestHeaderFieldAuthorization];
 }
 
 #pragma mark -
