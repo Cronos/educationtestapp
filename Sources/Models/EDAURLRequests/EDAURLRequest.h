@@ -29,13 +29,14 @@ typedef NS_ENUM(NSUInteger, EDARequestMethod) {
 };
 
 @interface EDAURLRequest : NSMutableURLRequest
+@property (nonatomic, copy, getter=contentType) NSString *contentType;
 
 + (instancetype)requestWithPath:(NSString *)path;
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod;
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy;
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout;
 
-- (void)setContentType:(NSString *)value;
+//- (void)setContentType:(NSString *)value;
 - (void)setAuthorizationHeader:(NSString *)credentials;
 
 @end

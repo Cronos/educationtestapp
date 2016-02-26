@@ -23,6 +23,7 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @implementation EDAURLRequest
 
+@dynamic contentType;
 
 + (instancetype)requestWithPath:(NSString *)path {
     return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
@@ -46,10 +47,14 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 }
 
 #pragma mark -
-#pragma mark Public methods
+#pragma mark Accessors
 
 - (void)setContentType:(NSString *)value {
     [self addValue:value forHTTPHeaderField:EDARequestHeaderFieldContentType];
+}
+
+- (NSString *)contentType:(NSString *)value {
+    return [self valueForHTTPHeaderField:EDARequestHeaderFieldContentType];
 }
 
 - (void)setAuthorizationHeader:(NSString *)credentials {
