@@ -43,13 +43,14 @@
     
     XCTAssertEqual(array.count, 2, @"dataArray size must be equals to 2");
 
-    XCTAssertEqual(array[0].Id, 1, @"dataArray size must be equals to 2");
-    XCTAssertEqual(array[0].content, @"MAMAPAPADEDABABA", @"dataArray[0].content init error");
-    XCTAssertEqual(array[0].image, @"http://www.1.de", @"dataArray[0].image init error");
+    EDAData *item = array[0];
+    XCTAssertEqual(item.Id, 1, @"dataArray size must be equals to 2");
+    XCTAssertEqual(item.content, @"MAMAPAPADEDABABA", @"dataArray[0].content init error");
+    XCTAssertEqual(item.image, @"http://www.1.de", @"dataArray[0].image init error");
     
-    
-    XCTAssertEqual(array[1].Id, 2, @"dataArray size must be equals to 2");
-    XCTAssertEqual(array[1].content, @"PAPAMAMABABADEDA", @"dataArray[0].content init error");
-    XCTAssertEqual(array[1].image, @"http://www.2.de", @"dataArray[0].image init error");
+    item = array[1];
+    XCTAssertEqual(item.Id, 2, @"dataArray size must be equals to 2");
+    XCTAssertEqual(item.content, @"PAPAMAMABABADEDA", @"dataArray[0].content init error");
+    XCTAssertEqual(item.image, @"http://www.2.de", @"dataArray[0].image init error");
 }
 @end
