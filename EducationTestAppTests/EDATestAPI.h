@@ -13,7 +13,8 @@
 // request: /data?index=0&count=100
 //
 
-static inline NSDictionary * testDataSuccessfulResponse() {
+static inline
+NSDictionary * EDATestDataSuccessfulResponse() {
     return @{
              @"response" : @{ // dictionary to contain all the response data
                      @"meta" : @{ // metadata dictionary
@@ -44,7 +45,8 @@ static inline NSDictionary * testDataSuccessfulResponse() {
 }
 
 
-static inline NSDictionary * testDataUnsuccessfulResponse() {
+static inline
+NSDictionary * EDATestDataUnsuccessfulResponse() {
     return @{
              @"response" : @{ // dictionary to contain all the response data
                      @"meta" : @{ // metadata dictionary
@@ -61,7 +63,8 @@ static inline NSDictionary * testDataUnsuccessfulResponse() {
 // request: /data/{id} - where id is the id of an individual record
 //
 
-static inline NSDictionary * testDataWithIdResponse() {
+static inline
+NSDictionary * EDATestDataWithIdResponse() {
     return @{
              @"data" : @[
                      @{

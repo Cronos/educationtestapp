@@ -28,7 +28,7 @@
 
 - (void)testDataFromDictionary {
     
-    EDAData *data = [EDAData instanceWithDictionary:testDataWithIdResponse()[@"data"][0]];
+    EDAData *data = [EDAData instanceWithDictionary:EDATestDataWithIdResponse()[@"data"][0]];
     
     XCTAssertEqual(data.Id, 1, @"Id initialize error");
     XCTAssertEqual(data.content, @"MAMAPAPADEDABABA", @"Content string initialize error");
@@ -39,7 +39,7 @@
 
 - (void)testArrayFromArray {
     
-    NSArray<EDAData*> *array = [EDAData arrayFromArray:testDataSuccessfulResponse()[@"response"][@"data"]];
+    NSArray<EDAData*> *array = [EDAData arrayFromArray:EDATestDataSuccessfulResponse()[@"response"][@"data"]];
     
     XCTAssertEqual(array.count, 2, @"dataArray size must be equals to 2");
 

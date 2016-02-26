@@ -31,7 +31,7 @@
 
 - (void)testResponseFromDictionarySuccessful {
     
-    EDAResponse *response = [EDAResponse instanceWithDictionary:testDataSuccessfulResponse()[@"response"]];
+    EDAResponse *response = [EDAResponse instanceWithDictionary:EDATestDataSuccessfulResponse()[@"response"]];
     
     XCTAssertNotNil(response, @"response init error");
     
@@ -51,7 +51,7 @@
 
 - (void)testResponseFromDictionaryUnsuccessful {
     
-    EDAResponse *response = [EDAResponse instanceWithDictionary:testDataUnsuccessfulResponse()[@"response"]];
+    EDAResponse *response = [EDAResponse instanceWithDictionary:EDATestDataUnsuccessfulResponse()[@"response"]];
     
     XCTAssertNotNil(response, @"response init error");
     
