@@ -23,25 +23,26 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @implementation EDAURLRequest
 
-+ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout {
-    EDAURLRequest *request = [super requestWithURL:url cachePolicy:(NSURLRequestCachePolicy)policy timeoutInterval:timeout];
-    request.allowsCellularAccess = YES;
-    [request setMethod:httpMethod];
-    
-    return request;
-}
 
-+ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy {
-    return [self requestWithPath:path httpMethod:httpMethod cachePolicy:policy timeout:EDARequestDefaultTimeout];
++ (instancetype)requestWithPath:(NSString *)path {
+    return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
 }
 
 + (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod {
     return [self requestWithPath:path httpMethod:httpMethod cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
 }
 
-+ (instancetype)requestWithPath:(NSString *)path {
-    return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
++ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy {
+    return [self requestWithPath:path httpMethod:httpMethod cachePolicy:policy timeout:EDARequestDefaultTimeout];
+}
+
++ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout {
     NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIBaseURL]];
+    EDAURLRequest *request = [super requestWithURL:url cachePolicy:(NSURLRequestCachePolicy)policy timeoutInterval:timeout];
+    request.allowsCellularAccess = YES;
+    [request setMethod:httpMethod];
+    
+    return request;
 }
 
 #pragma mark -

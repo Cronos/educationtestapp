@@ -11,9 +11,9 @@
 #import "EDARecordInfoRequest.h"
 #import "EDARecordsListRequest.h"
 
-extern NSString *const EDARecordInfoRequestTemplate;
-extern NSString *const EDARecordsListRequestTemplate;
 extern NSString * const EDAAPIBaseURL;
+extern NSString * const EDARecordInfoRequestTemplate;
+extern NSString * const EDARecordsListRequestTemplate;
 
 @interface EDAURLRequestTests : XCTestCase
 

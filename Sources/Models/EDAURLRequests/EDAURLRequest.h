@@ -30,10 +30,10 @@ typedef NS_ENUM(NSUInteger, EDARequestMethod) {
 
 @interface EDAURLRequest : NSMutableURLRequest
 
-+ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout;
-+ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy;
-+ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod;
 + (instancetype)requestWithPath:(NSString *)path;
++ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod;
++ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy;
++ (instancetype)requestWithPath:(NSString *)path httpMethod:(EDARequestMethod)httpMethod cachePolicy:(EDAURLRequestCachePolicy)policy timeout:(NSTimeInterval)timeout;
 
 - (void)setContentType:(NSString *)value;
 - (void)setAuthorizationHeader:(NSString *)credentials;
