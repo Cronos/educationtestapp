@@ -44,6 +44,21 @@ extern NSString * const EDARecordsListRequestTemplate;
     [self testEDAURLRequest:request path:path];
 }
 
+- (void)testContentType {
+    EDAURLRequest *request = [EDAURLRequest new];
+    
+    NSString *contentType1 = @"content type 1";
+    NSString *contentType2 = @"content type 2";
+    [request setContentType:contentType1];
+    [request setContentType:contentType2];
+    
+    NSString *contentType = request.contentType;
+    XCTAssertNotNil(contentType);
+    NSString *contentTypeValue = [NSString stringWithFormat:@"%@,%@", contentType1, contentType2];
+    XCTAssertTrue([contentType isEqualToString:contentTypeValue], @"Content type must be equal to %@", contentTypeValue);
+
+}
+
 - (void)testEDARecordInfoRequest {
     NSInteger ID = 55;
     EDARecordInfoRequest *request = [EDARecordInfoRequest requestWithId:ID];
