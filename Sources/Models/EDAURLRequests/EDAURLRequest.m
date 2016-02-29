@@ -7,16 +7,20 @@
 //
 
 #import "EDAURLRequest.h"
+#import "NSString+EDAExtensions.h"
 
 NSString * const EDAAPIBaseURL = @"http://newdev.anahoret.com:8082";
 
-NSString * const EDARequestHeaderFieldContentType    = @"Content-Type";
-NSString * const EDARequestHeaderFieldAuthorization  = @"Authorization";
+NSString * const EDARequestHeaderFieldContentType         = @"Content-Type";
+NSString * const EDARequestHeaderFieldValueSeparators     = @",";
+NSString * const EDARequestHeaderFieldAuthorization       = @"Authorization";
 
 static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
 @interface EDAURLRequest()
 
+
+- (void)addUniqueStringValue:(NSString *)value forHTTPHeader:(NSArray *)header type:(NSString *)type;
 - (void)setMethod:(EDARequestMethod)method;
 
 @end
@@ -24,6 +28,7 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 @implementation EDAURLRequest
 
 @dynamic contentType;
+@dynamic authorizationHeader;
 
 + (instancetype)requestWithPath:(NSString *)path {
     return [self requestWithPath:path httpMethod:EDARequestMethodGET cachePolicy:EDAURLRequestReturnCacheDataElseLoad timeout:EDARequestDefaultTimeout];
@@ -50,19 +55,37 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 #pragma mark Accessors
 
 - (void)setContentType:(NSString *)value {
-    [self addValue:value forHTTPHeaderField:EDARequestHeaderFieldContentType];
+    [self addUniqueStringValue:value forHTTPHeader:[self contentTypes] type:EDARequestHeaderFieldContentType];
 }
 
-- (NSString *)contentType:(NSString *)value {
+- (NSString *)contentType {
     return [self valueForHTTPHeaderField:EDARequestHeaderFieldContentType];
 }
 
+- (NSArray *)contentTypes {
+     return [self.contentType separatedWithChars:EDARequestHeaderFieldValueSeparators];
+}
+
 - (void)setAuthorizationHeader:(NSString *)credentials {
-    [self addValue:credentials forHTTPHeaderField:EDARequestHeaderFieldAuthorization];
+    [self addUniqueStringValue:credentials forHTTPHeader:[self authorizationHeaders] type:EDARequestHeaderFieldAuthorization];
+}
+
+- (NSString *)authorizationHeader {
+    return [self valueForHTTPHeaderField:EDARequestHeaderFieldAuthorization];
+}
+
+- (NSArray *)authorizationHeaders {
+    return [self.authorizationHeader separatedWithChars:EDARequestHeaderFieldValueSeparators];
 }
 
 #pragma mark -
 #pragma mark Private methods
+
+- (void)addUniqueStringValue:(NSString *)value forHTTPHeader:(NSArray *)header type:(NSString *)type {
+    if (![header containsObject:value]) {
+        [self addValue:value forHTTPHeaderField:type];
+    }
+}
 
 - (void)setMethod:(EDARequestMethod)method {
     NSString *string = nil;
