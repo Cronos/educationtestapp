@@ -51,13 +51,34 @@ extern NSString * const EDARecordsListRequestTemplate;
     NSString *contentType2 = @"content type 2";
     [request setContentType:contentType1];
     [request setContentType:contentType2];
-    
+
     NSString *contentType = request.contentType;
     XCTAssertNotNil(contentType);
     NSString *contentTypeValue = [NSString stringWithFormat:@"%@,%@", contentType1, contentType2];
     XCTAssertTrue([contentType isEqualToString:contentTypeValue], @"Content type must be equal to %@", contentTypeValue);
 
+    NSArray *array = [request contentTypes];
+    XCTAssertTrue([array containsObject:contentType1], @"Contents must be contains %@", contentType1);
+    XCTAssertTrue([array containsObject:contentType2], @"Contents must be contains %@", contentType2);
+    
+    [request setContentType:contentType1];
+    XCTAssertEqual([request contentTypes].count, 2, @"Contents must be contains 2 types");
 }
+
+- (void)testAuthorizationHeader {
+    EDAURLRequest *request = [EDAURLRequest new];
+    
+    NSString *authorizationHeader1 = @"authorization header value 1";
+    NSString *authorizationHeader2 = @"authorization header value 2";
+    [request setAuthorizationHeader:authorizationHeader1];
+    [request setAuthorizationHeader:authorizationHeader2];
+    
+    NSString *contentType = request.authorizationHeader;
+    XCTAssertNotNil(contentType);
+    NSString *contentTypeValue = [NSString stringWithFormat:@"%@,%@", authorizationHeader1, authorizationHeader2];
+    XCTAssertTrue([contentType isEqualToString:contentTypeValue], @"Authorization header must be equal to %@", contentTypeValue);
+}
+
 
 - (void)testEDARecordInfoRequest {
     NSInteger ID = 55;
