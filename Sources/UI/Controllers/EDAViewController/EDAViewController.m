@@ -10,6 +10,7 @@
 #import "EDATableViewCell.h"
 #import "EDADataManager.h"
 #import "UIViewController+EDAAlert.h"
+#import "UITableView+EDAExtensions.h"
 
 static NSString *   const EDATableViewCellIdentifier    = @"EDATableViewCell";
 static CGFloat      const EDATableViewCellHeigth        = 80.0;
@@ -77,9 +78,8 @@ static NSUInteger   const EDATableViewDefaultFetchCount = 10;
     for (NSInteger idx = index; idx < index + count; idx++) {
         [array addObject:[NSIndexPath indexPathForItem:idx inSection:0]];
     }
-    [self.tableView beginUpdates];
-    [self.tableView insertRowsAtIndexPaths:[array copy] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView endUpdates];
+    
+    [self.tableView insertCellsAtIndexPaths:[array copy] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)fetchData {

@@ -51,6 +51,7 @@
 		E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBF71C64F6170099B5E6 /* EDAViewController.m */; };
 		E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */; };
 		E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */; };
+		E38E9B681C874A4600BFF9C8 /* UITableView+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38E9B671C874A4600BFF9C8 /* UITableView+EDAExtensions.m */; };
 		E394C4E41C84452800B45EF2 /* NSString+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */; };
 		E39A0C8C1C7353F8009DE563 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E39A0C8F1C735682009DE563 /* NSError+EDAExtensions.m */; };
@@ -145,6 +146,8 @@
 		E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+EDAExtensions.m"; sourceTree = "<group>"; };
 		E38E9B611C86E70100BFF9C8 /* EDADefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDADefines.h; sourceTree = "<group>"; };
 		E38E9B641C872EE100BFF9C8 /* EDAAPIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAAPIKeys.h; sourceTree = "<group>"; };
+		E38E9B661C874A4600BFF9C8 /* UITableView+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38E9B671C874A4600BFF9C8 /* UITableView+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EDAExtensions.m"; sourceTree = "<group>"; };
 		E394C4E21C84452800B45EF2 /* NSString+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EDAExtensions.h"; sourceTree = "<group>"; };
 		E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EDAExtensions.m"; sourceTree = "<group>"; };
 		E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -369,6 +372,7 @@
 		E38ABBC41C64F6170099B5E6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E38E9B651C874A2F00BFF9C8 /* UITableView */,
 				E38E9B5A1C86D7CA00BFF9C8 /* NSMutableURLRequest */,
 				E39A0C911C735AE8009DE563 /* UIViewController */,
 				E39A0C8D1C735663009DE563 /* NSError */,
@@ -601,6 +605,15 @@
 			path = NSMutableURLRequest;
 			sourceTree = "<group>";
 		};
+		E38E9B651C874A2F00BFF9C8 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				E38E9B661C874A4600BFF9C8 /* UITableView+EDAExtensions.h */,
+				E38E9B671C874A4600BFF9C8 /* UITableView+EDAExtensions.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		E39A0C8D1C735663009DE563 /* NSError */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +781,7 @@
 				E38ABC031C64F6170099B5E6 /* EDAResponseMetadata.m in Sources */,
 				E38ABBF91C64F6170099B5E6 /* NSArray+EDAExtentions.m in Sources */,
 				E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */,
+				E38E9B681C874A4600BFF9C8 /* UITableView+EDAExtensions.m in Sources */,
 				E38A16631C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */,
 				E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
 				E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,
