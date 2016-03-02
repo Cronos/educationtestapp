@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class EDAData;
+
 @interface EDATableViewCell : UITableViewCell
+@property (nonatomic, strong) EDAData *data;
+
+- (void)willDisplay;
+- (void)didEndDisplaying;
 
 @end

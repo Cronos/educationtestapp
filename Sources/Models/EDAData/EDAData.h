@@ -7,16 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDADataModel.h"
 
-@interface EDAData : NSObject
+@class EDAData;
 
-@property (nonatomic, assign) NSInteger             Id;
+typedef void(^EDADataBlock)(EDAData *data);
+
+@interface EDAData : EDADataModel
+@property (nonatomic, assign) NSUInteger            index;
+@property (nonatomic, assign) NSInteger             ID;
 @property (nonatomic, copy) NSString                *content;
 @property (nonatomic, copy) NSString                *message;
 @property (nonatomic, copy) NSString                *image;
 @property (nonatomic, strong) NSArray <NSString*>   *images;
+@property (nonatomic, copy) EDADataBlock            didUpdatedBlock;
 
-+ (instancetype)dataFromDictionary:(NSDictionary *)dictionary;
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array;
++ (instancetype)dataWithIndex:(NSUInteger)index;
+
+- (instancetype)initWithIndex:(NSUInteger)index;
+
+- (void)setPropertyValueWithData:(EDAData *)data;
+
+- (void)fetchData;
+- (void)cancelFetchData;
 
 @end

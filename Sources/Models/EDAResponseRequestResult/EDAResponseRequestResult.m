@@ -10,12 +10,9 @@
 
 @implementation EDAResponseRequestResult
 
-+ (instancetype)resultFromDictionary:(NSDictionary *)dictionary {
-    
++ (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        
         EDAResponseRequestResult *result = [EDAResponseRequestResult new];
-        
         result.success = [[dictionary objectForKey:@"sucess"] boolValue];
         result.info = [dictionary objectForKey:@"info"];
         

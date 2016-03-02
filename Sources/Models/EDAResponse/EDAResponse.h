@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDADataModel.h"
 
 @class EDAResponseMetadata, EDAData;
 
-@interface EDAResponse : NSObject
-
+@interface EDAResponse : EDADataModel
 @property (nonatomic, strong) EDAResponseMetadata   *meta;
-@property (nonatomic, strong) NSArray<EDAData*>     *data;
-
-+ (instancetype)responseFromDictionary:(NSDictionary *)dictionary;
+@property (nonatomic, strong) NSArray<EDAData *>    *data;
 
 @end

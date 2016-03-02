@@ -7,38 +7,123 @@
 //
 
 #import "EDAData.h"
+#import "EDAResponse.h"
+#import "EDARecordInfoRequest.h"
+#import "NSURLSession+EDAExtensions.h"
+#import "EDADispatch.h"
+#import "EDAAPIKeys.h"
+
+@interface EDAData ()
+@property (nonatomic, strong) NSURLSessionDataTask  *loadTask;
+@property (nonatomic, assign) BOOL                  isLoaded;
+
+@end
 
 @implementation EDAData
 
-+ (instancetype _Nullable)dataFromDictionary:(NSDictionary *)dictionary {
-    
-    if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        
-        EDAData *data = [EDAData new];
-        data.Id = [[dictionary objectForKey:@"id"] integerValue];
-        data.content =[dictionary objectForKey:@"content"];
-        data.message = [dictionary objectForKey:@"message"];
-        data.image = [dictionary objectForKey:@"image"];
-        data.images = [dictionary objectForKey:@"images"];
-        
-        return data;
-    }
-    
-    return nil;
++ (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
+    EDAData *data = [EDAData dataWithIndex:0];
+    [data setPropertyValueWithDictionary:dictionary];
+    return data;
+}
+
++ (instancetype)dataWithIndex:(NSUInteger)index {
+    return [[self alloc] initWithIndex:index];
 }
 
 + (NSArray<EDAData*> *)arrayFromArray:(NSArray *)array {
-    
     NSMutableArray *newArray = [NSMutableArray array];
-    
     for (NSDictionary *dictionary in array) {
-        EDAData *data = [EDAData dataFromDictionary:dictionary];
+        EDAData *data = [EDAData instanceWithDictionary:dictionary];
         if (data) {
             [newArray addObject:data];
         }
     }
     
     return [newArray copy];
+}
+
+- (instancetype)init {
+    return [self initWithIndex:0];
+}
+
+- (instancetype)initWithIndex:(NSUInteger)index {
+    self = [super init];
+    if (self) {
+        self.loadTask = nil;
+        self.isLoaded = NO;
+        self.index = index;
+        [self setPropertyValueWithDictionary:@{}];
+        self.ID = NSIntegerMin;
+    }
+    
+    return self;
+}
+
+- (void)setPropertyValueWithDictionary:(NSDictionary *)dictionary {
+    if ([dictionary isKindOfClass:[NSDictionary class]]) {
+        self.ID = [[dictionary objectForKey:EDAKeyID] integerValue];
+        self.content =[dictionary objectForKey:EDAKeyContent];
+        self.message = [dictionary objectForKey:EDAKeyMessage];
+        self.image = [dictionary objectForKey:EDAKeyImage];
+        self.images = [dictionary objectForKey:EDAKeyImages];
+    }
+}
+
+- (void)setPropertyValueWithData:(EDAData *)data {    
+    self.ID = data.ID;
+    self.content =  data.content;
+    self.message = data.message;
+    self.image = data.image;
+    self.images = data.images;
+    
+    EDADispatchAsyncInMainQueue(^{
+        self.didUpdatedBlock ? self.didUpdatedBlock(self) : nil;
+    });
+}
+
+- (void)fetchData {
+    if (self.ID<0) {
+        return;
+    }
+    
+    if (self.isLoaded) {
+        EDADispatchAsyncInMainQueue(^{
+            self.didUpdatedBlock ? self.didUpdatedBlock(self) : nil;
+        });
+        
+        return;
+    }
+    
+    if (!self.loadTask) {
+        typeof(self) __weak weakSelf = self;
+        [self.loadTask = [NSURLSession dataTaskWithRequest:[EDARecordInfoRequest requestWithId:self.ID] completion:^(NSData *data, NSError *error) {
+            if (data ){
+                typeof(weakSelf) __strong strongSelf = weakSelf;
+                [strongSelf parseLoadedData:data];
+            } else {
+                 NSLog(@"Index %lu fetchData error: %@", (unsigned long)self.index, error.localizedDescription);
+            }
+        }] resume];
+    }
+}
+
+- (void)cancelFetchData {
+    [self.loadTask cancel];
+    self.loadTask = nil;
+}
+
+- (void)parseLoadedData:(NSData *)data {
+    NSError *error = nil;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    if (!error) {
+        self.isLoaded = YES;
+        EDAResponse *response = [EDAResponse instanceWithDictionary:dictionary[EDAKeyResponse]];
+        EDAData *data = response.data.firstObject;
+        [self setPropertyValueWithData:data];
+    } else {
+        self.content = @"Error data loading...";
+    }
 }
 
 @end

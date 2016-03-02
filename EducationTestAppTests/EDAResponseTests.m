@@ -12,6 +12,7 @@
 #import "EDAResponseMetadata.h"
 #import "EDAResponseRequestResult.h"
 #import "EDAResponseLayout.h"
+#import "EDAAPIKeys.h"
 
 @interface EDAResponseTests : XCTestCase
 
@@ -31,7 +32,7 @@
 
 - (void)testResponseFromDictionarySuccessful {
     
-    EDAResponse *response = [EDAResponse responseFromDictionary:testDataSuccessfulResponse()[@"response"]];
+    EDAResponse *response = [EDAResponse instanceWithDictionary:EDATestDataSuccessfulResponse()[EDAKeyResponse]];
     
     XCTAssertNotNil(response, @"response init error");
     
@@ -51,7 +52,7 @@
 
 - (void)testResponseFromDictionaryUnsuccessful {
     
-    EDAResponse *response = [EDAResponse responseFromDictionary:testDataUnsuccessfulResponse()[@"response"]];
+    EDAResponse *response = [EDAResponse instanceWithDictionary:EDATestDataUnsuccessfulResponse()[EDAKeyResponse]];
     
     XCTAssertNotNil(response, @"response init error");
     

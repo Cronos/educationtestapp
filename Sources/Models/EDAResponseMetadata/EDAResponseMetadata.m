@@ -12,14 +12,11 @@
 
 @implementation EDAResponseMetadata
 
-+ (instancetype)metaFromDictionary:(NSDictionary *)dictionary {
-    
++ (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        
         EDAResponseMetadata *metadata = [EDAResponseMetadata new];
-        
-        metadata.request = [EDAResponseRequestResult resultFromDictionary:[dictionary objectForKey:@"request"]];
-        metadata.layout = [EDAResponseLayout layoutFromDictionary:[dictionary objectForKey:@"layout"]];
+        metadata.request = [EDAResponseRequestResult instanceWithDictionary:[dictionary objectForKey:@"request"]];
+        metadata.layout = [EDAResponseLayout instanceWithDictionary:[dictionary objectForKey:@"layout"]];
         
         return metadata;
     }

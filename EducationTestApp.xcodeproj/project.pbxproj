@@ -13,21 +13,33 @@
 		E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */; };
 		E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */; };
 		E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */; };
+		E385CAC81C7499BB000197DB /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E385CAC71C7499BB000197DB /* EDADataManager.m */; };
+		E385CAC91C7499CB000197DB /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E385CAC71C7499BB000197DB /* EDADataManager.m */; };
+		E385CACC1C7499F1000197DB /* EDADataManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E385CACB1C7499F1000197DB /* EDADataManagerTests.m */; };
 		E38942391C622371007C1E6A /* EDAImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E38942381C622371007C1E6A /* EDAImp.m */; };
 		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
+		E38A16571C6CA62200ABC9EA /* EDAURLRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */; };
+		E38A16631C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */; };
+		E38A16641C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */; };
+		E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
+		E38A16691C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
+		E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */; };
+		E38A5A8B1C6A20C000AC03ED /* EDAURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */; };
+		E38A5A8C1C6A20C000AC03ED /* EDAURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */; };
+		E38A5A8F1C6A238C00AC03ED /* EDARecordInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8E1C6A238C00AC03ED /* EDARecordInfoRequest.m */; };
+		E38A5A901C6A238C00AC03ED /* EDARecordInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8E1C6A238C00AC03ED /* EDARecordInfoRequest.m */; };
+		E38A5A931C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A921C6A2B8800AC03ED /* EDARecordsListRequest.m */; };
+		E38A5A941C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A921C6A2B8800AC03ED /* EDARecordsListRequest.m */; };
 		E38ABBA71C64E9930099B5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */; };
 		E38ABBA81C64E9930099B5E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6D1C64E9930099B5E6 /* LaunchScreen.storyboard */; };
 		E38ABBA91C64E9930099B5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38ABB6F1C64E9930099B5E6 /* Main.storyboard */; };
 		E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBBC1C64F60F0099B5E6 /* EDAAppDelegate.m */; };
-		E38ABBC01C64F60F0099B5E6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E38ABBBD1C64F60F0099B5E6 /* Info.plist */; };
 		E38ABBC11C64F60F0099B5E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBBE1C64F60F0099B5E6 /* main.m */; };
 		E38ABBF91C64F6170099B5E6 /* NSArray+EDAExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBC81C64F6170099B5E6 /* NSArray+EDAExtentions.m */; };
 		E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBCC1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m */; };
 		E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD01C64F6170099B5E6 /* NSNull+EDARuntime.m */; };
 		E38ABBFC1C64F6170099B5E6 /* NSObject+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD41C64F6170099B5E6 /* NSObject+EDARuntime.m */; };
-		E38ABBFD1C64F6170099B5E6 /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD81C64F6170099B5E6 /* EDADataManager.m */; };
-		E38ABBFE1C64F6170099B5E6 /* EDANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBDB1C64F6170099B5E6 /* EDANetworkManager.m */; };
 		E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBDF1C64F6170099B5E6 /* EDAData.m */; };
 		E38ABC001C64F6170099B5E6 /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE21C64F6170099B5E6 /* EDANull.m */; };
 		E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE51C64F6170099B5E6 /* EDAResponse.m */; };
@@ -38,6 +50,11 @@
 		E38ABC061C64F6170099B5E6 /* EDATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38ABBF51C64F6170099B5E6 /* EDATableViewCell.xib */; };
 		E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBF71C64F6170099B5E6 /* EDAViewController.m */; };
 		E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */; };
+		E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */; };
+		E394C4E41C84452800B45EF2 /* NSString+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */; };
+		E39A0C8C1C7353F8009DE563 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E39A0C8F1C735682009DE563 /* NSError+EDAExtensions.m */; };
+		E39A0C941C735AFF009DE563 /* UIViewController+EDAAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E39A0C931C735AFF009DE563 /* UIViewController+EDAAlert.m */; };
 		E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D19541C560A8200A0D3E9 /* EDANullTests.m */; };
 		E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */; };
 		E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */; };
@@ -66,11 +83,28 @@
 		E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseRequestResultTests.m; sourceTree = "<group>"; };
 		E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseLayoutTests.m; sourceTree = "<group>"; };
 		E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseMetadataTests.m; sourceTree = "<group>"; };
+		E385CAC61C7499BB000197DB /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataManager.h; sourceTree = "<group>"; };
+		E385CAC71C7499BB000197DB /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManager.m; sourceTree = "<group>"; };
+		E385CACB1C7499F1000197DB /* EDADataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManagerTests.m; sourceTree = "<group>"; };
+		E385E97E1C7752F000E7849C /* EDADispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDADispatch.h; sourceTree = "<group>"; };
 		E38942371C622371007C1E6A /* EDAImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAImp.h; sourceTree = "<group>"; };
 		E38942381C622371007C1E6A /* EDAImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAImp.m; sourceTree = "<group>"; };
 		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
 		E389423C1C622424007C1E6A /* EDAMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAMock.m; sourceTree = "<group>"; };
 		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
+		E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAURLRequestTests.m; sourceTree = "<group>"; };
+		E38A16611C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+EDAExtensions.m"; sourceTree = "<group>"; };
+		E38A16661C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+EDAExtensions.m"; sourceTree = "<group>"; };
+		E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataModel.h; sourceTree = "<group>"; };
+		E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataModel.m; sourceTree = "<group>"; };
+		E38A5A891C6A20C000AC03ED /* EDAURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAURLRequest.h; sourceTree = "<group>"; };
+		E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAURLRequest.m; sourceTree = "<group>"; };
+		E38A5A8D1C6A238C00AC03ED /* EDARecordInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDARecordInfoRequest.h; sourceTree = "<group>"; };
+		E38A5A8E1C6A238C00AC03ED /* EDARecordInfoRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDARecordInfoRequest.m; sourceTree = "<group>"; };
+		E38A5A911C6A2B8800AC03ED /* EDARecordsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDARecordsListRequest.h; sourceTree = "<group>"; };
+		E38A5A921C6A2B8800AC03ED /* EDARecordsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDARecordsListRequest.m; sourceTree = "<group>"; };
 		E38ABB6C1C64E9930099B5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E38ABB6E1C64E9930099B5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E38ABB701C64E9930099B5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,8 +120,6 @@
 		E38ABBD01C64F6170099B5E6 /* NSNull+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+EDARuntime.m"; sourceTree = "<group>"; };
 		E38ABBD31C64F6170099B5E6 /* NSObject+EDARuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EDARuntime.h"; sourceTree = "<group>"; };
 		E38ABBD41C64F6170099B5E6 /* NSObject+EDARuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDARuntime.m"; sourceTree = "<group>"; };
-		E38ABBD71C64F6170099B5E6 /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataManager.h; sourceTree = "<group>"; };
-		E38ABBD81C64F6170099B5E6 /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManager.m; sourceTree = "<group>"; };
 		E38ABBDA1C64F6170099B5E6 /* EDANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDANetworkManager.h; sourceTree = "<group>"; };
 		E38ABBDB1C64F6170099B5E6 /* EDANetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANetworkManager.m; sourceTree = "<group>"; };
 		E38ABBDE1C64F6170099B5E6 /* EDAData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAData.h; sourceTree = "<group>"; };
@@ -108,6 +140,18 @@
 		E38ABBF61C64F6170099B5E6 /* EDAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAViewController.h; sourceTree = "<group>"; };
 		E38ABBF71C64F6170099B5E6 /* EDAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAViewController.m; sourceTree = "<group>"; };
 		E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDASubclassesTests.m"; sourceTree = "<group>"; };
+		E38E9B591C86D17400BFF9C8 /* EDANetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDANetwork.h; sourceTree = "<group>"; };
+		E38E9B5E1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+EDAExtensions.m"; sourceTree = "<group>"; };
+		E38E9B611C86E70100BFF9C8 /* EDADefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDADefines.h; sourceTree = "<group>"; };
+		E38E9B641C872EE100BFF9C8 /* EDAAPIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAAPIKeys.h; sourceTree = "<group>"; };
+		E394C4E21C84452800B45EF2 /* NSString+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EDAExtensions.h"; sourceTree = "<group>"; };
+		E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EDAExtensions.m"; sourceTree = "<group>"; };
+		E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E39A0C8E1C735682009DE563 /* NSError+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+EDAExtensions.h"; sourceTree = "<group>"; };
+		E39A0C8F1C735682009DE563 /* NSError+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+EDAExtensions.m"; sourceTree = "<group>"; };
+		E39A0C921C735AFF009DE563 /* UIViewController+EDAAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EDAAlert.h"; sourceTree = "<group>"; };
+		E39A0C931C735AFF009DE563 /* UIViewController+EDAAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+EDAAlert.m"; sourceTree = "<group>"; };
 		E39D19541C560A8200A0D3E9 /* EDANullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANullTests.m; sourceTree = "<group>"; };
 		E39D4FFA1C4F8E7900333F57 /* NSNullTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNullTests.m; sourceTree = "<group>"; };
 		E3CD77C41C478A020047446F /* EDANSJSONSerializationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDANSJSONSerializationTest.m; path = NSJSONSerializationTests/EDANSJSONSerializationTest.m; sourceTree = "<group>"; };
@@ -118,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39A0C8C1C7353F8009DE563 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +179,7 @@
 		E382E3811C3A914A009059BA = {
 			isa = PBXGroup;
 			children = (
+				E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */,
 				E38ABBBA1C64F60F0099B5E6 /* EducationTestApp */,
 				E38ABB6B1C64E9930099B5E6 /* Resources */,
 				E38ABBC21C64F6170099B5E6 /* Sources */,
@@ -160,6 +206,8 @@
 				E39D19531C560A8200A0D3E9 /* EDANullTests */,
 				E38CA30F1C4E90BA0047845A /* NSObject */,
 				E3CD77C31C4787880047446F /* NSJSONSerializationTests */,
+				E38A16551C6CA62200ABC9EA /* EDANetwork */,
+				E385CACA1C7499F1000197DB /* EDADataManagerTests */,
 				E382E3A71C3A914A009059BA /* EducationTestAppTests.m */,
 				E382E3A91C3A914A009059BA /* Info.plist */,
 				E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */,
@@ -179,6 +227,23 @@
 				E382E3B41C3A914A009059BA /* Info.plist */,
 			);
 			path = EducationTestAppUITests;
+			sourceTree = "<group>";
+		};
+		E385CAC51C7499BB000197DB /* EDADataManager */ = {
+			isa = PBXGroup;
+			children = (
+				E385CAC61C7499BB000197DB /* EDADataManager.h */,
+				E385CAC71C7499BB000197DB /* EDADataManager.m */,
+			);
+			path = EDADataManager;
+			sourceTree = "<group>";
+		};
+		E385CACA1C7499F1000197DB /* EDADataManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				E385CACB1C7499F1000197DB /* EDADataManagerTests.m */,
+			);
+			path = EDADataManagerTests;
 			sourceTree = "<group>";
 		};
 		E38942351C622371007C1E6A /* MockObjects */ = {
@@ -206,6 +271,55 @@
 				E389423C1C622424007C1E6A /* EDAMock.m */,
 			);
 			path = EDAMock;
+			sourceTree = "<group>";
+		};
+		E38A16551C6CA62200ABC9EA /* EDANetwork */ = {
+			isa = PBXGroup;
+			children = (
+				E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */,
+			);
+			path = EDANetwork;
+			sourceTree = "<group>";
+		};
+		E38A16601C6CBBF100ABC9EA /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				E38A16611C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.h */,
+				E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */,
+			);
+			name = NSURLSession;
+			path = NSObject/NSURLSession;
+			sourceTree = "<group>";
+		};
+		E38A16651C6CBCFE00ABC9EA /* NSURLSessionTask */ = {
+			isa = PBXGroup;
+			children = (
+				E38A16661C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.h */,
+				E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */,
+			);
+			path = NSURLSessionTask;
+			sourceTree = "<group>";
+		};
+		E38A5A791C69D9EE00AC03ED /* EDADataModel */ = {
+			isa = PBXGroup;
+			children = (
+				E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */,
+				E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */,
+			);
+			path = EDADataModel;
+			sourceTree = "<group>";
+		};
+		E38A5A881C6A20C000AC03ED /* EDAURLRequests */ = {
+			isa = PBXGroup;
+			children = (
+				E38A5A891C6A20C000AC03ED /* EDAURLRequest.h */,
+				E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */,
+				E38A5A8D1C6A238C00AC03ED /* EDARecordInfoRequest.h */,
+				E38A5A8E1C6A238C00AC03ED /* EDARecordInfoRequest.m */,
+				E38A5A911C6A2B8800AC03ED /* EDARecordsListRequest.h */,
+				E38A5A921C6A2B8800AC03ED /* EDARecordsListRequest.m */,
+			);
+			path = EDAURLRequests;
 			sourceTree = "<group>";
 		};
 		E38ABB6B1C64E9930099B5E6 /* Resources */ = {
@@ -242,6 +356,10 @@
 		E38ABBC31C64F6170099B5E6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E385E97E1C7752F000E7849C /* EDADispatch.h */,
+				E38E9B591C86D17400BFF9C8 /* EDANetwork.h */,
+				E38E9B611C86E70100BFF9C8 /* EDADefines.h */,
+				E38E9B641C872EE100BFF9C8 /* EDAAPIKeys.h */,
 				E38ABBC41C64F6170099B5E6 /* Categories */,
 				E38ABBD51C64F6170099B5E6 /* Managers */,
 			);
@@ -251,10 +369,17 @@
 		E38ABBC41C64F6170099B5E6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E38E9B5A1C86D7CA00BFF9C8 /* NSMutableURLRequest */,
+				E39A0C911C735AE8009DE563 /* UIViewController */,
+				E39A0C8D1C735663009DE563 /* NSError */,
+				E38A16601C6CBBF100ABC9EA /* NSURLSession */,
+				E38A16651C6CBCFE00ABC9EA /* NSURLSessionTask */,
 				E38ABBC51C64F6170099B5E6 /* NSArray */,
 				E38ABBC91C64F6170099B5E6 /* NSMethodSignature */,
 				E38ABBCD1C64F6170099B5E6 /* NSNull */,
 				E38ABBD11C64F6170099B5E6 /* NSObject */,
+				E394C4E21C84452800B45EF2 /* NSString+EDAExtensions.h */,
+				E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -330,19 +455,9 @@
 		E38ABBD51C64F6170099B5E6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABBD61C64F6170099B5E6 /* EDADataManager */,
 				E38ABBD91C64F6170099B5E6 /* EDANetworkManager */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		E38ABBD61C64F6170099B5E6 /* EDADataManager */ = {
-			isa = PBXGroup;
-			children = (
-				E38ABBD71C64F6170099B5E6 /* EDADataManager.h */,
-				E38ABBD81C64F6170099B5E6 /* EDADataManager.m */,
-			);
-			path = EDADataManager;
 			sourceTree = "<group>";
 		};
 		E38ABBD91C64F6170099B5E6 /* EDANetworkManager */ = {
@@ -357,8 +472,11 @@
 		E38ABBDC1C64F6170099B5E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E38ABBDD1C64F6170099B5E6 /* EDAData */,
+				E385CAC51C7499BB000197DB /* EDADataManager */,
+				E38A5A881C6A20C000AC03ED /* EDAURLRequests */,
 				E38ABBE01C64F6170099B5E6 /* EDANull */,
+				E38ABBDD1C64F6170099B5E6 /* EDAData */,
+				E38A5A791C69D9EE00AC03ED /* EDADataModel */,
 				E38ABBE31C64F6170099B5E6 /* EDAResponse */,
 				E38ABBE61C64F6170099B5E6 /* EDAResponseLayout */,
 				E38ABBE91C64F6170099B5E6 /* EDAResponseMetadata */,
@@ -474,6 +592,33 @@
 			path = NSObject;
 			sourceTree = "<group>";
 		};
+		E38E9B5A1C86D7CA00BFF9C8 /* NSMutableURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E38E9B5E1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.h */,
+				E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */,
+			);
+			path = NSMutableURLRequest;
+			sourceTree = "<group>";
+		};
+		E39A0C8D1C735663009DE563 /* NSError */ = {
+			isa = PBXGroup;
+			children = (
+				E39A0C8E1C735682009DE563 /* NSError+EDAExtensions.h */,
+				E39A0C8F1C735682009DE563 /* NSError+EDAExtensions.m */,
+			);
+			path = NSError;
+			sourceTree = "<group>";
+		};
+		E39A0C911C735AE8009DE563 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E39A0C921C735AFF009DE563 /* UIViewController+EDAAlert.h */,
+				E39A0C931C735AFF009DE563 /* UIViewController+EDAAlert.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		E39D19531C560A8200A0D3E9 /* EDANullTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,7 +726,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E38ABC061C64F6170099B5E6 /* EDATableViewCell.xib in Resources */,
-				E38ABBC01C64F60F0099B5E6 /* Info.plist in Resources */,
 				E38ABBA81C64E9930099B5E6 /* LaunchScreen.storyboard in Resources */,
 				E38ABBA71C64E9930099B5E6 /* Assets.xcassets in Resources */,
 				E38ABBA91C64E9930099B5E6 /* Main.storyboard in Resources */,
@@ -605,18 +749,27 @@
 				E38ABBC11C64F60F0099B5E6 /* main.m in Sources */,
 				E38ABC051C64F6170099B5E6 /* EDATableViewCell.m in Sources */,
 				E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */,
-				E38ABBFD1C64F6170099B5E6 /* EDADataManager.m in Sources */,
 				E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */,
 				E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */,
+				E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */,
+				E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */,
+				E38A5A931C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */,
 				E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */,
 				E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */,
 				E38ABC041C64F6170099B5E6 /* EDAResponseRequestResult.m in Sources */,
+				E38A5A8B1C6A20C000AC03ED /* EDAURLRequest.m in Sources */,
 				E38ABBFC1C64F6170099B5E6 /* NSObject+EDARuntime.m in Sources */,
-				E38ABBFE1C64F6170099B5E6 /* EDANetworkManager.m in Sources */,
+				E38A5A8F1C6A238C00AC03ED /* EDARecordInfoRequest.m in Sources */,
 				E38ABC001C64F6170099B5E6 /* EDANull.m in Sources */,
+				E39A0C941C735AFF009DE563 /* UIViewController+EDAAlert.m in Sources */,
+				E394C4E41C84452800B45EF2 /* NSString+EDAExtensions.m in Sources */,
 				E38ABC021C64F6170099B5E6 /* EDAResponseLayout.m in Sources */,
+				E385CAC81C7499BB000197DB /* EDADataManager.m in Sources */,
 				E38ABC031C64F6170099B5E6 /* EDAResponseMetadata.m in Sources */,
 				E38ABBF91C64F6170099B5E6 /* NSArray+EDAExtentions.m in Sources */,
+				E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */,
+				E38A16631C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */,
+				E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
 				E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,19 +778,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E38A5A8C1C6A20C000AC03ED /* EDAURLRequest.m in Sources */,
+				E385CAC91C7499CB000197DB /* EDADataManager.m in Sources */,
 				E382E3D41C3AA80D009059BA /* EDADataTests.m in Sources */,
 				E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */,
+				E385CACC1C7499F1000197DB /* EDADataManagerTests.m in Sources */,
+				E38A5A941C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */,
 				E3CD77C51C478A020047446F /* EDANSJSONSerializationTest.m in Sources */,
 				E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */,
 				E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */,
 				E38942391C622371007C1E6A /* EDAImp.m in Sources */,
 				E39D4FFB1C4F8E7900333F57 /* NSNullTests.m in Sources */,
+				E38A16571C6CA62200ABC9EA /* EDAURLRequestTests.m in Sources */,
 				E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */,
 				E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */,
 				E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */,
 				E389423D1C622424007C1E6A /* EDAMock.m in Sources */,
+				E38A16641C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */,
+				E38A16691C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
+				E38A5A901C6A238C00AC03ED /* EDARecordInfoRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,7 +919,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EducationTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anahoret.EducationTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -770,7 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EducationTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anahoret.EducationTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

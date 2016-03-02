@@ -10,12 +10,9 @@
 
 @implementation EDAResponseLayout
 
-+ (instancetype)layoutFromDictionary:(NSDictionary *)dictionary {
-    
++ (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        
         EDAResponseLayout *layout = [EDAResponseLayout new];
-        
         layout.index = [[dictionary objectForKey:@"index"] integerValue];
         layout.count = [[dictionary objectForKey:@"count"] integerValue];
         layout.totalCount = [[dictionary objectForKey:@"totalCount"] integerValue];

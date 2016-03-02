@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EDADataModel.h"
 
-@interface EDAResponseLayout : NSObject
-
+@interface EDAResponseLayout : EDADataModel
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) NSInteger totalCount;
-
-+ (instancetype)layoutFromDictionary:(NSDictionary *)dictionary;
 
 @end

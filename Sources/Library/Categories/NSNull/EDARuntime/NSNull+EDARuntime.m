@@ -24,7 +24,6 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
 
 
 + (void)replaceNull {
- 
     SEL selector = @selector(null);
     Class class = object_getClass(self);
 
@@ -32,8 +31,6 @@ typedef id(*EDAMethodNullIMP)(id, SEL);
         EDAMethodNullIMP methodIMP = (EDAMethodNullIMP)[class instanceMethodForSelector:@selector(edaNull)];
         
         return (id)^(id object) {
-            NSLog(@"Call [NSNull null]");
-            
             return methodIMP(object, selector);
         };
     };
