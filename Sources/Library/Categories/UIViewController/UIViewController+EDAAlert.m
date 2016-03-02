@@ -11,17 +11,11 @@
 @implementation UIViewController (EDAAlert)
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message handler:(void (^)(UIAlertAction *action))handler {
-    UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:title
-                                          message:message
-                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                               handler:^(UIAlertAction * action){
-                                                   if(handler){
-                                                       handler(action);
-                                                   }
-                                               }];
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:handler];
     
     [alertController addAction:ok];
     [self presentViewController:alertController animated:YES completion:nil];
