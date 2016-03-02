@@ -9,12 +9,14 @@
 #ifndef EDANetwork_h
 #define EDANetwork_h
 
+#import "EDADefine.h"
+
 typedef NS_ENUM(NSUInteger, EDARequestMethod) {
     EDARequestMethodGET     = 0,
     EDARequestMethodPOST
 };
 
-static inline
+EDA_STATIC_INLINE
 NSString *EDAHTTPMethod(EDARequestMethod method) {
     switch (method) {
         case EDARequestMethodGET:
