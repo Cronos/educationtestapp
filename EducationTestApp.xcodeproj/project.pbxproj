@@ -40,7 +40,6 @@
 		E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBCC1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m */; };
 		E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD01C64F6170099B5E6 /* NSNull+EDARuntime.m */; };
 		E38ABBFC1C64F6170099B5E6 /* NSObject+EDARuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBD41C64F6170099B5E6 /* NSObject+EDARuntime.m */; };
-		E38ABBFE1C64F6170099B5E6 /* EDANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBDB1C64F6170099B5E6 /* EDANetworkManager.m */; };
 		E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBDF1C64F6170099B5E6 /* EDAData.m */; };
 		E38ABC001C64F6170099B5E6 /* EDANull.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE21C64F6170099B5E6 /* EDANull.m */; };
 		E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBE51C64F6170099B5E6 /* EDAResponse.m */; };
@@ -761,7 +760,6 @@
 				E38A5A8B1C6A20C000AC03ED /* EDAURLRequest.m in Sources */,
 				E38ABBFC1C64F6170099B5E6 /* NSObject+EDARuntime.m in Sources */,
 				E38A5A8F1C6A238C00AC03ED /* EDARecordInfoRequest.m in Sources */,
-				E38ABBFE1C64F6170099B5E6 /* EDANetworkManager.m in Sources */,
 				E38ABC001C64F6170099B5E6 /* EDANull.m in Sources */,
 				E39A0C941C735AFF009DE563 /* UIViewController+EDAAlert.m in Sources */,
 				E394C4E41C84452800B45EF2 /* NSString+EDAExtensions.m in Sources */,
