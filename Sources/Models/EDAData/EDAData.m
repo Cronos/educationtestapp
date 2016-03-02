@@ -54,7 +54,7 @@
         self.isLoaded = NO;
         self.index = index;
         [self setPropertyValueWithDictionary:@{}];
-        self.Id = -1;
+        self.ID = NSIntegerMin;
     }
     
     return self;
@@ -71,7 +71,7 @@
 }
 
 - (void)setPropertyValueWithData:(EDAData *)data {    
-    self.Id = data.Id;
+    self.ID = data.ID;
     self.content =  data.content;
     self.message = data.message;
     self.image = data.image;
@@ -83,7 +83,7 @@
 }
 
 - (void)fetchData {
-    if (self.Id<0) {
+    if (self.ID<0) {
         return;
     }
     
@@ -97,7 +97,7 @@
     
     if (!self.loadTask) {
         typeof(self) __weak weakSelf = self;
-        [self.loadTask = [NSURLSession dataTaskWithRequest:[EDARecordInfoRequest requestWithId:self.Id] completion:^(NSData *data, NSError *error) {
+        [self.loadTask = [NSURLSession dataTaskWithRequest:[EDARecordInfoRequest requestWithId:self.ID] completion:^(NSData *data, NSError *error) {
             if (data ){
                 typeof(weakSelf) __strong strongSelf = weakSelf;
                 [strongSelf parseLoadedData:data];

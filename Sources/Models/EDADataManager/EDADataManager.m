@@ -132,7 +132,7 @@
 - (void)updateDataWithObjects:(NSArray *)objects fromIndex:(NSUInteger)index {
     [objects enumerateObjectsUsingBlock:^(EDAData *data, NSUInteger idx, BOOL * _Nonnull stop) {
         NSUInteger objIdx = index + idx;
-        self[objIdx].Id = data.Id;
+        self[objIdx].ID = data.ID;
         [self[objIdx] fetchData];
     }];
 }

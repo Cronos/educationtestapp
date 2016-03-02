@@ -15,7 +15,7 @@ typedef void(^EDADataBlock)(EDAData *data);
 
 @interface EDAData : EDADataModel
 @property (nonatomic, assign) NSUInteger            index;
-@property (nonatomic, assign) NSInteger             Id;
+@property (nonatomic, assign) NSInteger             ID;
 @property (nonatomic, copy) NSString                *content;
 @property (nonatomic, copy) NSString                *message;
 @property (nonatomic, copy) NSString                *image;

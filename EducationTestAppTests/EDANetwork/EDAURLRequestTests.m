@@ -10,6 +10,7 @@
 #import "EDAURLRequest.h"
 #import "EDARecordInfoRequest.h"
 #import "EDARecordsListRequest.h"
+#import "NSMutableURLRequest+EDAExtensions.h"
 
 EDA_EXTERNAL(NSString *, EDAAPIBaseURL);
 EDA_EXTERNAL(NSString *, EDARecordInfoRequestTemplate);

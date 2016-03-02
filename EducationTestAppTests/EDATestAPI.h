@@ -9,13 +9,10 @@
 #ifndef EDATestAPI_h
 #define EDATestAPI_h
 
-//
-// request: /data?index=0&count=100
-//
 #import "EDADefines.h"
 #import "EDAAPIKeys.h"
 
-static inline
+EDA_STATIC_INLINE
 NSDictionary * EDATestDataSuccessfulResponse() {
     return @{
              EDAKeyResponse : @{ // dictionary to contain all the response data
@@ -47,7 +44,7 @@ NSDictionary * EDATestDataSuccessfulResponse() {
 }
 
 
-static inline
+EDA_STATIC_INLINE
 NSDictionary * EDATestDataUnsuccessfulResponse() {
     return @{
              EDAKeyResponse : @{ // dictionary to contain all the response data
@@ -61,11 +58,7 @@ NSDictionary * EDATestDataUnsuccessfulResponse() {
              };
 }
 
-//
-// request: /data/{id} - where id is the id of an individual record
-//
-
-static inline
+EDA_STATIC_INLINE
 NSDictionary * EDATestDataWithIdResponse() {
     return @{
              EDAKeyData : @[

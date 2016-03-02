@@ -11,9 +11,7 @@
 #import "EDADefines.h"
 #import "EDAAPIKeys.h"
 
-//static NSString *const EDARequestPath = @"http://localhost";
-static NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082";
-
+static NSString * const EDAAPIHost = @"http://newdev.anahoret.com:8082";
 
 typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
     EDANetworkRequestOnceData,

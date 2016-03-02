@@ -11,9 +11,9 @@
 
 EDA_EXTERNAL(NSString *, EDAAPIBaseURL);
 
-NSString * const EDARequestHeaderFieldContentType         = @"Content-Type";
-NSString * const EDARequestHeaderFieldValueSeparators     = @",";
-NSString * const EDARequestHeaderFieldAuthorization       = @"Authorization";
+static NSString * const EDARequestHeaderFieldContentType         = @"Content-Type";
+static NSString * const EDARequestHeaderFieldValueSeparators     = @",";
+static NSString * const EDARequestHeaderFieldAuthorization       = @"Authorization";
 
 static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
 
