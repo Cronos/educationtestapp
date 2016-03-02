@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "EDANetwork.h"
+
 typedef NS_ENUM(NSUInteger, EDAURLRequestCachePolicy) {
     // Default policy
     EDAURLRequestDefaultCachePolicy = NSURLRequestUseProtocolCachePolicy,
@@ -21,11 +23,6 @@ typedef NS_ENUM(NSUInteger, EDAURLRequestCachePolicy) {
     EDAURLRequestReturnCacheDataDontLoad = NSURLRequestReturnCacheDataDontLoad,
     //
     EDAURLRequestReloadRevalidatingCacheData UNAVAILABLE_ATTRIBUTE = NSURLRequestReloadRevalidatingCacheData // Unimplemented
-};
-
-typedef NS_ENUM(NSUInteger, EDARequestMethod) {
-    EDARequestMethodGET     = 0,
-    EDARequestMethodPOST
 };
 
 @interface EDAURLRequest : NSMutableURLRequest

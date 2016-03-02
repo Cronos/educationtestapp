@@ -140,6 +140,7 @@
 		E38ABBF61C64F6170099B5E6 /* EDAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAViewController.h; sourceTree = "<group>"; };
 		E38ABBF71C64F6170099B5E6 /* EDAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAViewController.m; sourceTree = "<group>"; };
 		E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDASubclassesTests.m"; sourceTree = "<group>"; };
+		E38E9B591C86D17400BFF9C8 /* EDANetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDANetwork.h; sourceTree = "<group>"; };
 		E394C4E21C84452800B45EF2 /* NSString+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EDAExtensions.h"; sourceTree = "<group>"; };
 		E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EDAExtensions.m"; sourceTree = "<group>"; };
 		E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -352,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				E385E97E1C7752F000E7849C /* EDADispatch.h */,
+				E38E9B591C86D17400BFF9C8 /* EDANetwork.h */,
 				E38ABBC41C64F6170099B5E6 /* Categories */,
 				E38ABBD51C64F6170099B5E6 /* Managers */,
 			);

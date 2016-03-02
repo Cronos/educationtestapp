@@ -46,7 +46,7 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
     NSURL *url = [NSURL URLWithString:path relativeToURL:[NSURL URLWithString:EDAAPIBaseURL]];
     EDAURLRequest *request = [super requestWithURL:url cachePolicy:(NSURLRequestCachePolicy)policy timeoutInterval:timeout];
     request.allowsCellularAccess = YES;
-    [request setMethod:httpMethod];
+    request.HTTPMethod = EDAHTTPMethod(httpMethod);
     
     return request;
 }
@@ -85,20 +85,6 @@ static const NSTimeInterval EDARequestDefaultTimeout = 30.0;
     if (![header containsObject:value]) {
         [self addValue:value forHTTPHeaderField:type];
     }
-}
-
-- (void)setMethod:(EDARequestMethod)method {
-    NSString *string = nil;
-    switch (method) {
-        case EDARequestMethodPOST:
-            string = @"POST";
-            break;
-            
-        default:
-            string = @"GET";
-            break;
-    }
-    self.HTTPMethod = string;
 }
 
 @end
