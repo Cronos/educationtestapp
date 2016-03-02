@@ -9,8 +9,8 @@
 #ifndef EDADefines_h
 #define EDADefines_h
 
-#ifndef EDA_STATIC_INLINE
 #define EDA_STATIC_INLINE static inline
-#endif
+
+#define EDA_EXTERNAL(type, name) extern type const name
 
 #endif /* EDADefines_h */
