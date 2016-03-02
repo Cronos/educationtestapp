@@ -7,6 +7,7 @@
 //
 
 #import "EDARecordsListRequest.h"
+#import "NSMutableURLRequest+EDAExtensions.h"
 
 NSString * const EDARecordsListRequestTemplate = @"/data?index=%lu&count=%lu";
 

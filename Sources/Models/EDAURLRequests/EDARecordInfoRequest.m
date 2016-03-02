@@ -7,6 +7,7 @@
 //
 
 #import "EDARecordInfoRequest.h"
+#import "NSMutableURLRequest+EDAExtensions.h"
 
 NSString * const EDARecordInfoRequestTemplate = @"data/%ld";
 

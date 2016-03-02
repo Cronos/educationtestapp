@@ -51,6 +51,7 @@
 		E38ABC061C64F6170099B5E6 /* EDATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38ABBF51C64F6170099B5E6 /* EDATableViewCell.xib */; };
 		E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E38ABBF71C64F6170099B5E6 /* EDAViewController.m */; };
 		E38CA3111C4E90E20047845A /* NSObject+EDASubclassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */; };
+		E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */; };
 		E394C4E41C84452800B45EF2 /* NSString+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */; };
 		E39A0C8C1C7353F8009DE563 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E39A0C8F1C735682009DE563 /* NSError+EDAExtensions.m */; };
@@ -141,6 +142,8 @@
 		E38ABBF71C64F6170099B5E6 /* EDAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAViewController.m; sourceTree = "<group>"; };
 		E38CA3101C4E90E20047845A /* NSObject+EDASubclassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDASubclassesTests.m"; sourceTree = "<group>"; };
 		E38E9B591C86D17400BFF9C8 /* EDANetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDANetwork.h; sourceTree = "<group>"; };
+		E38E9B5E1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+EDAExtensions.m"; sourceTree = "<group>"; };
 		E394C4E21C84452800B45EF2 /* NSString+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EDAExtensions.h"; sourceTree = "<group>"; };
 		E394C4E31C84452800B45EF2 /* NSString+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EDAExtensions.m"; sourceTree = "<group>"; };
 		E39A0C8B1C7353F8009DE563 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -363,6 +366,7 @@
 		E38ABBC41C64F6170099B5E6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E38E9B5A1C86D7CA00BFF9C8 /* NSMutableURLRequest */,
 				E39A0C911C735AE8009DE563 /* UIViewController */,
 				E39A0C8D1C735663009DE563 /* NSError */,
 				E38A16601C6CBBF100ABC9EA /* NSURLSession */,
@@ -585,6 +589,15 @@
 			path = NSObject;
 			sourceTree = "<group>";
 		};
+		E38E9B5A1C86D7CA00BFF9C8 /* NSMutableURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E38E9B5E1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.h */,
+				E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */,
+			);
+			path = NSMutableURLRequest;
+			sourceTree = "<group>";
+		};
 		E39A0C8D1C735663009DE563 /* NSError */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +749,7 @@
 				E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */,
 				E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */,
 				E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */,
+				E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */,
 				E38A5A931C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */,
 				E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */,
 				E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */,
