@@ -19,7 +19,7 @@
 #import "EDADispatch.h"
 
 @interface EDADataManager ()
-@property (nonatomic, assign) NSInteger totalRecordsCount;
+@property (nonatomic, assign) NSInteger totalCount;
 @property (nonatomic, strong) NSMutableSet <EDAData *> *data;
 @property (nonatomic, assign) NSInteger count;
 
@@ -44,7 +44,7 @@
     if (self) {
         self.data = [NSMutableSet set];
         self.count = 0;
-        self.totalRecordsCount = -1;
+        self.totalCount = NSIntegerMin;
     }
     
     return self;
@@ -91,14 +91,14 @@
 
 - (void)fetchDataCount:(NSUInteger)recordsCount completion:(void (^)(NSUInteger index, NSUInteger count))completion error:(EDAErrorBlock)error {
     NSInteger index = self.count;
-    NSUInteger count = self.totalRecordsCount < 0 ? recordsCount : MIN(recordsCount, self.totalRecordsCount - index);
+    NSUInteger count = self.totalCount < 0 ? recordsCount : MIN(recordsCount, self.totalCount - index);
     self.count += count;
     
     EDADispatchAsyncInMainQueue(^{
         completion ? completion(index, count) : nil;
     });
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    dispatch_queue_t queue = dispatch_get_global_queue(EDAQueuePriorityHigh, 0);
     dispatch_async(queue, ^{
     
         EDARecordsListRequest *request = [EDARecordsListRequest requestFromIndex:index count:count];
@@ -115,7 +115,7 @@
                 typeof(weakSelf) __strong strongSelf = weakSelf;
                 if (!error) {
                     response = [EDAResponse instanceWithDictionary:dictionary[@"response"]];
-                    strongSelf.totalRecordsCount = response.meta.layout.totalCount;
+                    strongSelf.totalCount = response.meta.layout.totalCount;
                     [strongSelf updateDataWithObjects:response.data fromIndex:response.meta.layout.index];
                 }
             }

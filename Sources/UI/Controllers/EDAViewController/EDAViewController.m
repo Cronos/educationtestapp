@@ -40,8 +40,6 @@ static NSUInteger   const EDATableViewDefaultFetchCount = 10;
     EDATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EDATableViewCellIdentifier];
     if (!cell) {
         cell = [[EDATableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EDATableViewCellIdentifier];
-    } else {
-        [cell prepareForReuse];
     }
     cell.data = [EDADataManager sharedManager][indexPath.row];
     

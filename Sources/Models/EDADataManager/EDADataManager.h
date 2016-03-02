@@ -13,7 +13,7 @@
 typedef void(^EDAErrorBlock)(NSError *error);
 
 @interface EDADataManager : NSObject
-@property (nonatomic, readonly) NSInteger totalRecordsCount;
+@property (nonatomic, readonly) NSInteger totalCount;
 @property (nonatomic, readonly) NSInteger count;
 
 + (instancetype)sharedManager;

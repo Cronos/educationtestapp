@@ -32,7 +32,7 @@
 
         NSInteger statusCode = [[response valueForKey:@"statusCode"] integerValue];
         if (statusCode != 200) {
-            NSString *errorDescription = [NSString stringWithFormat:@"%@\n%@\n%@", [@(statusCode) stringValue], [NSHTTPURLResponse localizedStringForStatusCode:statusCode], response.URL];
+            NSString *errorDescription = [NSString stringWithFormat:@"%@\n%@\n%@", @(statusCode).stringValue, [NSHTTPURLResponse localizedStringForStatusCode:statusCode], response.URL];
             EDAURLSessionDispatchInMainQueue(nil, [NSError errorWithCode:statusCode description:errorDescription]);
         }
         
