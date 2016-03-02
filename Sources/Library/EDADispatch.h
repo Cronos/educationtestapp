@@ -11,6 +11,13 @@
 
 typedef void(^EDADispatchBlock)();
 
+typedef NS_ENUM(NSInteger, EDAQueuePriority){
+    EDAQueuePriorityDefault = DISPATCH_QUEUE_PRIORITY_DEFAULT,
+    EDAQueuePriorityHigh = DISPATCH_QUEUE_PRIORITY_HIGH,
+    EDAQueuePriorityLow = DISPATCH_QUEUE_PRIORITY_LOW,
+    EDAQueuePriorityBackground = DISPATCH_QUEUE_PRIORITY_BACKGROUND
+};
+
 static inline
 void EDADispatchAsyncBlockInQueue(EDADispatchBlock block, dispatch_queue_t queue) {
     dispatch_async(queue, ^{
@@ -25,22 +32,22 @@ void EDADispatchAsyncInMainQueue(EDADispatchBlock block) {
 
 static inline
 void EDADispatchAsyncWithDefaultPriority(EDADispatchBlock block) {
-    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
+    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(EDAQueuePriorityDefault, 0));
 }
 
 static inline
 void EDADispatchAsyncWithHighPriority(EDADispatchBlock block) {
-    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0));
+    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(EDAQueuePriorityHigh, 0));
 }
 
 static inline
 void EDADispatchAsyncWithLowPriority(EDADispatchBlock block) {
-    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0));
+    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(EDAQueuePriorityLow, 0));
 }
 
 static inline
 void EDADispatchAsyncWithBackgroundPriority(EDADispatchBlock block) {
-    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
+    EDADispatchAsyncBlockInQueue(block, dispatch_get_global_queue(EDAQueuePriorityBackground, 0));
 }
 
 #endif /* EDADispatch_h */
