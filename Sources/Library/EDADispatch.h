@@ -9,7 +9,7 @@
 #ifndef EDADispatch_h
 #define EDADispatch_h
 
-#import "EDADefine.h"
+#import "EDADefines.h"
 
 typedef void(^EDADispatchBlock)();
 

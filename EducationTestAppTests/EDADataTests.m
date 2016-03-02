@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "EDADefines.h"
 #import "EDATestAPI.h"
 #import "EDAData.h"
 

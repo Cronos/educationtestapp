@@ -12,6 +12,7 @@
 //
 // request: /data?index=0&count=100
 //
+#import "EDADefines.h"
 
 static inline
 NSDictionary * EDATestDataSuccessfulResponse() {

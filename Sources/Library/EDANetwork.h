@@ -9,7 +9,7 @@
 #ifndef EDANetwork_h
 #define EDANetwork_h
 
-#import "EDADefine.h"
+#import "EDADefines.h"
 
 typedef NS_ENUM(NSUInteger, EDARequestMethod) {
     EDARequestMethodGET     = 0,
