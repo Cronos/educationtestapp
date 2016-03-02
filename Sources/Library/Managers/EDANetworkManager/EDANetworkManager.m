@@ -9,13 +9,11 @@
 #import "EDANetworkManager.h"
 #import "EDAResponse.h"
 #import "EDADefines.h"
+#import "EDAAPIKeys.h"
 
 //static NSString *const EDARequestPath = @"http://localhost";
 static NSString *const EDAAPIHost = @"http://newdev.anahoret.com:8082";
 
-static NSString *const EDANetworkParameterId = @"id";
-static NSString *const EDANetworkParameterIndex = @"index";
-static NSString *const EDANetworkParameterCount = @"count";
 
 typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
     EDANetworkRequestOnceData,
@@ -31,7 +29,7 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
             if (completion) {
                 float delay = 0.5 + ((float)arc4random()/RAND_MAX)*2.0;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    EDAResponse *response = [EDAResponse instanceWithDictionary:[EDANetworkManager resultForData:parameters[EDANetworkParameterId]]];
+                    EDAResponse *response = [EDAResponse instanceWithDictionary:[EDANetworkManager resultForData:parameters[EDAKeyID]]];
                     // call completion(response);
                 });
             }
@@ -44,9 +42,9 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
     
     NSString *requestParameters;
     if (parameters) {
-        NSString *dataId = parameters[EDANetworkParameterId];
-        NSString *dataIndex = parameters[EDANetworkParameterIndex];
-        NSString *dataCount = parameters[EDANetworkParameterCount];
+        NSString *dataId = parameters[EDAKeyID];
+        NSString *dataIndex = parameters[EDAKeyIndex];
+        NSString *dataCount = parameters[EDAKeyCount];
         
         if (dataId) {
             requestParameters = [NSString stringWithFormat:@"/%@", dataId];
@@ -55,36 +53,36 @@ typedef NS_ENUM(NSInteger, EDANetworkRequestType) {
 }
 
 + (void)getDataWithId:(NSNumber *)Id completionHandler:(EDAResponse *)completion{
-    [EDANetworkManager sendRequest:EDANetworkRequestOnceData withParameters:@{EDANetworkParameterId : Id} completionHandler:completion];
+    [EDANetworkManager sendRequest:EDANetworkRequestOnceData withParameters:@{EDAKeyID : Id} completionHandler:completion];
 }
 
 + (void)getDataListFrom:(NSInteger)index count:(NSInteger)count completionHandler:(EDAResponse *)completion{
-    [EDANetworkManager sendRequest:EDANetworkRequestDataList withParameters:@{EDANetworkParameterIndex : @(index), EDANetworkParameterCount : @(count)} completionHandler:completion];
+    [EDANetworkManager sendRequest:EDANetworkRequestDataList withParameters:@{EDAKeyIndex : @(index), EDAKeyCount : @(count)} completionHandler:completion];
 }
 
 #pragma mark - Test data
 
 + (NSDictionary *)resultForData:(NSNumber *)Id {
     return @{
-             @"response" : @{ // dictionary to contain all the response data
-                     @"meta" : @{ // metadata dictionary
-                             @"request" : @{ // description of request
-                                     @"sucess" : @true, // if the request was succesful
-                                     @"info" : @"Fetch data successfully" // text accompanying the response
+             EDAKeyResponse : @{ // dictionary to contain all the response data
+                     EDAKeyMeta : @{ // metadata dictionary
+                             EDAKeyRequest : @{ // description of request
+                                     EDAKeySuccess  : @true, // if the request was succesful
+                                     EDAKeyInfo     : @"Fetch data successfully" // text accompanying the response
                                      },
-                             @"layout" : @{ // pagination dictionary
-                                     @"index" : Id, // index of the requested data, which is the starting idnex of the data to be returned
-                                     @"count" : @1, // amount of data items requested from the current index
-                                     @"totalCount" : @1 // total amount of data present in the database for the current request
+                             EDAKeyLayout : @{ // pagination dictionary
+                                     EDAKeyIndex        : Id, // index of the requested data, which is the starting idnex of the data to be returned
+                                     EDAKeyCount        : @1, // amount of data items requested from the current index
+                                     EDAKeyTotalCount   : @1 // total amount of data present in the database for the current request
                                      },
                              },
-                     @"data" : @[
+                     EDAKeyData : @[
                              @{
-                                 @"id"      : Id,
-                                 @"content" : [EDANetworkManager randomStringWithLength:NSMakeRange(10, 200)], // length of each string should be random between 10 and 200 symbols
-                                 @"message" : [EDANetworkManager randomStringWithLength:NSMakeRange(100, 2000)], // // length should be random between 100 and 2000 symbols
-                                 @"image"   : [EDANetworkManager imagePathForId:Id], // image URL pointing to real image (should differ for different ids)
-                                 @"images"  : @[@"http://www.de/1.jpg", @"http://www.de/2.jpg"] // image URLs pointing to additional real image (can be duplicated for different ids)
+                                 EDAKeyID      : Id,
+                                 EDAKeyContent : [EDANetworkManager randomStringWithLength:NSMakeRange(10, 200)], // length of each string should be random between 10 and 200 symbols
+                                 EDAKeyMessage : [EDANetworkManager randomStringWithLength:NSMakeRange(100, 2000)], // // length should be random between 100 and 2000 symbols
+                                 EDAKeyImage   : [EDANetworkManager imagePathForId:Id], // image URL pointing to real image (should differ for different ids)
+                                 EDAKeyImages  : @[@"http://www.de/1.jpg", @"http://www.de/2.jpg"] // image URLs pointing to additional real image (can be duplicated for different ids)
                                  },
                              ]
                      }

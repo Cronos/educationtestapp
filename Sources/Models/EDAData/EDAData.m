@@ -11,6 +11,7 @@
 #import "EDARecordInfoRequest.h"
 #import "NSURLSession+EDAExtensions.h"
 #import "EDADispatch.h"
+#import "EDAAPIKeys.h"
 
 @interface EDAData ()
 @property (nonatomic, strong) NSURLSessionDataTask  *loadTask;
@@ -61,11 +62,11 @@
 
 - (void)setPropertyValueWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
-        self.Id = [[dictionary objectForKey:@"id"] integerValue];
-        self.content =[dictionary objectForKey:@"content"];
-        self.message = [dictionary objectForKey:@"message"];
-        self.image = [dictionary objectForKey:@"image"];
-        self.images = [dictionary objectForKey:@"images"];
+        self.ID = [[dictionary objectForKey:EDAKeyID] integerValue];
+        self.content =[dictionary objectForKey:EDAKeyContent];
+        self.message = [dictionary objectForKey:EDAKeyMessage];
+        self.image = [dictionary objectForKey:EDAKeyImage];
+        self.images = [dictionary objectForKey:EDAKeyImages];
     }
 }
 
@@ -117,7 +118,7 @@
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     if (!error) {
         self.isLoaded = YES;
-        EDAResponse *response = [EDAResponse instanceWithDictionary:dictionary[@"response"]];
+        EDAResponse *response = [EDAResponse instanceWithDictionary:dictionary[EDAKeyResponse]];
         EDAData *data = response.data.firstObject;
         [self setPropertyValueWithData:data];
     } else {

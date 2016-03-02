@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "EDATestAPI.h"
 #import "EDAResponseLayout.h"
+#import "EDAAPIKeys.h"
 
 @interface EDAResponseLayoutTests : XCTestCase
 
@@ -28,7 +29,7 @@
 
 - (void)testLayoutFromDictionary {
     
-    EDAResponseLayout *layout = [EDAResponseLayout instanceWithDictionary:EDATestDataSuccessfulResponse()[@"response"][@"meta"][@"layout"]];
+    EDAResponseLayout *layout = [EDAResponseLayout instanceWithDictionary:EDATestDataSuccessfulResponse()[EDAKeyResponse][EDAKeyMeta][EDAKeyLayout]];
     
     XCTAssertEqual(layout.index, 0, @"Index initialization error.");
     XCTAssertEqual(layout.count, 1, @"Count initialization error.");

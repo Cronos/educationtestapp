@@ -10,14 +10,15 @@
 #import "EDAResponseMetadata.h"
 #import "EDAData.h"
 #import "EDADefines.h"
+#import "EDAAPIKeys.h"
 
 @implementation EDAResponse
 
 + (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     if ([dictionary isKindOfClass:[NSDictionary class]]) {
         EDAResponse *response = [EDAResponse new];
-        response.meta = [EDAResponseMetadata instanceWithDictionary:dictionary[@"meta"]];
-        response.data = [EDAData arrayFromArray:dictionary[@"data"]];
+        response.meta = [EDAResponseMetadata instanceWithDictionary:dictionary[EDAKeyMeta]];
+        response.data = [EDAData arrayFromArray:dictionary[EDAKeyData]];
         
         return response;
     }

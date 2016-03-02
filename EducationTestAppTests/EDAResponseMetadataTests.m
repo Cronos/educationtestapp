@@ -11,6 +11,7 @@
 #import "EDAResponseMetadata.h"
 #import "EDAResponseRequestresult.h"
 #import "EDAResponseLayout.h"
+#import "EDAAPIKeys.h"
 
 @interface EDAResponseMetadataTests : XCTestCase
 
@@ -30,7 +31,7 @@
 
 - (void)testMetadataFromDictionarySuccessful {
     
-    EDAResponseMetadata *metadata = [EDAResponseMetadata instanceWithDictionary:EDATestDataSuccessfulResponse()[@"response"][@"meta"]];
+    EDAResponseMetadata *metadata = [EDAResponseMetadata instanceWithDictionary:EDATestDataSuccessfulResponse()[EDAKeyResponse][EDAKeyMeta]];
     
     XCTAssertNotNil(metadata, @"Metadata init error");
     XCTAssertNotNil(metadata.request, @"Metadata.request init error");
@@ -46,7 +47,7 @@
 
 - (void)testMetadataFromDictionaryUnsuccessful {
     
-    EDAResponseMetadata *metadata = [EDAResponseMetadata instanceWithDictionary:EDATestDataUnsuccessfulResponse()[@"response"][@"meta"]];
+    EDAResponseMetadata *metadata = [EDAResponseMetadata instanceWithDictionary:EDATestDataUnsuccessfulResponse()[EDAKeyResponse][EDAKeyMeta]];
     
     XCTAssertNotNil(metadata, @"Metadata init error");
     XCTAssertNil(metadata.layout, @"Metadata.layout init error");

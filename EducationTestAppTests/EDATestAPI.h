@@ -13,32 +13,33 @@
 // request: /data?index=0&count=100
 //
 #import "EDADefines.h"
+#import "EDAAPIKeys.h"
 
 static inline
 NSDictionary * EDATestDataSuccessfulResponse() {
     return @{
-             @"response" : @{ // dictionary to contain all the response data
-                     @"meta" : @{ // metadata dictionary
-                             @"request" : @{ // description of request
-                                     @"sucess" : @true, // if the request was succesful
-                                     @"info" : @"Logged in successfully" // text accompanying the response
+             EDAKeyResponse : @{ // dictionary to contain all the response data
+                     EDAKeyMeta : @{ // metadata dictionary
+                             EDAKeyRequest : @{ // description of request
+                                     EDAKeySuccess  : @true, // if the request was succesful
+                                     EDAKeyInfo     : @"Logged in successfully" // text accompanying the response
                                      },
-                             @"layout" : @{ // pagination dictionary
-                                     @"index" : @0, // index of the requested data, which is the starting idnex of the data to be returned
-                                     @"count" : @1, // amount of data items requested from the current index
-                                     @"totalCount" : @1 // total amount of data present in the database for the current request
+                             EDAKeyLayout : @{ // pagination dictionary
+                                     EDAKeyIndex        : @0, // index of the requested data, which is the starting idnex of the data to be returned
+                                     EDAKeyCount        : @1, // amount of data items requested from the current index
+                                     EDAKeyTotalCount   : @1 // total amount of data present in the database for the current request
                                      },
                              },
-                     @"data" : @[
+                     EDAKeyData : @[
                              @{
-                                 @"id" : @1, // id
-                                 @"content" : @"MAMAPAPADEDABABA", // length should be random between 10 and 200 symbols
-                                 @"image" : @"http://www.1.de" // image URL pointing to real image (should differ for different ids)
+                                 EDAKeyID       : @1, // id
+                                 EDAKeyContent  : @"MAMAPAPADEDABABA", // length should be random between 10 and 200 symbols
+                                 EDAKeyImage    : @"http://www.1.de" // image URL pointing to real image (should differ for different ids)
                                  },
                              @{
-                                 @"id" : @2, // id
-                                 @"content" : @"PAPAMAMABABADEDA", // length should be random between 10 and 200 symbols
-                                 @"image" : @"http://www.2.de" // image URL pointing to real image (should differ for different ids)
+                                 EDAKeyID       : @2, // id
+                                 EDAKeyContent  : @"PAPAMAMABABADEDA", // length should be random between 10 and 200 symbols
+                                 EDAKeyImage    : @"http://www.2.de" // image URL pointing to real image (should differ for different ids)
                                  }
                              ]
                      }
@@ -49,11 +50,11 @@ NSDictionary * EDATestDataSuccessfulResponse() {
 static inline
 NSDictionary * EDATestDataUnsuccessfulResponse() {
     return @{
-             @"response" : @{ // dictionary to contain all the response data
-                     @"meta" : @{ // metadata dictionary
-                             @"request" : @{ // description of request
-                                     @"sucess" : @false, // if the request was succesful
-                                     @"info" : @"Failed to login" // text accompanying the response
+             EDAKeyResponse : @{ // dictionary to contain all the response data
+                     EDAKeyMeta : @{ // metadata dictionary
+                             EDAKeyRequest : @{ // description of request
+                                     EDAKeySuccess  : @false, // if the request was succesful
+                                     EDAKeyInfo     : @"Failed to login" // text accompanying the response
                                      },
                              },
                      }
@@ -67,13 +68,13 @@ NSDictionary * EDATestDataUnsuccessfulResponse() {
 static inline
 NSDictionary * EDATestDataWithIdResponse() {
     return @{
-             @"data" : @[
+             EDAKeyData : @[
                      @{
-                         @"id" : @1, // id
-                         @"content" : @"MAMAPAPADEDABABA", // length of each string should be random between 10 and 200 symbols
-                         @"message" : @"ABABABAAAAAAABBBBAAAA!!!", // // length should be random between 100 and 2000 symbols
-                         @"image" : @"http://www.de", // image URL pointing to real image (should differ for different ids)
-                         @"images" : @[@"http://www.de/1.jpg", @"http://www.de/2.jpg"] // image URLs pointing to additional real image (can be duplicated for different ids)
+                         EDAKeyID : @1, // id
+                         EDAKeyContent  : @"MAMAPAPADEDABABA", // length of each string should be random between 10 and 200 symbols
+                         EDAKeyMessage  : @"ABABABAAAAAAABBBBAAAA!!!", // // length should be random between 100 and 2000 symbols
+                         EDAKeyImage    : @"http://www.de", // image URL pointing to real image (should differ for different ids)
+                         EDAKeyImages   : @[@"http://www.de/1.jpg", @"http://www.de/2.jpg"] // image URLs pointing to additional real image (can be duplicated for different ids)
                          }
                      ]
              };

@@ -17,6 +17,7 @@
 #import "NSArray+EDAExtensions.h"
 #import "NSError+EDAExtensions.h"
 #import "EDADispatch.h"
+#import "EDAAPIKeys.h"
 
 @interface EDADataManager ()
 @property (nonatomic, assign) NSInteger totalCount;
@@ -114,7 +115,7 @@
                 NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                 typeof(weakSelf) __strong strongSelf = weakSelf;
                 if (!error) {
-                    response = [EDAResponse instanceWithDictionary:dictionary[@"response"]];
+                    response = [EDAResponse instanceWithDictionary:dictionary[EDAKeyResponse]];
                     strongSelf.totalCount = response.meta.layout.totalCount;
                     [strongSelf updateDataWithObjects:response.data fromIndex:response.meta.layout.index];
                 }

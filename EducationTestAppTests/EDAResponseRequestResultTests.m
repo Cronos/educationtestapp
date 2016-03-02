@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "EDAResponseRequestResult.h"
+#import "EDAAPIKeys.h"
 
 @interface EDAResponseRequestResultTests : XCTestCase
 
@@ -28,8 +29,8 @@
 - (void)testResultFromDictionarySuccessful {
     
     NSDictionary *dictionary = @{ // description of request
-                                 @"sucess" : @"true", // if the request was succesful
-                                 @"info" : @"Logged in successfully" // text accompanying the response
+                                 EDAKeySuccess  : @"true", // if the request was succesful
+                                 EDAKeyInfo     : @"Logged in successfully" // text accompanying the response
                                  };
     
     EDAResponseRequestResult *result = [EDAResponseRequestResult instanceWithDictionary:dictionary];
@@ -41,8 +42,8 @@
 - (void)testResultFromDictionaryUnsuccessful {
     
     NSDictionary *dictionary = @{ // description of request
-                                 @"sucess" : @"false",
-                                 @"info" : @"Failed to login"
+                                 EDAKeySuccess  : @"false",
+                                 EDAKeyInfo     : @"Failed to login"
                                  };
     
     EDAResponseRequestResult *result = [EDAResponseRequestResult instanceWithDictionary:dictionary];
