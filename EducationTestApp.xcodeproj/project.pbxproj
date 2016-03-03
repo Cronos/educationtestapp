@@ -21,6 +21,7 @@
 		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
 		E38A02BD1C88869C00566E0E /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */; };
+		E38A02C11C88898800566E0E /* EDAObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A02C01C88898800566E0E /* EDAObservableObject.m */; };
 		E38A16571C6CA62200ABC9EA /* EDAURLRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */; };
 		E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
 		E38A16691C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
@@ -98,6 +99,8 @@
 		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
 		E38A02BB1C88869C00566E0E /* NSURLSession+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+EDAExtensions.m"; sourceTree = "<group>"; };
+		E38A02BF1C88898800566E0E /* EDAObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAObservableObject.h; sourceTree = "<group>"; };
+		E38A02C01C88898800566E0E /* EDAObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAObservableObject.m; sourceTree = "<group>"; };
 		E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAURLRequestTests.m; sourceTree = "<group>"; };
 		E38A16661C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+EDAExtensions.m"; sourceTree = "<group>"; };
@@ -308,6 +311,15 @@
 			path = NSURLSession;
 			sourceTree = "<group>";
 		};
+		E38A02BE1C88897200566E0E /* EDAObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				E38A02BF1C88898800566E0E /* EDAObservableObject.h */,
+				E38A02C01C88898800566E0E /* EDAObservableObject.m */,
+			);
+			path = EDAObservableObject;
+			sourceTree = "<group>";
+		};
 		E38A16551C6CA62200ABC9EA /* EDANetwork */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +510,7 @@
 		E38ABBDC1C64F6170099B5E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E38A02BE1C88897200566E0E /* EDAObservableObject */,
 				E385CAC51C7499BB000197DB /* EDADataManager */,
 				E38A5A881C6A20C000AC03ED /* EDAURLRequests */,
 				E38ABBE01C64F6170099B5E6 /* EDANull */,
@@ -840,6 +853,7 @@
 				E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */,
 				E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */,
 				E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */,
+				E38A02C11C88898800566E0E /* EDAObservableObject.m in Sources */,
 				E38A5A931C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */,
 				E38ABBBF1C64F60F0099B5E6 /* EDAAppDelegate.m in Sources */,
 				E38ABC071C64F6170099B5E6 /* EDAViewController.m in Sources */,
