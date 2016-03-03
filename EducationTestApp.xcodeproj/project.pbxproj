@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0D99FD77733AD1B625CDF0 /* libPods-EducationTestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */; };
 		E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */; };
 		E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3A71C3A914A009059BA /* EducationTestAppTests.m */; };
 		E382E3D41C3AA80D009059BA /* EDADataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3D31C3AA80D009059BA /* EDADataTests.m */; };
@@ -71,6 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A37D27B320CCC8B8857B137 /* Pods-EducationTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9807A9D839318F44F9422E71 /* Pods-EducationTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EducationTestAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseTests.m; sourceTree = "<group>"; };
 		E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDATestAPI.h; sourceTree = "<group>"; };
 		E382E38A1C3A914A009059BA /* EducationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,12 +176,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD0D99FD77733AD1B625CDF0 /* libPods-EducationTestAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB8A82F6693B6363978EBBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9807A9D839318F44F9422E71 /* Pods-EducationTestAppTests.debug.xcconfig */,
+				4A37D27B320CCC8B8857B137 /* Pods-EducationTestAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C48BF66C8C67E97450071001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E382E3811C3A914A009059BA = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +210,8 @@
 				E382E3A61C3A914A009059BA /* EducationTestAppTests */,
 				E382E3B11C3A914A009059BA /* EducationTestAppUITests */,
 				E382E38B1C3A914A009059BA /* Products */,
+				0BB8A82F6693B6363978EBBC /* Pods */,
+				C48BF66C8C67E97450071001 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -679,9 +703,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E382E3BA1C3A914A009059BA /* Build configuration list for PBXNativeTarget "EducationTestAppTests" */;
 			buildPhases = (
+				DB699CFF932425B70FFA92FE /* Check Pods Manifest.lock */,
 				E382E39F1C3A914A009059BA /* Sources */,
 				E382E3A01C3A914A009059BA /* Frameworks */,
 				E382E3A11C3A914A009059BA /* Resources */,
+				29C1C45287059E1D8AFCCB2E /* Embed Pods Frameworks */,
+				2E17890EDC54FCCD49A795EB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -751,6 +778,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29C1C45287059E1D8AFCCB2E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E17890EDC54FCCD49A795EB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB699CFF932425B70FFA92FE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E382E3861C3A914A009059BA /* Sources */ = {
@@ -951,6 +1026,7 @@
 		};
 		E382E3BB1C3A914A009059BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9807A9D839318F44F9422E71 /* Pods-EducationTestAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = EducationTestAppTests/Info.plist;
@@ -963,6 +1039,7 @@
 		};
 		E382E3BC1C3A914A009059BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A37D27B320CCC8B8857B137 /* Pods-EducationTestAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = EducationTestAppTests/Info.plist;
