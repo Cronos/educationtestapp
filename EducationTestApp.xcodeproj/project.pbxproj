@@ -19,9 +19,8 @@
 		E38942391C622371007C1E6A /* EDAImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E38942381C622371007C1E6A /* EDAImp.m */; };
 		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
+		E38A02BD1C88869C00566E0E /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */; };
 		E38A16571C6CA62200ABC9EA /* EDAURLRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */; };
-		E38A16631C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */; };
-		E38A16641C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */; };
 		E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
 		E38A16691C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
 		E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */; };
@@ -93,9 +92,9 @@
 		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
 		E389423C1C622424007C1E6A /* EDAMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAMock.m; sourceTree = "<group>"; };
 		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
+		E38A02BB1C88869C00566E0E /* NSURLSession+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+EDAExtensions.h"; sourceTree = "<group>"; };
+		E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+EDAExtensions.m"; sourceTree = "<group>"; };
 		E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAURLRequestTests.m; sourceTree = "<group>"; };
-		E38A16611C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+EDAExtensions.h"; sourceTree = "<group>"; };
-		E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+EDAExtensions.m"; sourceTree = "<group>"; };
 		E38A16661C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+EDAExtensions.m"; sourceTree = "<group>"; };
 		E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataModel.h; sourceTree = "<group>"; };
@@ -276,22 +275,21 @@
 			path = EDAMock;
 			sourceTree = "<group>";
 		};
+		E38A02BA1C88869C00566E0E /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				E38A02BB1C88869C00566E0E /* NSURLSession+EDAExtensions.h */,
+				E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */,
+			);
+			path = NSURLSession;
+			sourceTree = "<group>";
+		};
 		E38A16551C6CA62200ABC9EA /* EDANetwork */ = {
 			isa = PBXGroup;
 			children = (
 				E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */,
 			);
 			path = EDANetwork;
-			sourceTree = "<group>";
-		};
-		E38A16601C6CBBF100ABC9EA /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				E38A16611C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.h */,
-				E38A16621C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m */,
-			);
-			name = NSURLSession;
-			path = NSObject/NSURLSession;
 			sourceTree = "<group>";
 		};
 		E38A16651C6CBCFE00ABC9EA /* NSURLSessionTask */ = {
@@ -376,7 +374,7 @@
 				E38E9B5A1C86D7CA00BFF9C8 /* NSMutableURLRequest */,
 				E39A0C911C735AE8009DE563 /* UIViewController */,
 				E39A0C8D1C735663009DE563 /* NSError */,
-				E38A16601C6CBBF100ABC9EA /* NSURLSession */,
+				E38A02BA1C88869C00566E0E /* NSURLSession */,
 				E38A16651C6CBCFE00ABC9EA /* NSURLSessionTask */,
 				E38ABBC51C64F6170099B5E6 /* NSArray */,
 				E38ABBC91C64F6170099B5E6 /* NSMethodSignature */,
@@ -759,6 +757,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E38A02BD1C88869C00566E0E /* NSURLSession+EDAExtensions.m in Sources */,
 				E38ABBC11C64F60F0099B5E6 /* main.m in Sources */,
 				E38ABC051C64F6170099B5E6 /* EDATableViewCell.m in Sources */,
 				E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */,
@@ -782,7 +781,6 @@
 				E38ABBF91C64F6170099B5E6 /* NSArray+EDAExtentions.m in Sources */,
 				E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */,
 				E38E9B681C874A4600BFF9C8 /* UITableView+EDAExtensions.m in Sources */,
-				E38A16631C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */,
 				E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
 				E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,
 			);
@@ -808,7 +806,6 @@
 				E39D19551C560A8200A0D3E9 /* EDANullTests.m in Sources */,
 				E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */,
 				E389423D1C622424007C1E6A /* EDAMock.m in Sources */,
-				E38A16641C6CBBF100ABC9EA /* NSURLSession+EDAExtensions.m in Sources */,
 				E38A16691C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
 				E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */,
 				E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */,
