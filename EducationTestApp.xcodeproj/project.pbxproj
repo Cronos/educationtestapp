@@ -14,6 +14,7 @@
 		E382E3E81C3AB401009059BA /* EDAResponseRequestResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */; };
 		E382E3F01C3ABA63009059BA /* EDAResponseLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */; };
 		E382E3F21C3ABF40009059BA /* EDAResponseMetadataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */; };
+		E3836FC21C88A208002CD62D /* EDAObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = E3836FC11C88A208002CD62D /* EDAObserver.m */; };
 		E385CAC81C7499BB000197DB /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E385CAC71C7499BB000197DB /* EDADataManager.m */; };
 		E385CAC91C7499CB000197DB /* EDADataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E385CAC71C7499BB000197DB /* EDADataManager.m */; };
 		E385CACC1C7499F1000197DB /* EDADataManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E385CACB1C7499F1000197DB /* EDADataManagerTests.m */; };
@@ -89,6 +90,8 @@
 		E382E3E71C3AB401009059BA /* EDAResponseRequestResultTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseRequestResultTests.m; sourceTree = "<group>"; };
 		E382E3EF1C3ABA63009059BA /* EDAResponseLayoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseLayoutTests.m; sourceTree = "<group>"; };
 		E382E3F11C3ABF40009059BA /* EDAResponseMetadataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseMetadataTests.m; sourceTree = "<group>"; };
+		E3836FC01C88A208002CD62D /* EDAObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAObserver.h; sourceTree = "<group>"; };
+		E3836FC11C88A208002CD62D /* EDAObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAObserver.m; sourceTree = "<group>"; };
 		E385CAC61C7499BB000197DB /* EDADataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataManager.h; sourceTree = "<group>"; };
 		E385CAC71C7499BB000197DB /* EDADataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManager.m; sourceTree = "<group>"; };
 		E385CACB1C7499F1000197DB /* EDADataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManagerTests.m; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 			children = (
 				E38A02BF1C88898800566E0E /* EDAObservableObject.h */,
 				E38A02C01C88898800566E0E /* EDAObservableObject.m */,
+				E3836FC01C88A208002CD62D /* EDAObserver.h */,
+				E3836FC11C88A208002CD62D /* EDAObserver.m */,
 			);
 			path = EDAObservableObject;
 			sourceTree = "<group>";
@@ -882,6 +887,7 @@
 				E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */,
 				E38E9B681C874A4600BFF9C8 /* UITableView+EDAExtensions.m in Sources */,
 				E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
+				E3836FC21C88A208002CD62D /* EDAObserver.m in Sources */,
 				E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
