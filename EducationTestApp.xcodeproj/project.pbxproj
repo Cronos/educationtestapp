@@ -292,6 +292,37 @@
 			path = NSLock;
 			sourceTree = "<group>";
 		};
+		E388F3461C89C75D00B9CF61 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E388F3471C89C75D00B9CF61 /* EDAMacros */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E388F3471C89C75D00B9CF61 /* EDAMacros */ = {
+			isa = PBXGroup;
+			children = (
+				E388F3481C89C75D00B9CF61 /* EDABlockMacros */,
+				E388F3491C89C75D00B9CF61 /* EDAReturnMacros */,
+			);
+			path = EDAMacros;
+			sourceTree = "<group>";
+		};
+		E388F3481C89C75D00B9CF61 /* EDABlockMacros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EDABlockMacros;
+			sourceTree = "<group>";
+		};
+		E388F3491C89C75D00B9CF61 /* EDAReturnMacros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EDAReturnMacros;
+			sourceTree = "<group>";
+		};
 		E38942351C622371007C1E6A /* MockObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +444,7 @@
 				E38ABBC31C64F6170099B5E6 /* Library */,
 				E38ABBDC1C64F6170099B5E6 /* Models */,
 				E38ABBEF1C64F6170099B5E6 /* UI */,
+				E388F3461C89C75D00B9CF61 /* Utilities */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
