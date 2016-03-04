@@ -9,7 +9,7 @@
 #ifndef EDATestAPI_h
 #define EDATestAPI_h
 
-#import "EDADefines.h"
+#import "EDALanguageC.h"
 #import "EDAAPIKeys.h"
 
 EDA_STATIC_INLINE
