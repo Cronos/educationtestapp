@@ -14,21 +14,7 @@ typedef NS_ENUM(NSUInteger, EDARequestMethod) {
     EDARequestMethodPOST
 };
 
-EDA_STATIC_INLINE
-NSString *EDAHTTPMethod(EDARequestMethod method) {
-    switch (method) {
-        case EDARequestMethodGET:
-            return @"GET";
-            break;
-            
-        case EDARequestMethodPOST:
-            return @"POST";
-            break;
-            
-        default:
-            return @"";
-            break;
-    }
-}
+extern
+NSString *EDAHTTPMethod(EDARequestMethod method);
 
 #endif /* EDANetwork_h */
