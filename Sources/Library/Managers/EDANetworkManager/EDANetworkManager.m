@@ -8,7 +8,6 @@
 
 #import "EDANetworkManager.h"
 #import "EDAResponse.h"
-#import "EDADefines.h"
 #import "EDAAPIKeys.h"
 
 static NSString * const EDAAPIHost = @"http://newdev.anahoret.com:8082";

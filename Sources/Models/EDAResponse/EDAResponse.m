@@ -9,7 +9,6 @@
 #import "EDAResponse.h"
 #import "EDAResponseMetadata.h"
 #import "EDAData.h"
-#import "EDADefines.h"
 #import "EDAAPIKeys.h"
 
 @implementation EDAResponse

@@ -11,6 +11,7 @@
 @class EDAObservableObject;
 
 typedef NSUInteger EDAObjectState;
+
 typedef void(^EDAObserverCallBlock)(id observableObject, id info);
 
 @interface EDAObserver : NSObject

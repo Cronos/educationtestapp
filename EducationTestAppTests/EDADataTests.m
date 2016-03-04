@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "EDADefines.h"
 #import "EDATestAPI.h"
 #import "EDAData.h"
 #import "EDAAPIKeys.h"
@@ -55,4 +54,5 @@
     XCTAssertEqual(item.content, @"PAPAMAMABABADEDA", @"dataArray[0].content init error");
     XCTAssertEqual(item.image, @"http://www.2.de", @"dataArray[0].image init error");
 }
+
 @end
