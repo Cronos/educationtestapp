@@ -8,7 +8,7 @@
 
 #import "NSMutableURLRequest+EDAExtensions.h"
 #import "NSString+EDAExtensions.h"
-#import "EDALanguageC.h"
+#import "EDACDefines.h"
 
 EDA_EXTERNAL(NSString *, EDAAPIBaseURL);
 

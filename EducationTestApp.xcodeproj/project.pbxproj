@@ -158,7 +158,7 @@
 		E38E9B591C86D17400BFF9C8 /* EDANetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDANetwork.h; sourceTree = "<group>"; };
 		E38E9B5E1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38E9B5F1C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+EDAExtensions.m"; sourceTree = "<group>"; };
-		E38E9B611C86E70100BFF9C8 /* EDALanguageC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDALanguageC.h; sourceTree = "<group>"; };
+		E38E9B611C86E70100BFF9C8 /* EDACDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDACDefines.h; sourceTree = "<group>"; };
 		E38E9B641C872EE100BFF9C8 /* EDAAPIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAAPIKeys.h; sourceTree = "<group>"; };
 		E38E9B661C874A4600BFF9C8 /* UITableView+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38E9B671C874A4600BFF9C8 /* UITableView+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EDAExtensions.m"; sourceTree = "<group>"; };
@@ -455,7 +455,7 @@
 				E385E97E1C7752F000E7849C /* EDADispatch.h */,
 				E38E9B591C86D17400BFF9C8 /* EDANetwork.h */,
 				E388F34A1C89C7C400B9CF61 /* EDANetwork.m */,
-				E38E9B611C86E70100BFF9C8 /* EDALanguageC.h */,
+				E38E9B611C86E70100BFF9C8 /* EDACDefines.h */,
 				E38E9B641C872EE100BFF9C8 /* EDAAPIKeys.h */,
 				E38ABBC41C64F6170099B5E6 /* Categories */,
 				E38ABBD51C64F6170099B5E6 /* Managers */,
