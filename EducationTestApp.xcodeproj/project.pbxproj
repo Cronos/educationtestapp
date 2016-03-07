@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD0D99FD77733AD1B625CDF0 /* libPods-EducationTestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */; };
+		E31448581C8D7133007A69AD /* EDALocking.m in Sources */ = {isa = PBXBuildFile; fileRef = E31448571C8D7133007A69AD /* EDALocking.m */; };
 		E382C6001C3BB4C40006F1C1 /* EDAResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */; };
 		E382E3A81C3A914A009059BA /* EducationTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3A71C3A914A009059BA /* EducationTestAppTests.m */; };
 		E382E3D41C3AA80D009059BA /* EDADataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E382E3D31C3AA80D009059BA /* EDADataTests.m */; };
@@ -79,6 +80,7 @@
 		4A37D27B320CCC8B8857B137 /* Pods-EducationTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9807A9D839318F44F9422E71 /* Pods-EducationTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EducationTestAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31448571C8D7133007A69AD /* EDALocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDALocking.m; sourceTree = "<group>"; };
 		E31448591C8D7187007A69AD /* EDAReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDAReturnMacros.h; path = Sources/Utilities/EDAMacros/EDAReturnMacros/EDAReturnMacros.h; sourceTree = SOURCE_ROOT; };
 		E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseTests.m; sourceTree = "<group>"; };
 		E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDATestAPI.h; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				E388F3451C898D6300B9CF61 /* EDALocking.h */,
+				E31448571C8D7133007A69AD /* EDALocking.m */,
 			);
 			path = NSLock;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				E388F34B1C89C7C400B9CF61 /* EDANetwork.m in Sources */,
 				E39A0C901C735682009DE563 /* NSError+EDAExtensions.m in Sources */,
 				E38E9B681C874A4600BFF9C8 /* UITableView+EDAExtensions.m in Sources */,
+				E31448581C8D7133007A69AD /* EDALocking.m in Sources */,
 				E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */,
 				E3836FC21C88A208002CD62D /* EDAObserver.m in Sources */,
 				E38ABBFA1C64F6170099B5E6 /* NSMethodSignature+EDAExtensions.m in Sources */,

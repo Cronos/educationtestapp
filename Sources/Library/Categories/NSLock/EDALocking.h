@@ -8,10 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^EDALockingBlock)(void);
+typedef void(^EDALockedBlock)(void);
 
 @protocol EDALocking <NSObject, NSLocking>
 
-- (void)performBlock:(EDALockingBlock)block;
+- (void)performBlock:(EDALockedBlock)block;
 
 @end
+
+#define EDASynthesizeLockingInterface(class) \
+@interface class (__EDALockingExtensions__##class) <EDALocking> \
+@end
+
+EDASynthesizeLockingInterface(NSLock)
+EDASynthesizeLockingInterface(NSRecursiveLock)
+EDASynthesizeLockingInterface(NSCondition)
+EDASynthesizeLockingInterface(NSConditionLock)
+
+#undef EDASynthesizeLockingInterface
