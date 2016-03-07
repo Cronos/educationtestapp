@@ -82,6 +82,7 @@
 		AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EducationTestAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E31448571C8D7133007A69AD /* EDALocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDALocking.m; sourceTree = "<group>"; };
 		E31448591C8D7187007A69AD /* EDAReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDAReturnMacros.h; path = Sources/Utilities/EDAMacros/EDAReturnMacros/EDAReturnMacros.h; sourceTree = SOURCE_ROOT; };
+		E314485A1C8D7372007A69AD /* EDABlockMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDABlockMacros.h; sourceTree = "<group>"; };
 		E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseTests.m; sourceTree = "<group>"; };
 		E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDATestAPI.h; sourceTree = "<group>"; };
 		E382E38A1C3A914A009059BA /* EducationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +317,7 @@
 		E388F3481C89C75D00B9CF61 /* EDABlockMacros */ = {
 			isa = PBXGroup;
 			children = (
+				E314485A1C8D7372007A69AD /* EDABlockMacros.h */,
 			);
 			path = EDABlockMacros;
 			sourceTree = "<group>";
