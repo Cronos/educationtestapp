@@ -26,6 +26,10 @@
 #pragma mark -
 #pragma mark Initialization and Deallocation
 
+- (void)dealloc {
+    self.mutableObservers = nil;
+}
+
 - (instancetype)init {
     return [self initWithTarget:nil];
 }
@@ -49,15 +53,19 @@
     return [self.mutableObservers setRepresentation];
 }
 
-#pragma mark -
-#pragma mark Public
-
-
 - (void)setState:(EDAObjectState)state object:(id)object {
     
 }
 
-- (EDAObserver *)observerWithObject:(id)observer {
+#pragma mark -
+#pragma mark Public
+
+- (void)addObserver:(EDAObserver *)observer {
+    [self.mutableObservers addObject:observer];
+}
+
+
+- (EDAObserver *)observer {
     return nil;
 }
 

@@ -12,17 +12,22 @@
 
 typedef NSUInteger EDAObjectState;
 
-typedef void(^EDAObserverCallBlock)(id observableObject, id info);
+typedef void(^EDAObserverCallback)(id observableObject, id info);
 
 @interface EDAObserver : NSObject
-@property (nonatomic, readonly) EDAObservableObject *observableObject;
-@property (nonatomic, assign, getter=isPaused) BOOL paused;
+@property (nonatomic, readonly, weak) EDAObservableObject *observableObject;
 @property (nonatomic, assign, getter=isValid)  BOOL valid;
 
-- (void)setBlock:(EDAObserverCallBlock)block forState:(EDAObjectState)state;
-- (EDAObserverCallBlock)blockForState:(EDAObjectState)state;
++ (instancetype)observerWithObservableObject:(EDAObservableObject *)object;
+
+- (instancetype)initWithObservableObject:(EDAObservableObject *)object;
+
+- (void)setBlock:(EDAObserverCallback)block forState:(EDAObjectState)state;
+- (EDAObserverCallback)blockForState:(EDAObjectState)state;
 
 - (id)objectAtIndexedSubscript:(NSUInteger)state;
 - (void)setObject:(id)object atIndexedSubscript:(NSUInteger)state;
+
+- (void)performBlockForState:(EDAObjectState)state object:(id)object;
 
 @end

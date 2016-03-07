@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EDAObserver.h"
+
 //EDAObservableObjectSpec
 //    after being deallocated it should remove all observers
 //    when observer starts observing
@@ -24,9 +25,9 @@
 //            when observer resumes observation it should send notification to all unpaused observers
 
 @interface EDAObservableObject : NSObject
-@property (nonatomic, readonly) NSSet           *observers;
-@property (nonatomic, readonly) id<NSObject>    target;
-@property (nonatomic, assign)   EDAObjectState  state;
+@property (nonatomic, readonly)         NSSet           *observers;
+@property (nonatomic, readonly, weak)   id<NSObject>    target;
+@property (nonatomic, assign)           EDAObjectState  state;
 
 + (instancetype)objectWithTarget:(id<NSObject>)target;
 
@@ -34,7 +35,9 @@
 
 - (void)setState:(EDAObjectState)state object:(id)object;
 
-- (EDAObserver *)observerWithObject:(id)observer;
+- (void)addObserver:(EDAObserver *)observer;
+
+- (EDAObserver *)observer;
 
 - (void)notifyObserversWithState:(NSUInteger)state;
 - (void)notifyObserversWithState:(NSUInteger)state object:(id)object;
