@@ -7,14 +7,50 @@
 //
 
 #import "Kiwi.h"
+#import "EDAObservableObject.h"
 
 SPEC_BEGIN(EDAObservableObjectSpec)
 
 describe(@"EDAObservableObjectSpec", ^{
-    context(@"after being deallocated", ^{
-        it(@"should remove all observers", ^{
-            //
+    __block EDAObservableObject *observableObject = nil;
+    beforeEach(^{
+        observableObject = [EDAObservableObject objectWithTarget:nil];
+    });
+    
+    afterEach(^{
+        observableObject = nil;
+    });
+    
+    context(@"when initialized without target", ^{
+        it(@"should have target == self", ^{
+            [[observableObject should] equal:observableObject.target];
         });
+    });
+
+    context(@"when initialized with target", ^{
+        __block id target = nil;
+        
+        beforeEach(^{
+            observableObject = nil;
+            target = [NSObject new];
+            observableObject = [EDAObservableObject objectWithTarget:target];
+        });
+ 
+        it(@"should have target", ^{
+            [[target should] equal:observableObject.target];
+
+        });
+    });
+
+    context(@"after being deallocated", ^{
+        beforeEach(^{
+            observableObject = nil;
+        });
+        
+        it(@"should remove all observers", ^{
+            [[observableObject.observers should] haveCountOf:0];
+        });
+        
     });
     
     context(@"when observer starts observing", ^{
