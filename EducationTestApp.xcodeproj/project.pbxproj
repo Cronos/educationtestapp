@@ -79,6 +79,7 @@
 		4A37D27B320CCC8B8857B137 /* Pods-EducationTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9807A9D839318F44F9422E71 /* Pods-EducationTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EducationTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EducationTestAppTests/Pods-EducationTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA78F819537D062122AF15D3 /* libPods-EducationTestAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EducationTestAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31448591C8D7187007A69AD /* EDAReturnMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDAReturnMacros.h; path = Sources/Utilities/EDAMacros/EDAReturnMacros/EDAReturnMacros.h; sourceTree = SOURCE_ROOT; };
 		E382C5FF1C3BB4C40006F1C1 /* EDAResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAResponseTests.m; sourceTree = "<group>"; };
 		E382C6011C3BB74A0006F1C1 /* EDATestAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDATestAPI.h; sourceTree = "<group>"; };
 		E382E38A1C3A914A009059BA /* EducationTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +320,7 @@
 		E388F3491C89C75D00B9CF61 /* EDAReturnMacros */ = {
 			isa = PBXGroup;
 			children = (
+				E31448591C8D7187007A69AD /* EDAReturnMacros.h */,
 			);
 			path = EDAReturnMacros;
 			sourceTree = "<group>";

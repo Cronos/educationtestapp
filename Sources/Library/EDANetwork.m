@@ -8,18 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EDANetwork.h"
-
-#define __EDAReturnValueWithBreak(value) \
-    return value; \
-    break
-
-#define EDAReturnValueInCase(value, expression) \
-    case expression: \
-    __EDAReturnValueWithBreak(value)
-
-#define EDAReturnValueInCaseDefault(value) \
-    default: \
-    __EDAReturnValueWithBreak(value)
+#import "EDAReturnMacros.h"
 
 NSString *EDAHTTPMethod(EDARequestMethod method) {
     switch (method) {
