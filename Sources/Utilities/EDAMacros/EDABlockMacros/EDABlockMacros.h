@@ -9,14 +9,20 @@
 #ifndef EDABlockMacros_h
 #define EDABlockMacros_h
 
-#define __EDABlockCall(block, ...) \
+#import "EDAUtilityMacros.h"
+
+#define __EDABlockCall(result, operation, block, ...) \
     do { \
         typeof(block) expression = block; \
         if (expression) { \
-            expression(__VA_ARGS__); \
+            result operation expression(__VA_ARGS__); \
         } \
     } while(0)
 
-#define EDABlockCall(...) __EDABlockCall(__VA_ARGS__)
+#define EDABlockCall(...) __EDABlockCall(EDAEmpty, EDAEmpty, __VA_ARGS__)
+
+#define EDAResultBlockCall(result, ...) __EDABlockCall(result, =, __VA_ARGS__)
+
+#define EDAReturnBlockCall(...) __EDABlockCall(EDAEmpty, return, __VA_ARGS__)
 
 #endif /* EDABlockMacros_h */
