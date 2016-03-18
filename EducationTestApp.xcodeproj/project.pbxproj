@@ -104,6 +104,7 @@
 		E385CACB1C7499F1000197DB /* EDADataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataManagerTests.m; sourceTree = "<group>"; };
 		E385E97E1C7752F000E7849C /* EDADispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDADispatch.h; sourceTree = "<group>"; };
 		E387254C1C9C202400AF59B9 /* EDAClangDiagnosticMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAClangDiagnosticMacros.h; sourceTree = "<group>"; };
+		E387254D1C9C20F400AF59B9 /* EDAWeakifyStrongifyMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDAWeakifyStrongifyMacros.h; sourceTree = "<group>"; };
 		E388F3451C898D6300B9CF61 /* EDALocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDALocking.h; sourceTree = "<group>"; };
 		E388F34A1C89C7C400B9CF61 /* EDANetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDANetwork.m; sourceTree = "<group>"; };
 		E38942371C622371007C1E6A /* EDAImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAImp.h; sourceTree = "<group>"; };
@@ -314,6 +315,7 @@
 			children = (
 				E398A6CF1C96FF1B0013EA6F /* EDAUtilityMacros.h */,
 				E387254C1C9C202400AF59B9 /* EDAClangDiagnosticMacros.h */,
+				E387254D1C9C20F400AF59B9 /* EDAWeakifyStrongifyMacros.h */,
 				E388F3481C89C75D00B9CF61 /* EDABlockMacros */,
 				E388F3491C89C75D00B9CF61 /* EDAReturnMacros */,
 			);
