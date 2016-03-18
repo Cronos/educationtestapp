@@ -9,14 +9,14 @@
 #ifndef EDAReturnMacros_h
 #define EDAReturnMacros_h
 
+#import "EDAUtilityMacros.h"
+
 #define EDAReturnValueIfNil(condition, value) \
     do { \
         if (!(condition)) { \
             return value; \
         } \
     } while(0)
-
-#define EDAEmpty
 
 #define EDAReturnNilIfNil(condition) EDAReturnValueIfNil((condition), nil)
 #define EDAReturnIfNil(condition) EDAReturnValueIfNil((condition), EDAEmpty)
