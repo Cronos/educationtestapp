@@ -23,7 +23,7 @@ void EDAPerformBlockWithLock(id<NSLocking> lock, EDALockedBlock block) {
 @implementation class (__EDALockingExtensions__##class) \
 \
 - (void)performBlock:(EDALockedBlock)block { \
-EDAPerformBlockWithLock(self, block); \
+    EDAPerformBlockWithLock(self, block); \
 } \
 \
 @end

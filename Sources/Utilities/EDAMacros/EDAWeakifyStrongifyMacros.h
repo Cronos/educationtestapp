@@ -24,13 +24,13 @@
     EDAClangDiagnosticPopExpression
 
 #define EDAStrongifyAndReturnValueIfNil(variable, value) \
-        EDAStrongify(variable); \
-        EDAReturnValueIfNil(variable, value)
+    EDAStrongify(variable); \
+    EDAReturnValueIfNil(variable, value)
 
 #define EDAStrongifyAndReturnIfNil(variable) \
     EDAStrongifyAndReturnValueIfNil(variable, EDAEmpty)
 
 #define EDAStrongifyAndReturnNilIfNil(variable) \
-        EDAStrongifyAndReturnValueIfNil(variable, nil)
+    EDAStrongifyAndReturnValueIfNil(variable, nil)
 
 #endif /* EDAWeakifyStrongifyMacros_h */

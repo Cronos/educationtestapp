@@ -14,7 +14,6 @@ typedef NS_ENUM(NSUInteger, EDARequestMethod) {
     EDARequestMethodPOST
 };
 
-extern
 NSString *EDAHTTPMethod(EDARequestMethod method);
 
 #endif /* EDANetwork_h */

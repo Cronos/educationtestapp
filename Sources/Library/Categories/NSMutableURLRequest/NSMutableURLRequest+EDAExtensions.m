@@ -10,7 +10,7 @@
 #import "NSString+EDAExtensions.h"
 #import "EDACDefines.h"
 
-EDA_EXTERNAL(NSString *, EDAAPIBaseURL);
+EDA_EXTERNAL_CONST(NSString *, EDAAPIBaseURL);
 
 static NSString * const EDARequestHeaderFieldContentType         = @"Content-Type";
 static NSString * const EDARequestHeaderFieldValueSeparators     = @",";

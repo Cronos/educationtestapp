@@ -11,6 +11,6 @@
 
 #define EDA_STATIC_INLINE static inline
 
-#define EDA_EXTERNAL(type, name) extern type const name
+#define EDA_EXTERNAL_CONST(type, name) extern type const name
 
 #endif /* EDACDefines_h */
