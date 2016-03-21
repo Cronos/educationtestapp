@@ -15,8 +15,8 @@ typedef NSUInteger EDAObjectState;
 typedef void(^EDAObserverCallback)(id observableObject, id info);
 
 @interface EDAObserver : NSObject
-@property (nonatomic, readonly, weak) EDAObservableObject *observableObject;
-@property (nonatomic, assign, getter=isValid)  BOOL valid;
+@property (nonatomic, weak, readonly) EDAObservableObject *observableObject;
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 + (instancetype)observerWithObservableObject:(EDAObservableObject *)object;
 

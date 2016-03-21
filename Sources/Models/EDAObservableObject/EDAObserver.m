@@ -7,9 +7,13 @@
 //
 
 #import "EDAObserver.h"
+
 #import "EDALocking.h"
 #import "EDAObservableObject.h"
+
 #import "EDABlockMacros.h"
+#import "EDAWeakifyStrongifyMacros.h"
+#import "EDAClangDiagnosticMacros.h"
 
 @interface EDAObserver ()
 @property (nonatomic, weak)     EDAObservableObject *observableObject;
@@ -34,10 +38,10 @@
 
 - (instancetype)initWithObservableObject:(EDAObservableObject *)object {
     self = [super init];
-    self.lock = [NSRecursiveLock new];
-    self.executableBlocks = [NSMapTable mapTableWithKeyOptions:NSMapTableCopyIn valueOptions:NSMapTableCopyIn];
     self.observableObject = object;
-   
+    self.executableBlocks = [NSMapTable mapTableWithKeyOptions:NSMapTableCopyIn valueOptions:NSMapTableCopyIn];
+    self.lock = [NSRecursiveLock new];
+    
     return self;
 }
 
@@ -76,11 +80,12 @@
 }
 
 - (EDAObserverCallback)blockForState:(EDAObjectState)state {
-    NSMapTable *executableBlocks = self.executableBlocks;
-    
     __block id result = nil;
+    EDAWeakify(self);
+    
     [self.lock performBlock:^{
-        result = [executableBlocks objectForKey:@(state)];
+        EDAStrongifyAndReturnIfNil(self);
+        result = [self.executableBlocks objectForKey:@(state)];
     }];
     
     return result;
