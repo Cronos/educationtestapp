@@ -13,9 +13,9 @@
 #import "NSMutableURLRequest+EDAExtensions.h"
 #import "EDACDefines.h"
 
-EDA_EXTERNAL(NSString *, EDAAPIBaseURL);
-EDA_EXTERNAL(NSString *, EDARecordInfoRequestTemplate);
-EDA_EXTERNAL(NSString *, EDARecordsListRequestTemplate);
+EDA_EXTERNAL_CONST(NSString *, EDAAPIBaseURL);
+EDA_EXTERNAL_CONST(NSString *, EDARecordInfoRequestTemplate);
+EDA_EXTERNAL_CONST(NSString *, EDARecordsListRequestTemplate);
 
 @interface EDAURLRequestTests : XCTestCase
 
