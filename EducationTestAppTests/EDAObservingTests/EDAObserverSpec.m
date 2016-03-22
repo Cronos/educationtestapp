@@ -20,7 +20,7 @@ describe(@"EDAObserver", ^{
     
     beforeEach(^{
         observableObject = [EDAObservableObject new];
-        observer = [EDAObserver observerWithObservableObject:observableObject];
+        observer = [observableObject observer];
     });
     
     afterEach(^{
