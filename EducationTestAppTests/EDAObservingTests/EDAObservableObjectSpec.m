@@ -7,18 +7,26 @@
 //
 
 #import "Kiwi.h"
+
 #import "EDAObservableObject.h"
+#import "EDAObserver.h"
 
 SPEC_BEGIN(EDAObservableObjectSpec)
 
 describe(@"EDAObservableObjectSpec", ^{
+    NSUInteger state = 99;
+    
     __block EDAObservableObject *observableObject = nil;
+    __block EDAObserver *observer = nil;
+    
     beforeEach(^{
         observableObject = [EDAObservableObject objectWithTarget:nil];
+        observer = [observableObject observer];
     });
     
     afterEach(^{
         observableObject = nil;
+        observer = nil;
     });
     
     context(@"when initialized without target", ^{
@@ -31,76 +39,104 @@ describe(@"EDAObservableObjectSpec", ^{
         __block id target = nil;
         
         beforeEach(^{
-            observableObject = nil;
             target = [NSObject new];
             observableObject = [EDAObservableObject objectWithTarget:target];
         });
  
         it(@"should have target", ^{
             [[target should] equal:observableObject.target];
-
         });
     });
 
-    context(@"after being deallocated", ^{
-        beforeEach(^{
+    context(@"after deallocate observable object", ^{
+        it(@"observer should be not valid", ^{
             observableObject = nil;
+            [[theValue(observer.isValid) should] beNo];
         });
-        
-        it(@"should remove all observers", ^{
-            [[observableObject.observers should] haveCountOf:0];
-        });
-        
     });
     
-    context(@"when observer starts observing", ^{
-        it(@"should add observer to observers", ^{
-            //
+    context(@"after deallocate observer", ^{
+        beforeEach(^{
+            observer = nil;
         });
         
-        it(@"should return observer object", ^{
-            //
+        it(@"should be removed from observers of observable object", ^{
+            [[observableObject.observers should] haveCountOf:0];
+        });
+    });
+    
+    context(@"after fetching observer", ^{
+        describe(@"EDAObserver", ^{
+            it(@"should contain observable object in its obsevable object property", ^{
+                [[observer.observableObject should] equal:observableObject];
+            });
+        });
+    });
+
+    context(@"when observer starts observing", ^{
+        it(@"should add observer to observers", ^{
+            [[observableObject.observers should] contain:observer];
+        });
+        
+        it(@"should return object by kind of EDAObserver", ^{
+            [[observer should] beKindOfClass:[EDAObserver class]];
         });
         
         context(@"multiple times", ^{
             it(@"should return multiple unique observer object", ^{
-                //
+                id anotherObserver = [observableObject observer];
+                [[anotherObserver shouldNot] equal:observer];
             });
-        });
-    });
-    
-    context(@"when observer stops observing", ^{
-        it(@"should remove observer from observers", ^{
-            //
         });
     });
     
     context(@"when object changes state", ^{
+        __block id sender = nil;
+        __block id receivedNotification = nil;
+        
+        beforeEach(^{
+            id callback = ^(id observableObject, id info){
+                sender = observableObject;
+                receivedNotification = info;
+            };
+            
+            [observer setBlock:callback forState:state];
+        });
+        
+        afterEach(^{
+            sender = nil;
+            receivedNotification = nil;
+        });
+        
         context(@"and sends changes in notification", ^{
-            it(@"should notify observers sending self and changes as parameters", ^{
-                //
+            __block id notification = nil;
+            
+            beforeEach(^{
+                notification = [NSObject new];
+                [observableObject setState:state object:notification];
+            });
+            
+            afterEach(^{
+                notification = nil;
+            });
+            
+            it(@"should notify observers by sending self", ^{
+                [[sender should] equal:observableObject];
+            });
+            
+            it(@"should notify observers by sending changes", ^{
+                [[receivedNotification should] equal:notification];
             });
         });
         
         context(@"and doesn't send changes in notification", ^{
+            beforeEach(^{
+                [observableObject notifyObserversWithState:state];
+            });
+            
             it(@"should notify observers sending self and changes == nil as parameters", ^{
-                //
-            });
-        });
-        
-        context(@"when observer pauses observation", ^{
-            it(@"shouldn't send notification to this observer", ^{
-                //
-            });
-            
-            it(@"shouldn't send notification to other observers", ^{
-                //
-            });
-            
-            context(@"when observer resumes observation", ^{
-                it(@"should send notification to all unpaused observers", ^{
-                    //
-                });
+                [[sender should] equal:observableObject];
+                [[receivedNotification should] beNil];
             });
         });
     });
