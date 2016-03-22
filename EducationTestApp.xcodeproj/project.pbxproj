@@ -25,13 +25,13 @@
 		E38942391C622371007C1E6A /* EDAImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E38942381C622371007C1E6A /* EDAImp.m */; };
 		E389423D1C622424007C1E6A /* EDAMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423C1C622424007C1E6A /* EDAMock.m */; };
 		E389423F1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */; };
+		E389565A1CA13BC300AD37AD /* EDAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E38956591CA13BC300AD37AD /* EDAModel.m */; };
 		E38A02BD1C88869C00566E0E /* NSURLSession+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */; };
 		E38A02C11C88898800566E0E /* EDAObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A02C01C88898800566E0E /* EDAObservableObject.m */; };
 		E38A02C41C888A0700566E0E /* EDAObservableObjectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A02C31C888A0700566E0E /* EDAObservableObjectSpec.m */; };
 		E38A16571C6CA62200ABC9EA /* EDAURLRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */; };
 		E38A16681C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
 		E38A16691C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */; };
-		E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */; };
 		E38A5A8B1C6A20C000AC03ED /* EDAURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */; };
 		E38A5A8C1C6A20C000AC03ED /* EDAURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */; };
 		E38A5A8F1C6A238C00AC03ED /* EDARecordInfoRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E38A5A8E1C6A238C00AC03ED /* EDARecordInfoRequest.m */; };
@@ -114,6 +114,8 @@
 		E389423B1C622424007C1E6A /* EDAMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAMock.h; sourceTree = "<group>"; };
 		E389423C1C622424007C1E6A /* EDAMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAMock.m; sourceTree = "<group>"; };
 		E389423E1C6228A2007C1E6A /* NSObject+EDACustomClassesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EDACustomClassesTests.m"; sourceTree = "<group>"; };
+		E38956581CA13BC300AD37AD /* EDAModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAModel.h; sourceTree = "<group>"; };
+		E38956591CA13BC300AD37AD /* EDAModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAModel.m; sourceTree = "<group>"; };
 		E38A02BB1C88869C00566E0E /* NSURLSession+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38A02BC1C88869C00566E0E /* NSURLSession+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+EDAExtensions.m"; sourceTree = "<group>"; };
 		E38A02BF1C88898800566E0E /* EDAObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAObservableObject.h; sourceTree = "<group>"; };
@@ -122,8 +124,6 @@
 		E38A16561C6CA62200ABC9EA /* EDAURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAURLRequestTests.m; sourceTree = "<group>"; };
 		E38A16661C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSessionTask+EDAExtensions.h"; sourceTree = "<group>"; };
 		E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSessionTask+EDAExtensions.m"; sourceTree = "<group>"; };
-		E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDADataModel.h; sourceTree = "<group>"; };
-		E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDADataModel.m; sourceTree = "<group>"; };
 		E38A5A891C6A20C000AC03ED /* EDAURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDAURLRequest.h; sourceTree = "<group>"; };
 		E38A5A8A1C6A20C000AC03ED /* EDAURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDAURLRequest.m; sourceTree = "<group>"; };
 		E38A5A8D1C6A238C00AC03ED /* EDARecordInfoRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDARecordInfoRequest.h; sourceTree = "<group>"; };
@@ -368,6 +368,15 @@
 			path = EDAMock;
 			sourceTree = "<group>";
 		};
+		E38956571CA13BC300AD37AD /* EDAModel */ = {
+			isa = PBXGroup;
+			children = (
+				E38956581CA13BC300AD37AD /* EDAModel.h */,
+				E38956591CA13BC300AD37AD /* EDAModel.m */,
+			);
+			path = EDAModel;
+			sourceTree = "<group>";
+		};
 		E38A02BA1C88869C00566E0E /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,15 +421,6 @@
 				E38A16671C6CBD1C00ABC9EA /* NSURLSessionTask+EDAExtensions.m */,
 			);
 			path = NSURLSessionTask;
-			sourceTree = "<group>";
-		};
-		E38A5A791C69D9EE00AC03ED /* EDADataModel */ = {
-			isa = PBXGroup;
-			children = (
-				E38A5A7A1C69D9FD00AC03ED /* EDADataModel.h */,
-				E38A5A7B1C69D9FD00AC03ED /* EDADataModel.m */,
-			);
-			path = EDADataModel;
 			sourceTree = "<group>";
 		};
 		E38A5A881C6A20C000AC03ED /* EDAURLRequests */ = {
@@ -594,8 +594,8 @@
 				E385CAC51C7499BB000197DB /* EDADataManager */,
 				E38A5A881C6A20C000AC03ED /* EDAURLRequests */,
 				E38ABBE01C64F6170099B5E6 /* EDANull */,
+				E38956571CA13BC300AD37AD /* EDAModel */,
 				E38ABBDD1C64F6170099B5E6 /* EDAData */,
-				E38A5A791C69D9EE00AC03ED /* EDADataModel */,
 				E38ABBE31C64F6170099B5E6 /* EDAResponse */,
 				E38ABBE61C64F6170099B5E6 /* EDAResponseLayout */,
 				E38ABBE91C64F6170099B5E6 /* EDAResponseMetadata */,
@@ -925,13 +925,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E389565A1CA13BC300AD37AD /* EDAModel.m in Sources */,
 				E38A02BD1C88869C00566E0E /* NSURLSession+EDAExtensions.m in Sources */,
 				E38ABBC11C64F60F0099B5E6 /* main.m in Sources */,
 				E38ABC051C64F6170099B5E6 /* EDATableViewCell.m in Sources */,
 				E38ABBFF1C64F6170099B5E6 /* EDAData.m in Sources */,
 				E38ABC011C64F6170099B5E6 /* EDAResponse.m in Sources */,
 				E38ABBFB1C64F6170099B5E6 /* NSNull+EDARuntime.m in Sources */,
-				E38A5A7C1C69D9FD00AC03ED /* EDADataModel.m in Sources */,
 				E38E9B601C86D81200BFF9C8 /* NSMutableURLRequest+EDAExtensions.m in Sources */,
 				E38A02C11C88898800566E0E /* EDAObservableObject.m in Sources */,
 				E38A5A931C6A2B8800AC03ED /* EDARecordsListRequest.m in Sources */,

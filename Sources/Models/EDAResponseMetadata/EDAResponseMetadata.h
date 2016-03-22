@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDADataModel.h"
+#import "EDAModel.h"
 
 @class EDAResponseRequestResult, EDAResponseLayout;
 
-@interface EDAResponseMetadata : EDADataModel
+@interface EDAResponseMetadata : EDAModel
 @property (nonatomic, strong) EDAResponseRequestResult  *request;
 @property (nonatomic, strong) EDAResponseLayout         *layout;
 

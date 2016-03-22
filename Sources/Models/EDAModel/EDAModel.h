@@ -1,5 +1,5 @@
 //
-//  EDADataModel.h
+//  EDAModel.h
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 09.02.16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EDADataModel : NSObject
+@interface EDAModel : NSObject
 
 + (instancetype)instanceWithDictionary:(NSDictionary *)dictionary;
 

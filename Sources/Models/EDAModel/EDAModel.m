@@ -1,14 +1,14 @@
 //
-//  EDADataModel.m
+//  EDAModel.m
 //  EducationTestApp
 //
 //  Created by Voropaev Vitali on 09.02.16.
 //  Copyright © 2016 Voropaev Vitali. All rights reserved.
 //
 
-#import "EDADataModel.h"
+#import "EDAModel.h"
 
-@implementation EDADataModel
+@implementation EDAModel
 
 + (instancetype)instanceWithDictionary:(NSDictionary *)dictionary {
     return [self new];

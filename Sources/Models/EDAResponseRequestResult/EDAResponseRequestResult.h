@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDADataModel.h"
+#import "EDAModel.h"
 
-@interface EDAResponseRequestResult : EDADataModel
+@interface EDAResponseRequestResult : EDAModel
 @property (nonatomic, assign) BOOL  success;
 @property (nonatomic, copy) NSString *info;
 

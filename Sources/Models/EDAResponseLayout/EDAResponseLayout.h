@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDADataModel.h"
+#import "EDAModel.h"
 
-@interface EDAResponseLayout : EDADataModel
+@interface EDAResponseLayout : EDAModel
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) NSInteger totalCount;

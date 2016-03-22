@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDADataModel.h"
+#import "EDAModel.h"
 
 @class EDAResponseMetadata, EDAData;
 
-@interface EDAResponse : EDADataModel
+@interface EDAResponse : EDAModel
 @property (nonatomic, strong) EDAResponseMetadata   *meta;
 @property (nonatomic, strong) NSArray<EDAData *>    *data;
 

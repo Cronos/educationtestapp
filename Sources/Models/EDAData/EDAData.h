@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EDADataModel.h"
+#import "EDAModel.h"
 
 @class EDAData;
 
 typedef void(^EDADataBlock)(EDAData *data);
 
-@interface EDAData : EDADataModel
+@interface EDAData : EDAModel
 @property (nonatomic, assign) NSUInteger            index;
 @property (nonatomic, assign) NSInteger             ID;
 @property (nonatomic, copy) NSString                *content;
