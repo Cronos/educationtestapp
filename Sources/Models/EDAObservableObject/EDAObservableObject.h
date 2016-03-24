@@ -21,6 +21,7 @@
 - (void)setState:(EDAObjectState)state object:(id)object;
 
 - (EDAObserver *)observer;
+- (void)removeObserver:(EDAObserver *)observer;
 
 - (void)notifyObserversWithState:(NSUInteger)state;
 - (void)notifyObserversWithState:(NSUInteger)state object:(id)object;

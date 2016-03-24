@@ -45,6 +45,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [self.observableObject removeObserver:self];
+}
+
 #pragma mark -
 #pragma mark Accessors
 

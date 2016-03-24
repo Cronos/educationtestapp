@@ -100,4 +100,11 @@
     }];
 }
 
+- (void)removeObserver:(EDAObserver *)observer {
+    NSHashTable *mutableObservers = self.mutableObservers;
+    [self.lock performBlock:^{
+        [mutableObservers removeObject:observer];
+    }];
+}
+
 @end
